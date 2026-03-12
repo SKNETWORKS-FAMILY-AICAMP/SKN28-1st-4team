@@ -1,0 +1,13 @@
+title: SKN28 Technical Docs
+description: 중고차 가격·감가 예측 플랫폼 기술 문서
+theme: jekyll-theme-cayman
+markdown: kramdown
+kramdown:
+  input: GFM
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+wandb_report_url: ""
+wandb_report_title: ""
