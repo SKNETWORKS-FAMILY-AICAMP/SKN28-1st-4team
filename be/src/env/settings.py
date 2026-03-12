@@ -6,8 +6,6 @@ from ._utils import _read_str, _read_int, _read_float, _read_optional_str
 class ApplicationSettings:
     env: str
     service_name: str
-    host: str
-    port: int
 
 
 @dataclass(frozen=True)
@@ -44,8 +42,6 @@ def load_application_settings() -> ApplicationSettings:
     return ApplicationSettings(
         env=_read_str("APP_ENV", "development"),
         service_name=_read_str("SERVICE_NAME", "be"),
-        host=_read_str("HOST", "0.0.0.0"),
-        port=_read_int("PORT", 8000),
     )
 
 

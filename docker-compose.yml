@@ -1,0 +1,83 @@
+# Docker - Compose ( 모든  서비스 묶는 entrypoint)
+services:
+  fe:
+    build:
+      context: ./fe
+      dockerfile: Dockerfile
+    env_file:
+      - ./fe/.env
+    depends_on:
+      - be
+      - predict-engine-host
+    ports:
+      - "8501:8501"
+    networks:
+      - skn28-network
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8501/_stcore/health')",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  be:
+    build:
+      context: ./be
+      dockerfile: Dockerfile
+    env_file:
+      - ./be/.env
+    environment:
+      PREDICT_ENGINE_GRPC_HOST: predict-engine-host
+    depends_on:
+      - predict-engine-host
+    ports:
+      - "8000:8000"
+    networks:
+      - skn28-network
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  predict-engine-host:
+    build:
+      context: ./predict_engine_host
+      dockerfile: Dockerfile
+    env_file:
+      - ./predict_engine_host/.env
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./predict_engine_research/models:/app/models
+    networks:
+      - skn28-network
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8001/health')",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+networks:
+  skn28-network:
+    driver: bridge

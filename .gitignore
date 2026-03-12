@@ -25,6 +25,12 @@ dist/
 .vscode
 .idea
 
+# Runtime env files
+.env
+*/.env
+*.run_env
+*/.run_env
+
 # ML artifacts
 *.pt
 *.pth

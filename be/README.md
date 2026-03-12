@@ -7,8 +7,8 @@
 ## 디렉토리 구성
 
 - `pyproject.toml`: 프로젝트 메타데이터와 의존성 정의
-- `.run_env`: 로컬 실행과 Docker Compose 런타임에서 사용하는 환경변수 파일
-- `.build_env`: Docker 이미지 빌드 시에만 사용하는 환경변수 파일
+- `.env`: 로컬 실행과 Docker Compose 런타임에서 사용하는 환경변수 파일 (Git 미추적)
+- `.env.example`: 백엔드 런타임 환경변수 템플릿
 - `certs/`: 외부 DB SSL 접속용 CA 인증서 보관 디렉토리 (`.gitkeep`만 추적)
 - `Dockerfile`: 백엔드 컨테이너 이미지 정의
 - `src/app.py`: 실제 FastAPI 소스 코드 엔트리포인트
@@ -41,7 +41,8 @@
 
 ```bash
 cd be
-uv run --env-file .run_env uvicorn --app-dir src app:app --reload --host 0.0.0.0 --port 8000
+cp .env.example .env
+uv run --env-file .env uvicorn --app-dir src app:app --reload --host 0.0.0.0 --port 8000
 ```
 
 ## Docker 실행
@@ -49,6 +50,7 @@ uv run --env-file .run_env uvicorn --app-dir src app:app --reload --host 0.0.0.0
 저장소 루트에서 실행합니다.
 
 ```bash
+cp be/.env.example be/.env
 docker compose up --build be
 ```
 
@@ -56,8 +58,6 @@ docker compose up --build be
 
 - `APP_ENV`: 실행 환경 구분값입니다.
 - `SERVICE_NAME`: API 응답에 표시할 서비스 이름입니다.
-- `HOST`: Uvicorn 바인드 주소입니다.
-- `PORT`: 백엔드 API 포트입니다.
 - `DB_HOST`: MySQL 서버 호스트입니다.
 - `DB_PORT`: MySQL 서버 포트입니다.
 - `DB_USER`: DB 접속 계정입니다.
@@ -67,7 +67,7 @@ docker compose up --build be
 - `DB_CONNECT_TIMEOUT`: 연결 타임아웃 초 단위 값입니다.
 - `DB_SSL_CA_PATH`: DB SSL CA PEM 파일 경로입니다. 로컬과 Docker 모두 `certs/<파일명>.pem` 같은 상대경로 사용을 권장합니다.
 
-기본 `DB_HOST=127.0.0.1` 값은 로컬 실행 기준 예시입니다. Docker에서 외부 DB를 붙일 때는 `.run_env` 값을 실제 DB 주소나 서비스 이름으로 바꿔야 합니다.
+기본 `DB_HOST=127.0.0.1` 값은 로컬 실행 기준 예시입니다. Docker에서 외부 DB를 붙일 때는 `.env` 값을 실제 DB 주소나 서비스 이름으로 바꿔야 합니다.
 
 ## AWS RDS CA 인증서
 
@@ -81,7 +81,8 @@ docker compose up --build be
 
 - 런타임 설정은 `src/env/settings.py`의 `Settings`로 관리합니다.
 - 실제 앱에서는 `src/env/__init__.py`의 `settings` singleton만 사용합니다.
-- `buildtime` 환경변수는 Python 런타임으로 들고 오지 않고, `be/.build_env`에서 Dockerfile 빌드 단계에만 사용합니다.
+- Python/uv 빌드 설정은 별도 env 파일 대신 `be/Dockerfile`의 `ENV`로 고정합니다.
+- 애플리케이션 런타임 환경변수는 계속 `be/.env`와 Docker Compose service 환경설정에서 주입합니다.
 - DB 연결 정보는 `src/env/settings.py`의 `DatabaseSettings`로 분리되고, `src/external/db/factory.py`가 이를 주입해 `MySQLClient`를 생성합니다.
 
 ## 테스트
