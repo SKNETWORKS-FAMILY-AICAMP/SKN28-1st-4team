@@ -1,8 +1,6 @@
-from __future__ import annotations
-
 from collections.abc import Iterator
 from contextlib import contextmanager
-from typing import Any, Protocol, cast
+from typing import Any, Protocol, Self, cast
 
 import pymysql as mysql
 
@@ -37,7 +35,7 @@ class MySQLClient:
         config: DatabaseSettings,
         *,
         connector: DBConnector | None = None,
-    ) -> "MySQLClient":
+    ) -> Self:
         return cls(config=config, connector=connector)
 
     def _connection_kwargs(self) -> dict[str, object]:
