@@ -5,6 +5,8 @@ an isolated unit test. The tests replace the real DB connector with lightweight
 test doubles so no live MySQL server is required.
 """
 
+from dataclasses import replace
+
 import pytest
 
 from env.settings import DatabaseSettings
@@ -63,6 +65,7 @@ def database_settings() -> DatabaseSettings:
         name="app_db",
         charset="utf8mb4",
         connect_timeout=15,
+        ssl_ca_path=None,
     )
 
 
@@ -95,6 +98,7 @@ def test_from_config_builds_mysql_client_from_database_settings(
         "user": "app_user",
         "charset": "utf8mb4",
         "connect_timeout": 15,
+        "ssl_ca_path": None,
     }
 
 
@@ -144,6 +148,36 @@ def test_connect_commits_and_closes_after_success(
     assert stub_connection.close_calls == 1
 
 
+def test_connect_includes_ssl_ca_path_when_configured(
+    database_settings: DatabaseSettings,
+    stub_connection: StubConnection,
+    recording_connector: RecordingConnector,
+) -> None:
+    """Unit scope: `connect()` should forward the configured CA path when present."""
+
+    client = MySQLClient(
+        replace(database_settings, ssl_ca_path="certs/aws-global-bundle.pem"),
+        connector=recording_connector,
+    )
+
+    with client.connect() as active_connection:
+        assert active_connection is stub_connection
+
+    assert recording_connector.calls == [
+        {
+            "host": "db.internal",
+            "user": "app_user",
+            "password": "secret",
+            "database": "app_db",
+            "port": 3307,
+            "charset": "utf8mb4",
+            "connect_timeout": 15,
+            "autocommit": False,
+            "ssl_ca": "certs/aws-global-bundle.pem",
+        }
+    ]
+
+
 def test_connect_rolls_back_and_closes_after_error(
     database_settings: DatabaseSettings,
     stub_connection: StubConnection,
@@ -178,6 +212,7 @@ def test_health_summary_reports_available_after_successful_connection(
         "user": "app_user",
         "charset": "utf8mb4",
         "connect_timeout": 15,
+        "ssl_ca_path": None,
         "status": "available",
     }
     assert stub_connection.commit_calls == 1
@@ -199,6 +234,7 @@ def test_health_summary_reports_unavailable_after_connection_error(
         "user": "app_user",
         "charset": "utf8mb4",
         "connect_timeout": 15,
+        "ssl_ca_path": None,
         "status": "unavailable",
         "error": "cannot connect to test database",
     }

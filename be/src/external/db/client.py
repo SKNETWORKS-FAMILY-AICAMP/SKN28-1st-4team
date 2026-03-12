@@ -39,7 +39,7 @@ class MySQLClient:
         return cls(config=config, connector=connector)
 
     def _connection_kwargs(self) -> dict[str, object]:
-        return {
+        kwargs: dict[str, object] = {
             "host": self._config.host,
             "user": self._config.user,
             "password": self._config.password,
@@ -49,6 +49,9 @@ class MySQLClient:
             "connect_timeout": self._config.connect_timeout,
             "autocommit": False,
         }
+        if self._config.ssl_ca_path is not None:
+            kwargs["ssl_ca"] = self._config.ssl_ca_path
+        return kwargs
 
     def _connect(self) -> DBConnection:
         return self._connector(**self._connection_kwargs())
@@ -61,6 +64,7 @@ class MySQLClient:
             "user": self._config.user,
             "charset": self._config.charset,
             "connect_timeout": self._config.connect_timeout,
+            "ssl_ca_path": self._config.ssl_ca_path,
         }
 
     def health_summary(self) -> dict[str, object]:
