@@ -1,0 +1,39 @@
+services:
+  test_db_docker:
+    build:
+      context: ./be/tests/integration/external/db/docker/test-db
+      dockerfile: Dockerfile
+    container_name: test_db_docker
+    environment:
+      MYSQL_DATABASE: app_db
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: app_password
+      MYSQL_ROOT_PASSWORD: root_password
+    ports:
+      - "3307:3306"
+    networks:
+      - skn28-network
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysqladmin ping -h 127.0.0.1 -uroot -p$${MYSQL_ROOT_PASSWORD} --silent",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  be:
+    environment:
+      DB_HOST: test_db_docker
+      DB_PORT: 3306
+      DB_USER: app_user
+      DB_PASSWORD: app_password
+      DB_NAME: app_db
+      DB_CHARSET: utf8mb4
+      DB_CONNECT_TIMEOUT: 10
+
+networks:
+  skn28-network:
+    driver: bridge
