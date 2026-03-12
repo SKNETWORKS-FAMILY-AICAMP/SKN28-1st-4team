@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package predictengine.v1;
+
+import "google/protobuf/struct.proto";
+
+service PredictEngine {
+  rpc Health(HealthRequest) returns (HealthResponse);
+  rpc Predict(PredictRequest) returns (PredictResponse);
+}
+
+message HealthRequest {}
+
+message HealthResponse {
+  string status = 1;
+  string service_name = 2;
+  string model_path = 3;
+  bool model_exists = 4;
+  bool model_loaded = 5;
+  string model_input_name = 6;
+  repeated string model_output_names = 7;
+  string model_error = 8;
+}
+
+message PredictRequest {
+  string request_id = 1;
+  repeated string feature_names = 2;
+  repeated FeatureRow rows = 3;
+}
+
+message FeatureRow {
+  repeated FeatureValue values = 1;
+}
+
+message FeatureValue {
+  oneof kind {
+    double double_value = 1;
+    int64 int_value = 2;
+    string string_value = 3;
+    bool bool_value = 4;
+    google.protobuf.NullValue null_value = 5;
+  }
+}
+
+message PredictResponse {
+  string request_id = 1;
+  repeated ModelOutput outputs = 2;
+}
+
+message ModelOutput {
+  string name = 1;
+  Tensor tensor = 2;
+}
+
+message Tensor {
+  string dtype = 1;
+  repeated int64 shape = 2;
+  repeated double double_values = 3;
+  repeated int64 int64_values = 4;
+  repeated string string_values = 5;
+  repeated bool bool_values = 6;
+}

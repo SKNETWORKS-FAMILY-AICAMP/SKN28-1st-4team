@@ -13,6 +13,8 @@ class EnvSettings(BaseSettings):
 class ApplicationSettings(EnvSettings):
     env: str = Field(default="development", validation_alias="APP_ENV")
     service_name: str = Field(default="be", validation_alias="SERVICE_NAME")
+    format :str = Field(default="{time:YYYY-MM-DD HH:mm:ss.SSS} | {level:<8} | {name}:{function}:{line} - {message}",
+ validation_alias="LOG_FORMAT")
 
 
 class DatabaseSettings(EnvSettings):

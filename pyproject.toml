@@ -1,0 +1,8 @@
+[tool.uv.workspace]
+members = [
+    "fe",
+    "be",
+    "predict_engine_research",
+    "predict_engine_host",
+    "data_collection",
+]

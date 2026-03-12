@@ -1,0 +1,6 @@
+[project]
+name = "data-collection"
+version = "0.1.0"
+description = "Data collection and cleaning project for the monorepo"
+requires-python = ">=3.12"
+dependencies = []
