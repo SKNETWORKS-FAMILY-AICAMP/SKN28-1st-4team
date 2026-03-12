@@ -5,8 +5,6 @@ an isolated unit test. The tests replace the real DB connector with lightweight
 test doubles so no live MySQL server is required.
 """
 
-from dataclasses import replace
-
 import pytest
 
 from env.settings import DatabaseSettings
@@ -156,7 +154,9 @@ def test_connect_includes_ssl_ca_path_when_configured(
     """Unit scope: `connect()` should forward the configured CA path when present."""
 
     client = MySQLClient(
-        replace(database_settings, ssl_ca_path="certs/aws-global-bundle.pem"),
+        database_settings.model_copy(
+            update={"ssl_ca_path": "certs/aws-global-bundle.pem"}
+        ),
         connector=recording_connector,
     )
 

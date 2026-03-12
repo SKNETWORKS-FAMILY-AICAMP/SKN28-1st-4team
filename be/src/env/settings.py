@@ -1,74 +1,63 @@
-from dataclasses import dataclass
-from ._utils import _read_str, _read_int, _read_float, _read_optional_str
+from pydantic import BaseModel, ConfigDict, Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
-@dataclass(frozen=True)
-class ApplicationSettings:
-    env: str
-    service_name: str
+class EnvSettings(BaseSettings):
+    model_config = SettingsConfigDict(
+        populate_by_name=True,
+        extra="ignore",
+        frozen=True,
+    )
 
 
-@dataclass(frozen=True)
-class DatabaseSettings:
-    host: str
-    port: int
-    user: str
-    password: str
-    name: str
-    charset: str
-    connect_timeout: int
-    ssl_ca_path: str | None = None
+class ApplicationSettings(EnvSettings):
+    env: str = Field(default="development", validation_alias="APP_ENV")
+    service_name: str = Field(default="be", validation_alias="SERVICE_NAME")
 
 
-@dataclass(frozen=True)
-class PredictEngineSettings:
-    host: str
-    port: int
-    timeout_seconds: float
+class DatabaseSettings(EnvSettings):
+    host: str = Field(default="127.0.0.1", validation_alias="DB_HOST")
+    port: int = Field(default=3306, validation_alias="DB_PORT")
+    user: str = Field(default="app_user", validation_alias="DB_USER")
+    password: str = Field(default="app_password", validation_alias="DB_PASSWORD")
+    name: str = Field(default="app_db", validation_alias="DB_NAME")
+    charset: str = Field(default="utf8mb4", validation_alias="DB_CHARSET")
+    connect_timeout: int = Field(default=10, validation_alias="DB_CONNECT_TIMEOUT")
+    ssl_ca_path: str | None = Field(default=None, validation_alias="DB_SSL_CA_PATH")
+
+
+class PredictEngineSettings(EnvSettings):
+    host: str = Field(default="127.0.0.1", validation_alias="PREDICT_ENGINE_GRPC_HOST")
+    port: int = Field(default=50051, validation_alias="PREDICT_ENGINE_GRPC_PORT")
+    timeout_seconds: float = Field(
+        default=5.0,
+        validation_alias="PREDICT_ENGINE_TIMEOUT_SECONDS",
+    )
 
     @property
     def target(self) -> str:
         return f"{self.host}:{self.port}"
 
 
-@dataclass(frozen=True)
-class Settings:
-    app: ApplicationSettings
-    db: DatabaseSettings
-    predict_engine: PredictEngineSettings
+class Settings(BaseModel):
+    model_config = ConfigDict(frozen=True)
+
+    app: ApplicationSettings = Field(default_factory=ApplicationSettings)
+    db: DatabaseSettings = Field(default_factory=DatabaseSettings)
+    predict_engine: PredictEngineSettings = Field(default_factory=PredictEngineSettings)
 
 
 def load_application_settings() -> ApplicationSettings:
-    return ApplicationSettings(
-        env=_read_str("APP_ENV", "development"),
-        service_name=_read_str("SERVICE_NAME", "be"),
-    )
+    return ApplicationSettings()
 
 
 def load_database_settings() -> DatabaseSettings:
-    return DatabaseSettings(
-        host=_read_str("DB_HOST", "127.0.0.1"),
-        port=_read_int("DB_PORT", 3306),
-        user=_read_str("DB_USER", "app_user"),
-        password=_read_str("DB_PASSWORD", "app_password"),
-        name=_read_str("DB_NAME", "app_db"),
-        charset=_read_str("DB_CHARSET", "utf8mb4"),
-        connect_timeout=_read_int("DB_CONNECT_TIMEOUT", 10),
-        ssl_ca_path=_read_optional_str("DB_SSL_CA_PATH"),
-    )
+    return DatabaseSettings()
 
 
 def load_predict_engine_settings() -> PredictEngineSettings:
-    return PredictEngineSettings(
-        host=_read_str("PREDICT_ENGINE_GRPC_HOST", "127.0.0.1"),
-        port=_read_int("PREDICT_ENGINE_GRPC_PORT", 50051),
-        timeout_seconds=_read_float("PREDICT_ENGINE_TIMEOUT_SECONDS", 5.0),
-    )
+    return PredictEngineSettings()
 
 
 def load_settings() -> Settings:
-    return Settings(
-        app=load_application_settings(),
-        db=load_database_settings(),
-        predict_engine=load_predict_engine_settings(),
-    )
+    return Settings()

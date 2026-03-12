@@ -32,6 +32,7 @@
 ## 의존성 및 역할
 
 - `fastapi`: HTTP API 엔드포인트와 JSON 응답 스키마를 구성합니다.
+- `pydantic-settings`: 환경변수를 타입 안전한 설정 모델로 로드합니다.
 - `pymysql`: MySQL/MariaDB 연결을 위한 순수 Python 드라이버입니다.
 - `uvicorn`: FastAPI 애플리케이션을 로컬과 Docker에서 실행하는 ASGI 서버입니다.
 
@@ -80,6 +81,7 @@ docker compose up --build be
 ## 설정 구조
 
 - 런타임 설정은 `src/env/settings.py`의 `Settings`로 관리합니다.
+- 설정 로딩은 `pydantic-settings` 기반이며, 프로세스 환경변수에서 직접 값을 읽습니다.
 - 실제 앱에서는 `src/env/__init__.py`의 `settings` singleton만 사용합니다.
 - Python/uv 빌드 설정은 별도 env 파일 대신 `be/Dockerfile`의 `ENV`로 고정합니다.
 - 애플리케이션 런타임 환경변수는 계속 `be/.env`와 Docker Compose service 환경설정에서 주입합니다.
