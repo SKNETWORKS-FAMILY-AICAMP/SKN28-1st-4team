@@ -1,10 +1,14 @@
 from collections.abc import Mapping, Sequence
+from functools import lru_cache
 
-import grpc
-from fastapi import HTTPException
-
-from external.predict_engine.client import PredictEngineClient, predict_engine_client
-from external.predict_engine.types import PredictEnginePrediction, PredictScalar
+from external.predict_engine import (
+    PredictEngineClient,
+    PredictEnginePrediction,
+    PredictEngineProjection,
+    PredictEngineProjectionPoint,
+    PredictScalar,
+    get_predict_engine_client,
+)
 
 
 class PredictEngineService:
@@ -16,14 +20,7 @@ class PredictEngineService:
         return self._client.connection_summary()
 
     def health_summary(self) -> dict[str, object]:
-        try:
-            health = self._client.health()
-        except grpc.RpcError as exc:
-            return {
-                **self._client.connection_summary(),
-                "status": "unavailable",
-                "error": self._rpc_error_message(exc),
-            }
+        health = self._client.health()
         return {
             **self._client.connection_summary(),
             **health.as_dict(),
@@ -31,40 +28,70 @@ class PredictEngineService:
 
     def predict(
         self,
-        records: Sequence[Mapping[str, PredictScalar]],
+        record: Mapping[str, PredictScalar] | None = None,
         *,
-        feature_names: Sequence[str] | None = None,
         request_id: str | None = None,
+        **kwargs: PredictScalar,
     ) -> PredictEnginePrediction:
-        try:
-            return self._client.predict(
-                records,
-                feature_names=feature_names,
+        return self._client.predict(record, request_id=request_id, **kwargs)
+
+
+    def project(
+        self,
+        base_record: Mapping[str, PredictScalar] | None = None,
+        *,
+        feature_name: str,
+        feature_values: Sequence[PredictScalar],
+        request_id: str | None = None,
+        **kwargs: PredictScalar,
+    ) -> PredictEngineProjection:
+        if not feature_name:
+            raise ValueError("feature_name is required for predict-engine projection")
+        if not feature_values:
+            raise ValueError("feature_values must contain at least one item")
+
+        seed_record = {} if base_record is None else dict(base_record)
+        if kwargs:
+            seed_record.update(kwargs)
+
+        records: list[dict[str, PredictScalar]] = []
+        labels: list[str] = []
+        for feature_value in feature_values:
+            projected_record = dict(seed_record)
+            projected_record[feature_name] = feature_value
+            records.append(projected_record)
+            labels.append(str(feature_value))
+
+        points: list[PredictEngineProjectionPoint] = []
+        feature_columns: tuple[str, ...] = ()
+        for label, projected_record, feature_value in zip(
+            labels,
+            records,
+            feature_values,
+            strict=True,
+        ):
+            prediction = self._client.predict(
+                projected_record,
                 request_id=request_id,
             )
-        except grpc.RpcError as exc:
-            raise HTTPException(
-                status_code=self._http_status_for_rpc(exc),
-                detail=self._rpc_error_message(exc),
-            ) from exc
+            feature_columns = prediction.feature_columns
+            points.append(
+                PredictEngineProjectionPoint(
+                    label=label,
+                    feature_name=feature_name,
+                    feature_value=feature_value,
+                    predicted_price=prediction.predicted_price,
+                )
+            )
 
-    @staticmethod
-    def _http_status_for_rpc(exc: grpc.RpcError) -> int:
-        mapping = {
-            grpc.StatusCode.INVALID_ARGUMENT: 400,
-            grpc.StatusCode.NOT_FOUND: 404,
-            grpc.StatusCode.FAILED_PRECONDITION: 412,
-            grpc.StatusCode.DEADLINE_EXCEEDED: 504,
-            grpc.StatusCode.UNAVAILABLE: 503,
-        }
-        return mapping.get(exc.code(), 502)
-
-    @staticmethod
-    def _rpc_error_message(exc: grpc.RpcError) -> str:
-        details = exc.details()
-        if details:
-            return details
-        return f"predict engine call failed with status {exc.code().name}"
+        return PredictEngineProjection(
+            request_id=request_id or "",
+            feature_name=feature_name,
+            feature_columns=feature_columns,
+            points=tuple(points),
+        )
 
 
-predict_engine_service = PredictEngineService(client=predict_engine_client)
+@lru_cache(maxsize=1)
+def get_predict_engine_service() -> PredictEngineService:
+    return PredictEngineService(client=get_predict_engine_client())

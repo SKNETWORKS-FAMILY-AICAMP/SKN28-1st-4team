@@ -1,5 +1,10 @@
-from pydantic import BaseModel, ConfigDict, Field
+from pathlib import Path
+
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+_PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
 class EnvSettings(BaseSettings):
@@ -29,16 +34,22 @@ class DatabaseSettings(EnvSettings):
 
 
 class PredictEngineSettings(EnvSettings):
-    host: str = Field(default="127.0.0.1", validation_alias="PREDICT_ENGINE_GRPC_HOST")
-    port: int = Field(default=50051, validation_alias="PREDICT_ENGINE_GRPC_PORT")
-    timeout_seconds: float = Field(
-        default=5.0,
-        validation_alias="PREDICT_ENGINE_TIMEOUT_SECONDS",
+    model_path: Path = Field(
+        default=Path("../predict_engine_research/output/model.cbm"),
+        validation_alias="PREDICT_ENGINE_MODEL_PATH",
+    )
+    feature_manifest_path: Path = Field(
+        default=Path("../predict_engine_research/output/feature_manifest.json"),
+        validation_alias="PREDICT_ENGINE_FEATURE_MANIFEST_PATH",
     )
 
-    @property
-    def target(self) -> str:
-        return f"{self.host}:{self.port}"
+    @field_validator("model_path", "feature_manifest_path", mode="before")
+    @classmethod
+    def _resolve_project_relative_path(cls, value: str | Path) -> Path:
+        path = Path(value).expanduser()
+        if path.is_absolute():
+            return path
+        return (_PROJECT_ROOT / path).resolve()
 
 
 class Settings(BaseModel):

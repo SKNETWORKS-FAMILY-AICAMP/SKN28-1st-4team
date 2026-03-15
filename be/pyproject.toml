@@ -4,11 +4,11 @@ version = "0.1.0"
 description = "FastAPI backend app for the monorepo"
 requires-python = ">=3.12"
 dependencies = [
+    "catboost>=1.2.10",
     "cryptography>=46.0.5",
     "fastapi>=0.135.1",
-    "grpcio>=1.78.0",
     "loguru>=0.7.3",
-    "protobuf>=6.33.5",
+    "pandas>=2.3.3",
     "pydantic-settings>=2.13.1",
     "pymysql>=1.1.2",
     "uvicorn>=0.41.0",

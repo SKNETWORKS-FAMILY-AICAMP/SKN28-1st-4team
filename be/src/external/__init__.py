@@ -1,22 +1,23 @@
-from .client import PredictEngineClient
-from .feature_vectorizer import (
-    FeatureTransformer,
+from .db import DBConnection, DBConnector, MySQLClient, get_db_client
+from .predict_engine import (
+    PredictEngineClient,
+    PredictEngineFeatureVector,
     PredictEngineFeatureVectorizer,
-    build_default_transformers,
-    load_feature_manifest,
-)
-from .provider import get_predict_engine_client
-from .types import (
+    FeatureTransformer,
     PredictEngineHealth,
     PredictEngineManifest,
     PredictEnginePrediction,
     PredictEngineProjection,
     PredictEngineProjectionPoint,
     PredictScalar,
+    build_default_transformers,
+    get_predict_engine_client,
 )
-from .vector_models import PredictEngineFeatureVector
 
 __all__ = [
+    "DBConnection",
+    "DBConnector",
+    "MySQLClient",
     "PredictEngineClient",
     "PredictEngineFeatureVector",
     "PredictEngineFeatureVectorizer",
@@ -28,6 +29,6 @@ __all__ = [
     "PredictEngineProjectionPoint",
     "PredictScalar",
     "build_default_transformers",
+    "get_db_client",
     "get_predict_engine_client",
-    "load_feature_manifest",
 ]

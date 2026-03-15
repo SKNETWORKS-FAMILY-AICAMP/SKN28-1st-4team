@@ -1,146 +1,116 @@
 from collections.abc import Mapping, Sequence
+from pathlib import Path
+from threading import Lock
 from typing import Self
 
-import grpc
-from google.protobuf import struct_pb2
-
-import predict_engine_pb2 as pb2
-import predict_engine_pb2_grpc as pb2_grpc
-
-from env.settings import Settings, load_settings
-from .types import PredictEngineHealth, PredictEnginePrediction, PredictEngineTensor, PredictScalar
+from .feature_vectorizer import (
+    FeatureTransformer,
+    PredictEngineFeatureVectorizer,
+)
+from .model_runtime import PredictEngineRuntime
+from .types import PredictEngineHealth, PredictEnginePrediction, PredictScalar
 
 
 class PredictEngineClient:
+    def __init__(
+        self,
+        *,
+        model_path: Path,
+        feature_manifest_path: Path,
+        runtime: PredictEngineRuntime | None = None,
+        transformers: Sequence[FeatureTransformer] | None = None,
+    ) -> None:
+        self._model_path = model_path
+        self._feature_manifest_path = feature_manifest_path
+        self._runtime = runtime or PredictEngineRuntime(self._model_path)
+        self._transformers = tuple(transformers or ())
+        self._feature_vectorizer: PredictEngineFeatureVectorizer | None = None
+        self._feature_vectorizer_lock = Lock()
 
-    def __init__(self, settings: Settings) -> None:
-        self._settings = settings
-        self._channel = grpc.insecure_channel(self._settings.predict_engine.target)
-        self._stub = pb2_grpc.PredictEngineStub(self._channel)
+    @classmethod
+    def from_paths(
+        cls,
+        *,
+        model_path: Path,
+        feature_manifest_path: Path,
+        transformers: Sequence[FeatureTransformer] | None = None,
+    ) -> Self:
+        return cls(
+            model_path=model_path,
+            feature_manifest_path=feature_manifest_path,
+            transformers=transformers,
+        )
 
     def connection_summary(self) -> dict[str, object]:
         return {
-            "target": self._settings.predict_engine.target,
-            "timeout_seconds": self._settings.predict_engine.timeout_seconds,
+            "mode": "local_cbm",
+            "model_path": str(self._model_path),
+            "feature_manifest_path": str(self._feature_manifest_path),
         }
 
-    def close(self) -> None:
-        self._channel.close()
-
     def health(self) -> PredictEngineHealth:
-        response = self._stub.Health(
-            pb2.HealthRequest(),
-            timeout=self._settings.predict_engine.timeout_seconds,
-        )
+        manifest_exists = self._feature_manifest_path.is_file()
+        manifest = None
+        manifest_error = None
+        try:
+            manifest = self._get_feature_vectorizer().manifest
+        except Exception as exc:
+            manifest_error = str(exc)
+
+        model_exists = self._runtime.model_exists()
+        model_loaded = False
+        model_error = None
+        if model_exists:
+            try:
+                self._runtime.get_model()
+                model_loaded = True
+            except Exception as exc:
+                model_error = str(exc)
+        else:
+            model_error = f"predict engine model not found at {self._runtime.model_path}"
+
+        status = "available" if manifest is not None and model_loaded else "unavailable"
         return PredictEngineHealth(
-            status=response.status,
-            service_name=response.service_name,
-            model_path=response.model_path,
-            model_exists=response.model_exists,
-            model_loaded=response.model_loaded,
-            model_input_name=response.model_input_name,
-            model_output_names=tuple(response.model_output_names),
-            model_error=response.model_error or None,
+            status=status,
+            mode="local_cbm",
+            model_path=str(self._runtime.model_path),
+            model_exists=model_exists,
+            model_loaded=model_loaded,
+            feature_manifest_path=str(self._feature_manifest_path),
+            feature_manifest_exists=manifest_exists,
+            target_column=None if manifest is None else manifest.target_column,
+            feature_columns=() if manifest is None else manifest.feature_columns,
+            categorical_columns=() if manifest is None else manifest.categorical_columns,
+            model_error=model_error,
+            manifest_error=manifest_error,
         )
 
     def predict(
         self,
-        records: Sequence[Mapping[str, PredictScalar]],
+        record: Mapping[str, PredictScalar] | None = None,
         *,
-        feature_names: Sequence[str] | None = None,
         request_id: str | None = None,
+        **kwargs: PredictScalar,
     ) -> PredictEnginePrediction:
-        request = pb2.PredictRequest(
-            request_id=request_id or "",
-            feature_names=self._resolve_feature_names(records, feature_names),
-            rows=self._build_rows(records, feature_names),
-        )
-        response = self._stub.Predict(
-            request,
-            timeout=self._settings.predict_engine.timeout_seconds,
-        )
+        feature_vectorizer = self._get_feature_vectorizer()
+        feature_vector = feature_vectorizer.vectorize(record, **kwargs)
+        predicted_price = self._runtime.predict(feature_vector)
         return PredictEnginePrediction(
-            request_id=response.request_id,
-            outputs=tuple(self._parse_output(output) for output in response.outputs),
+            request_id=request_id or "",
+            predicted_price=predicted_price,
+            feature_columns=feature_vector.feature_names,
         )
 
-    @staticmethod
-    def _resolve_feature_names(
-        records: Sequence[Mapping[str, PredictScalar]],
-        feature_names: Sequence[str] | None,
-    ) -> list[str]:
-        if feature_names is not None:
-            names = [name for name in feature_names if name]
-            if not names:
-                raise ValueError("feature_names must not be empty when provided")
-            return names
+    def _get_feature_vectorizer(self) -> PredictEngineFeatureVectorizer:
+        if self._feature_vectorizer is not None:
+            return self._feature_vectorizer
 
-        if not records:
-            raise ValueError("records must contain at least one item")
+        with self._feature_vectorizer_lock:
+            if self._feature_vectorizer is not None:
+                return self._feature_vectorizer
 
-        names = list(records[0].keys())
-        if not names:
-            raise ValueError("records must contain at least one feature")
-        return names
-
-    def _build_rows(
-        self,
-        records: Sequence[Mapping[str, PredictScalar]],
-        feature_names: Sequence[str] | None,
-    ) -> list[pb2.FeatureRow]:
-        names = self._resolve_feature_names(records, feature_names)
-        rows: list[pb2.FeatureRow] = []
-        for row_index, record in enumerate(records):
-            missing = [name for name in names if name not in record]
-            if missing:
-                raise ValueError(
-                    f"record at index {row_index} is missing required features: {missing}"
-                )
-            rows.append(
-                pb2.FeatureRow(
-                    values=[self._to_feature_value(record[name]) for name in names]
-                )
+            self._feature_vectorizer = PredictEngineFeatureVectorizer.from_manifest_path(
+                self._feature_manifest_path,
+                transformers=self._transformers,
             )
-        return rows
-
-    @staticmethod
-    def _to_feature_value(value: PredictScalar) -> pb2.FeatureValue:
-        if value is None:
-            return pb2.FeatureValue(null_value=struct_pb2.NULL_VALUE)
-        if isinstance(value, bool):
-            return pb2.FeatureValue(bool_value=value)
-        if isinstance(value, int):
-            return pb2.FeatureValue(int_value=value)
-        if isinstance(value, float):
-            return pb2.FeatureValue(double_value=value)
-        if isinstance(value, str):
-            return pb2.FeatureValue(string_value=value)
-        raise TypeError(f"unsupported feature value type: {type(value)!r}")
-
-    @staticmethod
-    def _parse_output(output: pb2.ModelOutput) -> PredictEngineTensor:
-        tensor = output.tensor
-        values: tuple[float | int | str | bool, ...]
-
-        if tensor.bool_values:
-            values = tuple(tensor.bool_values)
-        elif tensor.string_values:
-            values = tuple(tensor.string_values)
-        elif tensor.int64_values:
-            values = tuple(tensor.int64_values)
-        else:
-            values = tuple(tensor.double_values)
-
-        return PredictEngineTensor(
-            name=output.name,
-            dtype=tensor.dtype,
-            shape=tuple(tensor.shape),
-            values=values,
-        )
-
-    @classmethod
-    def get_client(cls) -> Self:
-        return cls(settings=load_settings())
-
-
-predict_engine_client = PredictEngineClient.get_client()
+            return self._feature_vectorizer
