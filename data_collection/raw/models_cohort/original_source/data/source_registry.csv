@@ -1,0 +1,11 @@
+source_id,brand,source_kind,landing_url,collector_key,fetch_mode,notes,external_code,active
+official_hyundai_catalog_index,hyundai,official_catalog_index,https://www.hyundai.com/kr/ko/e/vehicles/catalog-price-download,hyundai,playwright,Rendered table page. Price PDFs are exposed through download buttons.,,Y
+archive_bobaedream_hyundai_index,hyundai,market_archive_index,https://m.bobaedream.co.kr/calculator/carinfo,bobaedream_archive,http_html,Historical model hierarchy from Bobaedream new-car price calculator.,49,Y
+official_kia_catalog_index,kia,official_catalog_index,https://www.kia.com/kr/vehicles/catalog-price,kia,playwright,Tabbed rendered page. Price PDFs are exposed as direct anchors per visible tab.,,Y
+archive_bobaedream_kia_index,kia,market_archive_index,https://m.bobaedream.co.kr/calculator/carinfo,bobaedream_archive,http_html,Historical model hierarchy from Bobaedream new-car price calculator.,3,Y
+official_chevrolet_catalog_index,chevrolet,official_catalog_index,https://www.chevrolet.co.kr/e-catalog-price-list,chevrolet,http_html,"Index text is reachable, but full rendered price access is currently blocked and marked for manual review.",,Y
+archive_bobaedream_chevrolet_index,chevrolet,market_archive_index,https://m.bobaedream.co.kr/calculator/carinfo,bobaedream_archive,http_html,Historical model hierarchy from Bobaedream new-car price calculator.,105,Y
+official_renault_catalog_index,renault,official_catalog_index,https://renault.co.kr/ko/side/catalog_download.jsp,renault,playwright,Rendered download buttons. Price PDFs are exposed through button-triggered downloads.,,Y
+archive_bobaedream_renault_index,renault,market_archive_index,https://m.bobaedream.co.kr/calculator/carinfo,bobaedream_archive,http_html,Historical model hierarchy from Bobaedream new-car price calculator.,26,Y
+official_kgm_catalog_index,kgm,official_catalog_index,https://www.kg-mobility.com/od/promotion/catalog-download,kgm,playwright,Rendered download cards. Price PDFs are exposed through button-triggered downloads.,,Y
+archive_bobaedream_kgm_index,kgm,market_archive_index,https://m.bobaedream.co.kr/calculator/carinfo,bobaedream_archive,http_html,Historical model hierarchy from Bobaedream new-car price calculator.,31,Y

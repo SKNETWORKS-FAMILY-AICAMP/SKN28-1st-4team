@@ -1,0 +1,11 @@
+brand,stage,status,detail,collected_at
+hyundai,collect,ok,model_rows=37 price_rows=37,2026-03-15T15:09:31+00:00
+hyundai,collect,ok,model_rows=208 price_rows=5557,2026-03-15T15:09:43+00:00
+kia,collect,ok,model_rows=38 price_rows=38,2026-03-15T15:20:44+00:00
+kia,collect,ok,model_rows=192 price_rows=3974,2026-03-15T15:20:52+00:00
+chevrolet,collect,warning,Chevrolet price sources are manual_review because rendered download access is blocked.,2026-03-15T15:28:30+00:00
+chevrolet,collect,ok,model_rows=35 price_rows=667,2026-03-15T15:28:30+00:00
+renault,collect,ok,model_rows=4 price_rows=4,2026-03-15T15:29:20+00:00
+renault,collect,ok,model_rows=39 price_rows=842,2026-03-15T15:29:27+00:00
+kgm,collect,ok,model_rows=9 price_rows=9,2026-03-15T15:30:34+00:00
+kgm,collect,ok,model_rows=63 price_rows=1340,2026-03-15T15:30:39+00:00

@@ -1,0 +1,12 @@
+metric,value
+total_rows,12380
+zero_price_rows,4296
+nonzero_price_rows,8084
+extraction_error_rows,0
+rows_with_displacement,12380
+rows_with_drive_type,9043
+zero_price_rows_chevrolet,24
+zero_price_rows_hyundai,2294
+zero_price_rows_kgm,398
+zero_price_rows_kia,1442
+zero_price_rows_renault,138
