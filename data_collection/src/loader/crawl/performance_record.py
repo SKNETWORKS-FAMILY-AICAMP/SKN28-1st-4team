@@ -6,69 +6,93 @@ from urllib.parse import parse_qsl, quote, urlencode, urljoin, urlsplit, urlunsp
 
 from bs4 import BeautifulSoup
 from playwright.async_api import TimeoutError as PlaywrightTimeoutError
-from playwright.async_api import async_playwright
+
+from .browser import create_browser_context
+from .errors import BlockedRequestError, MissingPerformanceRecordError, SlowResponseError, StaleListingError
 
 
 async def download_performance_record_pdf(
     detail_url: str,
     output_dir: str | Path,
     *,
-    timeout_ms: int = 30_000,
+    timeout_ms: int = 20_000,
     retry_count: int = 3,
     retry_backoff_seconds: float = 2.0,
     raise_on_blocked_error: bool = False,
+    context=None,
 ) -> Path | None:
     """상세 페이지에서 성능기록부 iframe을 찾아 PDF로 저장한다."""
+
+    if context is None:
+        async with create_browser_context() as owned_context:
+            return await download_performance_record_pdf(
+                detail_url,
+                output_dir,
+                timeout_ms=timeout_ms,
+                retry_count=retry_count,
+                retry_backoff_seconds=retry_backoff_seconds,
+                raise_on_blocked_error=raise_on_blocked_error,
+                context=owned_context,
+            )
 
     output_dir_path = Path(output_dir)
     output_dir_path.mkdir(parents=True, exist_ok=True)
     last_error: Exception | None = None
 
     for attempt in range(1, retry_count + 1):
+        detail_page = None
+        report_page = None
         try:
-            async with async_playwright() as playwright:
-                browser = await playwright.chromium.launch(headless=True)
-                detail_page = await browser.new_page(locale="ko-KR")
-                await detail_page.goto(detail_url, wait_until="domcontentloaded", timeout=timeout_ms)
-                await detail_page.wait_for_selector("h3", timeout=timeout_ms)
-                await detail_page.wait_for_timeout(1_000)
+            detail_page = await context.new_page()
+            response = await detail_page.goto(detail_url, wait_until="domcontentloaded", timeout=timeout_ms)
+            _raise_for_navigation_response(response, "detail page")
+            await detail_page.wait_for_selector("h3", timeout=timeout_ms)
+            await detail_page.wait_for_timeout(1_000)
 
-                registration_number = _extract_registration_number(await detail_page.content())
-                await _open_performance_record_tab(detail_page, timeout_ms=timeout_ms)
-                iframe_src = await _locate_performance_record_iframe(detail_page)
-                if not iframe_src:
-                    await browser.close()
-                    return None
+            registration_number = _extract_registration_number(await detail_page.content())
+            await _open_performance_record_tab(detail_page, timeout_ms=timeout_ms)
+            iframe_src = await _locate_performance_record_iframe(detail_page)
+            if not iframe_src:
+                raise MissingPerformanceRecordError("performance record iframe missing")
 
-                report_url = _normalize_url(urljoin(detail_page.url, iframe_src))
-                output_path = _build_output_path(output_dir_path, registration_number)
+            report_url = _normalize_url(urljoin(detail_page.url, iframe_src))
+            output_path = _build_output_path(output_dir_path, registration_number)
 
-                report_page = await browser.new_page(locale="ko-KR")
-                await report_page.wait_for_timeout(500 * attempt)
-                await report_page.goto(report_url, wait_until="domcontentloaded", timeout=timeout_ms)
-                await report_page.wait_for_load_state("networkidle", timeout=timeout_ms)
-                await report_page.wait_for_selector("text=중고자동차성능", timeout=timeout_ms)
-                await report_page.emulate_media(media="print")
-                await report_page.pdf(
-                    path=str(output_path),
-                    format="A4",
-                    print_background=True,
-                    prefer_css_page_size=True,
-                    margin={
-                        "top": "8mm",
-                        "bottom": "8mm",
-                        "left": "8mm",
-                        "right": "8mm",
-                    },
-                )
-                await report_page.close()
-                await browser.close()
-                return output_path
-        except PlaywrightTimeoutError:
-            last_error = PlaywrightTimeoutError("performance record timeout")
+            report_page = await context.new_page()
+            await report_page.wait_for_timeout(500 * attempt)
+            report_response = await report_page.goto(report_url, wait_until="domcontentloaded", timeout=timeout_ms)
+            _raise_for_navigation_response(report_response, "performance record")
+            await report_page.wait_for_selector("text=중고자동차성능", timeout=timeout_ms)
+            await report_page.emulate_media(media="print")
+            await report_page.pdf(
+                path=str(output_path),
+                format="A4",
+                print_background=True,
+                prefer_css_page_size=True,
+                margin={
+                    "top": "8mm",
+                    "bottom": "8mm",
+                    "left": "8mm",
+                    "right": "8mm",
+                },
+            )
+            return output_path
+        except PlaywrightTimeoutError as exc:
+            last_error = SlowResponseError("performance record timeout")
             if attempt == retry_count:
                 if raise_on_blocked_error:
-                    raise PlaywrightTimeoutError("performance record timeout")
+                    raise last_error from exc
+                return None
+        except MissingPerformanceRecordError as exc:
+            last_error = exc
+            if raise_on_blocked_error:
+                raise
+            return None
+        except (SlowResponseError, StaleListingError) as exc:
+            last_error = exc
+            if attempt == retry_count:
+                if raise_on_blocked_error:
+                    raise
                 return None
         except Exception as exc:  # noqa: BLE001
             last_error = exc
@@ -78,14 +102,19 @@ async def download_performance_record_pdf(
                 for marker in [
                     "ERR_CONNECTION_CLOSED",
                     "ERR_CONNECTION_RESET",
+                    "ERR_NETWORK_CHANGED",
                     "ERR_HTTP2_PROTOCOL_ERROR",
-                    "ERR_TIMED_OUT",
                 ]
             )
             if not transient_error or attempt == retry_count:
                 if raise_on_blocked_error and transient_error:
-                    raise exc
+                    raise BlockedRequestError(error_message) from exc
                 return None
+        finally:
+            if report_page is not None and not report_page.is_closed():
+                await report_page.close()
+            if detail_page is not None and not detail_page.is_closed():
+                await detail_page.close()
 
         await asyncio.sleep(retry_backoff_seconds * attempt)
 
@@ -204,3 +233,16 @@ def _search(pattern: str, text: str) -> str | None:
     if not match:
         return None
     return _collapse_text(match.group(1))
+
+
+def _raise_for_navigation_response(response, purpose: str) -> None:
+    if response is None:
+        return
+
+    status = response.status
+    if status in {404, 410}:
+        raise StaleListingError(f"{purpose} stale status {status}")
+    if status in {401, 403, 429}:
+        raise BlockedRequestError(f"{purpose} blocked status {status}")
+    if status >= 500:
+        raise SlowResponseError(f"{purpose} server status {status}")

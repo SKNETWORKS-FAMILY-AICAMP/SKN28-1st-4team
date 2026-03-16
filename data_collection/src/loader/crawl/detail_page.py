@@ -3,7 +3,10 @@
 from dataclasses import asdict, dataclass
 
 from bs4 import BeautifulSoup
-from playwright.async_api import async_playwright
+from playwright.async_api import TimeoutError as PlaywrightTimeoutError
+
+from .browser import create_browser_context
+from .errors import BlockedRequestError, SlowResponseError, StaleListingError
 
 
 @dataclass(slots=True)
@@ -33,25 +36,44 @@ class DetailPage:
         return asdict(self)
 
 
-async def crawl_detail_page(detail_url: str, *, timeout_ms: int = 30_000) -> DetailPage:
+async def crawl_detail_page(detail_url: str, *, timeout_ms: int = 30_000, context=None) -> DetailPage:
     """실제 상세 페이지를 열고, 화면에 보이는 기본 차량 정보를 추출한다."""
 
-    html = await _load_detail_page_html(detail_url, timeout_ms=timeout_ms)
+    html = await _load_detail_page_html(detail_url, timeout_ms=timeout_ms, context=context)
     return _parse_detail_page_html(html)
 
 
-async def _load_detail_page_html(detail_url: str, *, timeout_ms: int) -> str:
+async def _load_detail_page_html(detail_url: str, *, timeout_ms: int, context=None) -> str:
     """Playwright로 실제 페이지를 렌더링한 뒤 최종 HTML을 반환한다."""
 
-    async with async_playwright() as playwright:
-        browser = await playwright.chromium.launch(headless=True)
-        page = await browser.new_page(locale="ko-KR")
-        await page.goto(detail_url, wait_until="domcontentloaded", timeout=timeout_ms)
+    if context is None:
+        async with create_browser_context() as owned_context:
+            return await _load_detail_page_html(detail_url, timeout_ms=timeout_ms, context=owned_context)
+
+    page = await context.new_page()
+    try:
+        response = await page.goto(detail_url, wait_until="domcontentloaded", timeout=timeout_ms)
+        _raise_for_navigation_response(response, "detail page")
         await page.wait_for_selector("h3", timeout=timeout_ms)
         await page.wait_for_timeout(1_000)
-        html = await page.content()
-        await browser.close()
-    return html
+        return await page.content()
+    except PlaywrightTimeoutError as exc:
+        raise SlowResponseError("detail page timeout") from exc
+    finally:
+        await page.close()
+
+
+def _raise_for_navigation_response(response, purpose: str) -> None:
+    if response is None:
+        return
+
+    status = response.status
+    if status in {404, 410}:
+        raise StaleListingError(f"{purpose} stale status {status}")
+    if status in {401, 403, 429}:
+        raise BlockedRequestError(f"{purpose} blocked status {status}")
+    if status >= 500:
+        raise SlowResponseError(f"{purpose} server status {status}")
 
 
 def _parse_detail_page_html(html: str) -> DetailPage:
