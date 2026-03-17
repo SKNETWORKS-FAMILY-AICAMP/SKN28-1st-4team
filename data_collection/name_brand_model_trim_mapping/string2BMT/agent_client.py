@@ -20,6 +20,7 @@ ModelT = TypeVar("ModelT", bound=BaseModel)
 class StructuredAgentClient:
     def __init__(self, config: AgentRuntimeConfig) -> None:
         self.config = config
+        self._client: AsyncOpenAI | None = None
 
     async def run(
         self,
@@ -41,6 +42,12 @@ class StructuredAgentClient:
         )
         result = await Runner.run(agent, user_prompt)
         return result.final_output
+
+    async def aclose(self) -> None:
+        if self._client is None:
+            return
+        await self._client.close()
+        self._client = None
 
     def run_sync(
         self,
@@ -64,21 +71,22 @@ class StructuredAgentClient:
         )
 
     def _configure(self) -> None:
-        client = AsyncOpenAI(
-            base_url=self.config.base_url,
-            api_key=self.config.api_key,
-            default_headers={
-                key: value
-                for key, value in {
-                    "HTTP-Referer": self.config.site_url,
-                    "X-Title": self.config.app_name,
-                }.items()
-                if value
-            },
-        )
+        if self._client is None:
+            self._client = AsyncOpenAI(
+                base_url=self.config.base_url,
+                api_key=self.config.api_key,
+                default_headers={
+                    key: value
+                    for key, value in {
+                        "HTTP-Referer": self.config.site_url,
+                        "X-Title": self.config.app_name,
+                    }.items()
+                    if value
+                },
+            )
         set_default_openai_api("chat_completions")
         set_tracing_disabled(True)
-        set_default_openai_client(client)
+        set_default_openai_client(self._client)
 
 
 def _run_coroutine_sync(coro):

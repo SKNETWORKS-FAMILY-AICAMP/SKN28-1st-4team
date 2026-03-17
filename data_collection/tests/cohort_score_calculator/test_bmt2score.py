@@ -32,3 +32,17 @@ def test_mixed_geometry_tuple_collapses_to_one_score() -> None:
 
 def test_returns_none_without_usable_geometry() -> None:
     assert get_size_score("chevrolet", "더 넥스트 이쿼녹스", "LS") is None
+
+
+def test_falls_back_to_base_class_placeholder_when_trim_is_missing() -> None:
+    base_score = get_size_score("kia", "레이", "-")
+    fallback_score = get_size_score("kia", "레이", None)
+
+    assert base_score is not None
+    assert fallback_score == base_score
+
+
+def test_returns_model_level_score_when_only_base_class_exists() -> None:
+    score = get_size_score("renault", "SM7 노바", None)
+
+    assert score is not None

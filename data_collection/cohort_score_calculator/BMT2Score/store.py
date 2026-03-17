@@ -19,6 +19,7 @@ from .config import DEFAULT_INPUT_TABLE_PATH
 
 
 GEOMETRY_FIELDS = ("body_length_mm", "body_width_mm", "body_height_mm")
+DEFAULT_CLASS_PLACEHOLDER = "__base_class__"
 
 
 @dataclass(frozen=True)
@@ -37,7 +38,7 @@ class TupleSample:
         return (
             normalize_text(self.brand),
             normalize_text(self.model_name),
-            normalize_text(self.class_name),
+            _normalize_class_name(self.class_name),
         )
 
 
@@ -57,7 +58,7 @@ class TupleRecord:
         return (
             normalize_text(self.brand),
             normalize_text(self.model_name),
-            normalize_text(self.class_name),
+            _normalize_class_name(self.class_name),
         )
 
 
@@ -88,14 +89,20 @@ class ScoreStore:
         model_name: str | None,
         class_name: str | None,
     ) -> float | None:
-        lookup_key = (
-            normalize_text(brand),
-            normalize_text(model_name),
-            normalize_text(class_name),
-        )
-        if not all(lookup_key):
+        normalized_brand = normalize_text(brand)
+        normalized_model = normalize_text(model_name)
+        if not normalized_brand or not normalized_model:
             return None
-        return self._score_lookup.get(lookup_key)
+
+        exact_class = _normalize_class_name(class_name)
+        if exact_class:
+            exact_key = (normalized_brand, normalized_model, exact_class)
+            exact_score = self._score_lookup.get(exact_key)
+            if exact_score is not None:
+                return exact_score
+
+        fallback_key = (normalized_brand, normalized_model, DEFAULT_CLASS_PLACEHOLDER)
+        return self._score_lookup.get(fallback_key)
 
     def _load(self) -> None:
         if not self.source_path.exists():
@@ -252,6 +259,16 @@ def _percentile_rank(value: float, sorted_values: list[float]) -> float:
     right = bisect_right(sorted_values, value)
     average_position = (left + right - 1) / 2
     return 100.0 * average_position / (len(sorted_values) - 1)
+
+
+def _normalize_class_name(class_name: str | None) -> str:
+    raw = (class_name or "").strip()
+    normalized = normalize_text(raw)
+    if normalized:
+        return normalized
+    if raw == "-":
+        return DEFAULT_CLASS_PLACEHOLDER
+    return ""
 
 
 @lru_cache(maxsize=2)

@@ -20,7 +20,7 @@ LOGGER = logging.getLogger(__name__)
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Collect current official and historical archive model indexes plus price-source URLs.")
     parser.add_argument(
-        "--output-dir",
+        "--images-dir",
         type=Path,
         default=DEFAULT_OUTPUT_DIR,
         help="Directory where CSV outputs will be written.",
@@ -91,7 +91,7 @@ def main() -> None:
     args = parse_args()
     configure_logging(args.log_level)
     output_dir: Path = args.output_dir.resolve()
-    LOGGER.info("Starting original source pipeline. output_dir=%s", output_dir)
+    LOGGER.info("Starting original_source source pipeline. output_dir=%s", output_dir)
     models, prices, audits = collect_all(
         output_dir,
         include_archive_price_index=args.include_archive_price_index,
