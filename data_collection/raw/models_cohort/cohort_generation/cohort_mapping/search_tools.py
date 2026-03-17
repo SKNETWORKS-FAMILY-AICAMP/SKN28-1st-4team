@@ -4,7 +4,7 @@ import json
 from typing import Annotated
 
 from agents import function_tool
-from duckduckgo_search import DDGS
+from ddgs import DDGS
 
 
 @function_tool(name_override="web_search")

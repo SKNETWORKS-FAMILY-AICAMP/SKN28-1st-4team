@@ -5,11 +5,10 @@ from .builders import (
     apply_mapping_table,
     build_mapping_requests,
     dataframe_to_mapping_inputs,
-    derive_market_family,
     get_pending_requests,
     load_mapping_table,
 )
-from .schemas import MajorCategory, MarketFamily, VehicleCategoryMappingInput, VehicleCategoryMappingOutput
+from .schemas import MajorCategory, VehicleCategoryMappingInput, VehicleCategoryMappingOutput
 from .service import (
     get_input_schema,
     get_output_schema,
@@ -23,14 +22,12 @@ __all__ = [
     "REQUEST_COLUMNS",
     "MAPPING_TABLE_COLUMNS",
     "MajorCategory",
-    "MarketFamily",
     "VehicleCategoryMappingInput",
     "VehicleCategoryMappingOutput",
     "build_mapping_requests",
     "dataframe_to_mapping_inputs",
     "load_mapping_table",
     "get_pending_requests",
-    "derive_market_family",
     "apply_mapping_table",
     "get_input_schema",
     "get_output_schema",

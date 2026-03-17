@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import asyncio
+from concurrent.futures import Future
+from threading import Thread
 from typing import Iterable
 
 from agents import Agent, Runner, set_default_openai_api, set_tracing_disabled
@@ -63,14 +65,14 @@ def run_category_mapping_sync(
     mapping_input: VehicleCategoryMappingInput,
     config: CohortAgentConfig,
 ) -> VehicleCategoryMappingOutput:
-    return asyncio.run(run_category_mapping(mapping_input, config))
+    return _run_coroutine_sync(run_category_mapping(mapping_input, config))
 
 
 def run_category_mapping_batch_sync(
     mapping_inputs: Iterable[VehicleCategoryMappingInput],
     config: CohortAgentConfig,
 ) -> list[VehicleCategoryMappingOutput]:
-    return asyncio.run(run_category_mapping_batch(mapping_inputs, config))
+    return _run_coroutine_sync(run_category_mapping_batch(mapping_inputs, config))
 
 
 def mapping_outputs_to_frame(outputs: Iterable[VehicleCategoryMappingOutput]):
@@ -98,3 +100,28 @@ def _configure_openrouter(config: CohortAgentConfig) -> None:
     from agents import set_default_openai_client
 
     set_default_openai_client(client)
+
+
+def _run_coroutine_sync(coro):
+    try:
+        loop = asyncio.get_running_loop()
+    except RuntimeError:
+        loop = None
+
+    if loop is not None and loop.is_running():
+        future: Future = Future()
+
+        def runner() -> None:
+            try:
+                result = asyncio.run(coro)
+            except Exception as exc:  # pragma: no cover - runtime propagation
+                future.set_exception(exc)
+            else:
+                future.set_result(result)
+
+        thread = Thread(target=runner, daemon=True)
+        thread.start()
+        thread.join()
+        return future.result()
+
+    return asyncio.run(coro)

@@ -19,7 +19,6 @@ MAPPING_TABLE_COLUMNS = [
     "brand",
     "model_name",
     "major_category",
-    "market_family",
     "search_used",
     "note",
 ]
@@ -76,18 +75,8 @@ def get_pending_requests(requests_df: pd.DataFrame, mapping_df: pd.DataFrame) ->
     return requests_df.loc[pending_mask].copy()
 
 
-def derive_market_family(major_category: str) -> str:
-    if major_category in {"sedan", "hatchback", "wagon", "coupe_convertible"}:
-        return "sedan"
-    if major_category == "suv":
-        return "suv"
-    if major_category == "unknown":
-        return "unknown"
-    return "other"
-
-
 def apply_mapping_table(input_df: pd.DataFrame, mapping_df: pd.DataFrame) -> pd.DataFrame:
-    mapping_core = mapping_df[["brand", "model_name", "major_category", "market_family"]].drop_duplicates()
+    mapping_core = mapping_df[["brand", "model_name", "major_category"]].drop_duplicates()
     return input_df.merge(mapping_core, on=["brand", "model_name"], how="left")
 
 

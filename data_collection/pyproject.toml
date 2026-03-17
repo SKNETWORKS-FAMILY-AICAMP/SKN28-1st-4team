@@ -5,7 +5,7 @@ description = "Data collection and cleaning project for the monorepo"
 requires-python = ">=3.12"
 dependencies = [
     "beautifulsoup4>=4.14.3",
-    "duckduckgo-search>=8.1.1",
+    "ddgs>=9.11.4",
     "ipykernel>=7.2.0",
     "matplotlib>=3.10.8",
     "notebook>=7.5.5",

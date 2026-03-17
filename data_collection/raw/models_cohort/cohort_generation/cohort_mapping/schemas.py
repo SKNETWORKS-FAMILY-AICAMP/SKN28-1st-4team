@@ -18,13 +18,6 @@ class MajorCategory(StrEnum):
     UNKNOWN = "unknown"
 
 
-class MarketFamily(StrEnum):
-    SEDAN = "sedan"
-    SUV = "suv"
-    OTHER = "other"
-    UNKNOWN = "unknown"
-
-
 class VehicleCategoryMappingInput(BaseModel):
     brand: str = Field(description="Vehicle brand")
     model_name: str = Field(description="Vehicle model name")
@@ -46,6 +39,5 @@ class VehicleCategoryMappingOutput(BaseModel):
     brand: str
     model_name: str
     major_category: MajorCategory
-    market_family: MarketFamily
     search_used: bool = False
     note: str | None = None
