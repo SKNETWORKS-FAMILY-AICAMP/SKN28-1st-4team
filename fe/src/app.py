@@ -1,22 +1,54 @@
-import importlib
-import os
+import sys
+from pathlib import Path
 
-st = importlib.import_module("streamlit")
+import streamlit as st
+
+SRC_ROOT = Path(__file__).resolve().parent
+if str(SRC_ROOT) not in sys.path:
+    sys.path.insert(0, str(SRC_ROOT))
+
+from components.site_footer import render_site_footer
+from core.routing import Route, get_current_route, reroute
+from core.state import initialize_state, reset_demo_state
+from core.styles import inject_global_styles
+from pages.entry import render_entry_page
+from pages.expect import render_expect_page
+from pages.landing import render_landing_page
+from services.query_facade import get_frontend_query_facade
 
 
-st.set_page_config(page_title="SKN28 FE", layout="wide")
+def main() -> None:
+    st.set_page_config(
+        page_title="차량 예측 가격 시뮬레이터",
+        layout="wide",
+        initial_sidebar_state="collapsed",
+    )
+    inject_global_styles()
+    facade = get_frontend_query_facade()
+    initialize_state(facade)
+    route = get_current_route()
 
-st.title("SKN28 Frontend")
-st.write("이 프런트엔드 앱은 src 바로 아래에 소스가 놓이도록 정리되어 있습니다.")
+    def go(page: Route, *, reset: bool = False) -> None:
+        if reset:
+            reset_demo_state(facade)
+        reroute(page)
 
-st.subheader("실행 환경")
-st.json(
-    {
-        "app_env": os.environ.get("APP_ENV", "development"),
-        "service_name": os.environ.get("SERVICE_NAME", "fe"),
-        "server_address": os.environ.get("STREAMLIT_SERVER_ADDRESS", "0.0.0.0"),
-        "server_port": os.environ.get("STREAMLIT_SERVER_PORT", "8501"),
-    }
-)
+    if route == "landing":
+        render_landing_page(on_entry=lambda: go("entry", reset=True))
+    elif route == "entry":
+        render_entry_page(
+            facade=facade,
+            on_back=lambda: go("landing"),
+            on_expect=lambda: go("expect"),
+        )
+    else:
+        render_expect_page(
+            facade=facade,
+            on_back=lambda: go("entry"),
+        )
 
-st.info("docker compose 또는 uv run --env-file .env 방식으로 같은 환경값을 사용할 수 있습니다.")
+    render_site_footer(route)
+
+
+if __name__ == "__main__":
+    main()
