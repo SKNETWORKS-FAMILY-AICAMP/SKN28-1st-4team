@@ -1,0 +1,103 @@
+_wandb:
+    value:
+        cli_version: 0.25.1
+        e:
+            plls1kw3aplrkcy57vkwjqhpm5v6vdg7:
+                apple:
+                    ecpuCores: 2
+                    gpuCores: 32
+                    memoryGb: 32
+                    name: Apple M1 Max
+                    pcpuCores: 8
+                    ramTotalBytes: "34359738368"
+                codePath: predict_engine_research/src/main.ipynb
+                cpu_count: 10
+                cpu_count_logical: 10
+                disk:
+                    /:
+                        total: "494384795648"
+                        used: "410694533120"
+                email: wonbeenlee093@gmail.com
+                executable: /Users/iwonbin/workspace/Study/boot/SKN28-1st-4team/.venv/bin/python
+                git:
+                    commit: 4a2312ebf7ecd84e7360d859d1785b627778a802
+                    remote: https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN28-1st-4team.git
+                host: iwonbin-ui-MacBookPro-3.local
+                memory:
+                    total: "34359738368"
+                os: macOS-26.3-arm64-arm-64bit-Mach-O
+                program: predict_engine_research/src/main.ipynb
+                python: CPython 3.14.3
+                root: /Users/iwonbin/workspace/Study/boot/SKN28-1st-4team/predict_engine_research/src
+                startedAt: "2026-03-17T15:14:47.370216Z"
+                writerId: plls1kw3aplrkcy57vkwjqhpm5v6vdg7
+        m: []
+        python_version: 3.14.3
+        t:
+            "1":
+                - 1
+                - 5
+                - 7
+                - 53
+            "2":
+                - 1
+                - 5
+                - 7
+                - 53
+            "3":
+                - 2
+                - 15
+                - 61
+                - 62
+            "4": 3.14.3
+            "5": 0.25.1
+            "8":
+                - 1
+            "12": 0.25.1
+            "13": darwin-arm64
+categorical_columns:
+    value:
+        - brand
+        - model_name
+        - trim_name
+        - major_category
+        - color
+data_path:
+    value: /Users/iwonbin/workspace/Study/boot/SKN28-1st-4team/predict_engine_research/data/prepared_training.csv
+early_stopping_rounds:
+    value: 300
+feature_columns:
+    value:
+        - brand
+        - model_name
+        - trim_name
+        - major_category
+        - size_score
+        - model_year
+        - vehicle_age_years
+        - color
+        - mileage_km
+final_iteration_strategy:
+    value: p75
+holdout_valid_size:
+    value: 0.2
+max_iterations:
+    value: 2000
+model_params:
+    value:
+        allow_writing_files: false
+        depth: 8
+        eval_metric: RMSE
+        iterations: 2000
+        learning_rate: 0.05
+        loss_function: RMSE
+        random_seed: 42
+        verbose: 25
+n_splits:
+    value: 5
+target_column:
+    value: price_manwon
+train_log_period:
+    value: 25
+use_cross_validation:
+    value: true

@@ -1,0 +1,25 @@
+{"time":"2026-03-18T00:14:51.13713+09:00","level":"INFO","msg":"wandb-core"}
+{"time":"2026-03-18T00:14:51.138378+09:00","level":"INFO","msg":"stream: starting","core version":"0.25.1"}
+{"time":"2026-03-18T00:14:51.993397+09:00","level":"INFO","msg":"stream: created new stream","id":"7gm7ge3j"}
+{"time":"2026-03-18T00:14:51.993501+09:00","level":"INFO","msg":"handler: started"}
+{"time":"2026-03-18T00:14:51.993709+09:00","level":"INFO","msg":"stream: started"}
+{"time":"2026-03-18T00:14:51.993728+09:00","level":"INFO","msg":"writer: started","stream_id":"7gm7ge3j"}
+{"time":"2026-03-18T00:14:51.993751+09:00","level":"INFO","msg":"sender: started"}
+{"time":"2026-03-18T00:14:53.356212+09:00","level":"INFO","msg":"filestream: sending request","total_files":1,"console_offset":0,"console_lines":1}
+{"time":"2026-03-18T00:14:57.880383+09:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-03-18T00:14:59.92376+09:00","level":"WARN","msg":"handler: ignoring partial history record","step":1255,"current":1256}
+{"time":"2026-03-18T00:15:05.010662+09:00","level":"WARN","msg":"handler: ignoring partial history record","step":1961,"current":1963}
+{"time":"2026-03-18T00:15:05.010891+09:00","level":"WARN","msg":"handler: ignoring partial history record","step":1962,"current":1963}
+{"time":"2026-03-18T00:15:06.420335+09:00","level":"WARN","msg":"handler: ignoring partial history record","step":3726,"current":3729}
+{"time":"2026-03-18T00:15:06.420579+09:00","level":"WARN","msg":"handler: ignoring partial history record","step":3727,"current":3729}
+{"time":"2026-03-18T00:15:06.42061+09:00","level":"WARN","msg":"handler: ignoring partial history record","step":3728,"current":3729}
+{"time":"2026-03-18T00:15:08.358265+09:00","level":"INFO","msg":"filestream: sending request","total_files":3,"history_offset":0,"history_lines":4107,"console_offset":0,"console_lines":1,"uploaded_len":2}
+{"time":"2026-03-18T00:15:09.545242+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-18T00:15:14.159349+09:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-03-18T00:15:14.159983+09:00","level":"INFO","msg":"filestream: sending request","total_files":2,"history_offset":4107,"history_lines":1,"uploaded_len":3,"complete":true,"exit_code":0}
+{"time":"2026-03-18T00:15:32.156629+09:00","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-03-18T00:15:32.161843+09:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-18T00:15:32.175744+09:00","level":"INFO","msg":"stream: closing"}
+{"time":"2026-03-18T00:15:32.175767+09:00","level":"INFO","msg":"handler: closed"}
+{"time":"2026-03-18T00:15:32.175907+09:00","level":"INFO","msg":"sender: closed"}
+{"time":"2026-03-18T00:15:32.175961+09:00","level":"INFO","msg":"stream: closed"}
