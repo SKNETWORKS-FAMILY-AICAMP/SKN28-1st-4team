@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Resale Estimator Mockup</title>
+    <style>
+      :root {
+        --bg: #eef4ff;
+        --bg-soft: #f8fbff;
+        --surface: rgba(255, 255, 255, 0.92);
+        --surface-strong: #ffffff;
+        --line: #d8e4ff;
+        --text: #11203f;
+        --muted: #66748f;
+        --accent: #1662ff;
+        --accent-deep: #0e3fb8;
+        --accent-soft: #eaf2ff;
+        --success: #2d8f5b;
+        --shadow: 0 28px 70px rgba(52, 85, 164, 0.14);
+        --radius-xl: 32px;
+        --radius-lg: 24px;
+        --radius-md: 18px;
+        --radius-sm: 14px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "SF Pro Display", "Apple SD Gothic Neo", "Noto Sans KR",
+          sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(73, 134, 255, 0.2), transparent 34%),
+          linear-gradient(180deg, #f7fbff 0%, var(--bg) 50%, #edf3ff 100%);
+      }
+
+      .page-shell {
+        width: min(1440px, calc(100vw - 56px));
+        margin: 28px auto 48px;
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        border-radius: 40px;
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(20px);
+      }
+
+      .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        padding: 18px 10px 30px;
+      }
+
+      .hero-copy {
+        max-width: 760px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(22, 98, 255, 0.1);
+        color: var(--accent-deep);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+
+      h1 {
+        margin: 18px 0 14px;
+        font-size: 52px;
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+      }
+
+      .hero-copy p {
+        margin: 0;
+        max-width: 620px;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .hero-panel {
+        width: 360px;
+        padding: 22px;
+        border-radius: 28px;
+        background:
+          linear-gradient(160deg, rgba(17, 76, 216, 0.96), rgba(11, 46, 136, 0.98));
+        color: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      .hero-panel-label {
+        font-size: 13px;
+        opacity: 0.82;
+      }
+
+      .hero-panel strong {
+        display: block;
+        margin-top: 10px;
+        font-size: 36px;
+        letter-spacing: -0.04em;
+      }
+
+      .hero-panel p {
+        margin: 14px 0 0;
+        font-size: 14px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .dashboard {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(380px, 0.8fr);
+        gap: 24px;
+      }
+
+      .stack {
+        display: grid;
+        gap: 24px;
+      }
+
+      .card {
+        padding: 28px;
+        border-radius: var(--radius-xl);
+        background: var(--surface);
+        border: 1px solid rgba(216, 228, 255, 0.9);
+        box-shadow: var(--shadow);
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 18px;
+        margin-bottom: 24px;
+      }
+
+      .card-title {
+        margin: 0;
+        font-size: 24px;
+        letter-spacing: -0.03em;
+      }
+
+      .card-subtitle {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent-deep);
+        font-size: 13px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .field {
+        padding: 18px;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--line);
+        background: var(--surface-strong);
+      }
+
+      .field.span-2 {
+        grid-column: span 2;
+      }
+
+      .label {
+        display: block;
+        margin-bottom: 12px;
+        color: #4c5d7c;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .input-shell {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        min-height: 46px;
+        color: var(--text);
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .placeholder {
+        color: #93a0ba;
+        font-weight: 500;
+      }
+
+      .field-tag {
+        padding: 8px 10px;
+        border-radius: 12px;
+        background: #f1f6ff;
+        color: var(--accent-deep);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .check-row,
+      .chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .check-chip,
+      .select-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: #f9fbff;
+        color: #52627d;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .check-chip.active,
+      .select-chip.active {
+        border-color: transparent;
+        background: linear-gradient(135deg, #1662ff, #0c47cd);
+        color: #fff;
+      }
+
+      .tree-shell {
+        display: grid;
+        gap: 18px;
+      }
+
+      .brand-tabs {
+        display: flex;
+        gap: 10px;
+      }
+
+      .tree-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 180px;
+        gap: 18px;
+      }
+
+      .tree-panel,
+      .year-panel {
+        padding: 16px;
+        border-radius: 22px;
+        border: 1px solid var(--line);
+        background: var(--surface-strong);
+      }
+
+      .tree-node {
+        display: grid;
+        gap: 10px;
+      }
+
+      .tree-root,
+      .tree-item,
+      .year-pill {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 14px;
+        border-radius: 16px;
+      }
+
+      .tree-root {
+        background: #f4f8ff;
+        color: var(--accent-deep);
+        font-weight: 800;
+      }
+
+      .tree-root::before,
+      .tree-item::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: #c5d7ff;
+      }
+
+      .tree-item {
+        margin-left: 22px;
+        color: #50617c;
+        font-weight: 700;
+      }
+
+      .tree-item.active {
+        background: rgba(22, 98, 255, 0.1);
+        color: var(--accent-deep);
+      }
+
+      .year-pill {
+        justify-content: space-between;
+        border: 1px solid transparent;
+        background: #f7faff;
+        color: #50617c;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .year-pill.active {
+        border-color: rgba(22, 98, 255, 0.15);
+        background: var(--accent-soft);
+        color: var(--accent-deep);
+      }
+
+      .preview-card {
+        display: grid;
+        grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
+        gap: 26px;
+        align-items: stretch;
+      }
+
+      .car-stage {
+        position: relative;
+        overflow: hidden;
+        min-height: 320px;
+        border-radius: 28px;
+        background:
+          linear-gradient(180deg, #f7fbff 0%, #e9f1ff 100%);
+        border: 1px solid rgba(216, 228, 255, 0.95);
+      }
+
+      .car-stage::before {
+        content: "";
+        position: absolute;
+        inset: auto 18px 22px 18px;
+        height: 54px;
+        border-radius: 999px;
+        background: radial-gradient(circle at center, rgba(17, 32, 63, 0.18), transparent 68%);
+        filter: blur(12px);
+      }
+
+      .car-stage svg {
+        position: absolute;
+        inset: 20px 12px auto;
+        width: calc(100% - 24px);
+        height: auto;
+      }
+
+      .car-photo-chip {
+        position: absolute;
+        top: 18px;
+        left: 18px;
+        padding: 10px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.86);
+        color: var(--accent-deep);
+        font-size: 12px;
+        font-weight: 800;
+        backdrop-filter: blur(8px);
+      }
+
+      .detail-stack {
+        display: grid;
+        gap: 18px;
+      }
+
+      .headline-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        align-items: flex-start;
+      }
+
+      .headline-row h2 {
+        margin: 0;
+        font-size: 34px;
+        letter-spacing: -0.04em;
+      }
+
+      .headline-row p {
+        margin: 10px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .score-box {
+        padding: 16px 18px;
+        min-width: 180px;
+        border-radius: 22px;
+        background: linear-gradient(160deg, rgba(22, 98, 255, 0.08), rgba(22, 98, 255, 0.16));
+      }
+
+      .score-box span {
+        display: block;
+        color: #49608f;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .score-box strong {
+        display: block;
+        margin-top: 8px;
+        color: var(--accent-deep);
+        font-size: 30px;
+        letter-spacing: -0.04em;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .info-card {
+        padding: 16px;
+        border-radius: 20px;
+        border: 1px solid var(--line);
+        background: #fbfdff;
+      }
+
+      .info-card span {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .info-card strong {
+        display: block;
+        margin-top: 8px;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+      }
+
+      .estimate-banner {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+        padding: 20px 22px;
+        border-radius: 24px;
+        background: linear-gradient(130deg, #134fdf, #0a379d);
+        color: #fff;
+      }
+
+      .estimate-banner small {
+        display: block;
+        opacity: 0.76;
+        font-size: 13px;
+      }
+
+      .estimate-banner strong {
+        display: block;
+        margin-top: 8px;
+        font-size: 38px;
+        letter-spacing: -0.05em;
+      }
+
+      .estimate-banner p {
+        margin: 0;
+        max-width: 220px;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .summary-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .summary-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 18px;
+        border-radius: 18px;
+        background: #fbfdff;
+        border: 1px solid var(--line);
+      }
+
+      .summary-item span {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .summary-item strong {
+        font-size: 16px;
+      }
+
+      .cta-row {
+        display: flex;
+        gap: 12px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 18px;
+        border-radius: 18px;
+        font-size: 15px;
+        font-weight: 800;
+      }
+
+      .btn.primary {
+        flex: 1;
+        background: linear-gradient(135deg, #1662ff, #0b42be);
+        color: #fff;
+      }
+
+      .btn.secondary {
+        background: #edf3ff;
+        color: var(--accent-deep);
+      }
+
+      .floating-note {
+        padding: 16px 18px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.84);
+        border: 1px solid rgba(216, 228, 255, 0.9);
+      }
+
+      .floating-note strong {
+        display: block;
+        font-size: 15px;
+      }
+
+      .floating-note p {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.65;
+      }
+
+      @media (max-width: 1180px) {
+        .hero {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .hero-panel {
+          width: 100%;
+        }
+
+        .dashboard,
+        .preview-card {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .page-shell {
+          width: min(100vw - 24px, 100%);
+          margin: 12px auto 24px;
+          padding: 12px;
+          border-radius: 28px;
+        }
+
+        h1 {
+          font-size: 38px;
+        }
+
+        .card {
+          padding: 22px;
+        }
+
+        .form-grid,
+        .tree-grid,
+        .info-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .field.span-2 {
+          grid-column: span 1;
+        }
+
+        .headline-row {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">차량 예상 판매가 시뮬레이터</div>
+          <h1>내 차, 지금 얼마에 팔릴지<br />가볍게 확인하는 입력 페이지</h1>
+          <p>
+            흰 배경 중심의 깔끔한 톤 위에 블루 악센트를 얹고, 차량 번호부터
+            구매일자, 중고 구매 여부, 주행거리, 색상, 브랜드-모델-연식 선택까지
+            한 화면 안에서 자연스럽게 이어지도록 구성한 시안입니다.
+          </p>
+        </div>
+        <aside class="hero-panel">
+          <span class="hero-panel-label">예상 판매가 프리뷰</span>
+          <strong>2,140만원</strong>
+          <p>
+            선택한 모델과 입력값이 쌓이면 우측 요약 카드와 하단 차량 프리뷰가
+            함께 갱신되는 구조를 가정했습니다.
+          </p>
+        </aside>
+      </section>
+
+      <section class="dashboard">
+        <div class="stack">
+          <article class="card">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">차량 기본 정보 입력</h2>
+                <p class="card-subtitle">
+                  핵심 필드는 크게 보이되, 시선이 분산되지 않게 동일한 리듬으로
+                  정렬합니다.
+                </p>
+              </div>
+              <div class="badge">Step 1. 정보 입력</div>
+            </div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label class="label">차량 번호</label>
+                <div class="input-shell">
+                  <span>128가 4321</span>
+                  <span class="field-tag">필수</span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">구매 일자</label>
+                <div class="input-shell">
+                  <span>2021. 05. 14</span>
+                  <span class="field-tag">달력</span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">주행거리</label>
+                <div class="input-shell">
+                  <span>58,400 km</span>
+                  <span class="field-tag">자동 포맷</span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">차량 색상</label>
+                <div class="input-shell">
+                  <span>글레시어 화이트</span>
+                  <span class="field-tag">컬러 선택</span>
+                </div>
+              </div>
+
+              <div class="field span-2">
+                <label class="label">중고 상태로 구매했나요?</label>
+                <div class="check-row">
+                  <span class="check-chip active">예, 중고로 구매</span>
+                  <span class="check-chip">아니오, 신차로 구매</span>
+                </div>
+              </div>
+
+              <div class="field span-2">
+                <label class="label">빠른 색상 선택 예시</label>
+                <div class="chip-row">
+                  <span class="select-chip active">화이트</span>
+                  <span class="select-chip">블랙</span>
+                  <span class="select-chip">실버</span>
+                  <span class="select-chip">그레이</span>
+                  <span class="select-chip">블루</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card preview-card">
+            <div class="car-stage">
+              <div class="car-photo-chip">Candidate Vehicle</div>
+              <svg viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M141 225C155 188 180 149 229 132C271 117 381 114 433 129C480 143 524 178 543 219L570 222C587 224 600 238 600 255V273C600 287 589 298 575 298H562C556 322 534 339 509 339C484 339 462 322 456 298H210C204 322 182 339 157 339C132 339 110 322 104 298H81C65 298 52 285 52 269V246C52 235 59 225 70 223L141 225Z" fill="url(#paint0_linear)"/>
+                <path d="M202 149C226 132 382 128 412 141C440 152 470 183 481 212H168C176 188 185 163 202 149Z" fill="url(#paint1_linear)"/>
+                <path d="M232 156C249 145 355 143 381 149C404 154 429 178 440 201H206C211 183 218 166 232 156Z" fill="#DCE8FF"/>
+                <path d="M239 164C255 155 346 154 369 159C391 164 413 184 421 199H219C223 186 228 171 239 164Z" fill="#F8FBFF"/>
+                <circle cx="158" cy="289" r="34" fill="#24324E"/>
+                <circle cx="158" cy="289" r="17" fill="#D9E4F8"/>
+                <circle cx="507" cy="289" r="34" fill="#24324E"/>
+                <circle cx="507" cy="289" r="17" fill="#D9E4F8"/>
+                <rect x="531" y="229" width="45" height="14" rx="7" fill="#BFD1F8"/>
+                <rect x="68" y="229" width="54" height="14" rx="7" fill="#BFD1F8"/>
+                <rect x="472" y="164" width="42" height="9" rx="4.5" fill="#2C5DE0"/>
+                <path d="M215 218H405" stroke="#C2D4FA" stroke-width="7" stroke-linecap="round"/>
+                <defs>
+                  <linearGradient id="paint0_linear" x1="52" y1="126" x2="598" y2="322" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#1F63F9"/>
+                    <stop offset="1" stop-color="#0B3AA7"/>
+                  </linearGradient>
+                  <linearGradient id="paint1_linear" x1="168" y1="132" x2="481" y2="212" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#AAC5FF"/>
+                    <stop offset="1" stop-color="#E5EEFF"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+
+            <div class="detail-stack">
+              <div class="headline-row">
+                <div>
+                  <h2>쏘나타 디 엣지</h2>
+                  <p>현대 · 2023년형 · 2.0 가솔린 익스클루시브</p>
+                </div>
+                <div class="score-box">
+                  <span>매물 매칭 신뢰도</span>
+                  <strong>92점</strong>
+                </div>
+              </div>
+
+              <div class="info-grid">
+                <div class="info-card">
+                  <span>차량 번호</span>
+                  <strong>128가 4321</strong>
+                </div>
+                <div class="info-card">
+                  <span>구매 형태</span>
+                  <strong>중고 구매</strong>
+                </div>
+                <div class="info-card">
+                  <span>구매 일자</span>
+                  <strong>2021.05.14</strong>
+                </div>
+                <div class="info-card">
+                  <span>주행거리</span>
+                  <strong>58,400km</strong>
+                </div>
+                <div class="info-card">
+                  <span>색상</span>
+                  <strong>글레시어 화이트</strong>
+                </div>
+                <div class="info-card">
+                  <span>최근 비교 매물</span>
+                  <strong>34건</strong>
+                </div>
+              </div>
+
+              <div class="estimate-banner">
+                <div>
+                  <small>현재 조건 기준 예상 판매가</small>
+                  <strong>2,140만원</strong>
+                </div>
+                <p>
+                  주행거리와 구매 형태를 반영한 기준값입니다. 세부 옵션에 따라
+                  범위가 달라질 수 있습니다.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="stack">
+          <article class="card">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">브랜드 · 모델 · 연식 선택</h2>
+                <p class="card-subtitle">
+                  트리 구조로 현대/기아를 먼저 고르고, 하위 모델과 연식을 단계별로
+                  좁혀가는 방식입니다.
+                </p>
+              </div>
+              <div class="badge">Step 2. 모델 선택</div>
+            </div>
+
+            <div class="tree-shell">
+              <div class="brand-tabs">
+                <span class="select-chip active">현대</span>
+                <span class="select-chip">기아</span>
+              </div>
+
+              <div class="tree-grid">
+                <div class="tree-panel">
+                  <div class="tree-node">
+                    <div class="tree-root">Hyundai</div>
+                    <div class="tree-item">아반떼</div>
+                    <div class="tree-item active">쏘나타</div>
+                    <div class="tree-item">그랜저</div>
+                    <div class="tree-item">투싼</div>
+                    <div class="tree-item">싼타페</div>
+                  </div>
+                </div>
+
+                <div class="year-panel">
+                  <div class="tree-node">
+                    <div class="year-pill">2025년형</div>
+                    <div class="year-pill">2024년형</div>
+                    <div class="year-pill active">2023년형</div>
+                    <div class="year-pill">2022년형</div>
+                    <div class="year-pill">2021년형</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">우측 요약 패널</h2>
+                <p class="card-subtitle">
+                  스크롤 중에도 핵심 상태를 유지하는 고정형 카드 구성입니다.
+                </p>
+              </div>
+              <div class="badge">Sticky Summary</div>
+            </div>
+
+            <div class="summary-list">
+              <div class="summary-item">
+                <span>선택 브랜드</span>
+                <strong>현대</strong>
+              </div>
+              <div class="summary-item">
+                <span>선택 모델</span>
+                <strong>쏘나타 디 엣지</strong>
+              </div>
+              <div class="summary-item">
+                <span>선택 연식</span>
+                <strong>2023년형</strong>
+              </div>
+              <div class="summary-item">
+                <span>입력 완성도</span>
+                <strong>8 / 9</strong>
+              </div>
+            </div>
+
+            <div class="cta-row" style="margin-top: 18px">
+              <div class="btn primary">예상 가격 계산하기</div>
+              <div class="btn secondary">초기화</div>
+            </div>
+          </article>
+
+          <aside class="floating-note">
+            <strong>레이아웃 포인트</strong>
+            <p>
+              좌측은 입력 집중, 우측은 선택 상태 요약, 하단은 차량 이미지와 결과
+              확인으로 분리해 컴포넌트 배치가 복잡해 보여도 사용자는 단계적으로
+              이해할 수 있게 했습니다.
+            </p>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

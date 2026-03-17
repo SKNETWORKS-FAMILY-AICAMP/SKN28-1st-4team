@@ -1,0 +1,141 @@
+- generic [ref=e3]:
+  - banner [ref=e6]
+  - generic [ref=e19]:
+    - button "← 돌아가기" [ref=e26] [cursor=pointer]:
+      - paragraph [ref=e30]: ← 돌아가기
+    - heading "차량 정보 입력" [level=1] [ref=e37]: 차량 정보 입력
+    - generic [ref=e41]:
+      - generic [ref=e43]:
+        - heading "기본 차량 정보" [level=3] [ref=e48]: 기본 차량 정보
+        - paragraph [ref=e53]: 차량 번호, 구매 일자, 중고 구매 여부, 주행거리, 차량 색상부터 먼저 입력합니다.
+        - alert [ref=e56]:
+          - paragraph [ref=e61]: 더 자세히 입력하면 더 잘 알 수 있어요. 선택 입력은 아래 확장 영역에서 이어집니다.
+        - generic [ref=e63]:
+          - generic [ref=e65]:
+            - generic [ref=e67]:
+              - paragraph [ref=e71]: 차량 번호
+              - textbox "차량 번호" [ref=e74]:
+                - /placeholder: ""
+                - text: 128가 4321
+            - generic [ref=e76]:
+              - paragraph [ref=e80]: 주행거리 (km)
+              - textbox "주행거리 (km)" [ref=e83]:
+                - /placeholder: ""
+                - text: "58400"
+            - generic [ref=e85]:
+              - paragraph [ref=e89]: 차량 색상
+              - generic [ref=e91]:
+                - generic [ref=e92]:
+                  - generic [ref=e93]: 화이트 펄
+                  - combobox "Selected 화이트 펄. 차량 색상" [ref=e95]
+                - img "open" [ref=e97]
+          - generic [ref=e100]:
+            - generic [ref=e102]:
+              - paragraph [ref=e106]: 구매 일자
+              - textbox "구매 일자" [ref=e109]:
+                - /placeholder: ""
+                - text: 2021/05/14
+            - generic [ref=e111]:
+              - paragraph [ref=e115]: 변속기
+              - generic [ref=e117]:
+                - generic [ref=e118]:
+                  - generic [ref=e119]: 자동
+                  - combobox "Selected 자동. 변속기" [ref=e121]
+                - img "open" [ref=e123]
+            - generic [ref=e127] [cursor=pointer]:
+              - checkbox "중고 상태로 구매했어요" [checked]
+              - paragraph [ref=e133]: 중고 상태로 구매했어요
+        - heading "브랜드 · 모델 · 연식 선택" [level=3] [ref=e138]: 브랜드 · 모델 · 연식 선택
+        - paragraph [ref=e143]: 브랜드부터 모델, 연식, 세부 트림까지 실제 선택 흐름처럼 드롭다운으로 정리했습니다.
+        - generic [ref=e145]:
+          - paragraph [ref=e149]: 브랜드
+          - generic [ref=e151]:
+            - generic [ref=e152]:
+              - generic [ref=e153]: 현대
+              - combobox "Selected 현대. 브랜드" [ref=e155]
+            - img "open" [ref=e157]
+        - generic [ref=e160]:
+          - paragraph [ref=e164]: 모델
+          - generic [ref=e166]:
+            - generic [ref=e167]:
+              - generic [ref=e168]: 쏘나타
+              - combobox "Selected 쏘나타. 모델" [ref=e170]
+            - img "open" [ref=e172]
+        - generic [ref=e175]:
+          - paragraph [ref=e179]: 연식
+          - generic [ref=e181]:
+            - generic [ref=e182]:
+              - generic [ref=e183]: 2023년형
+              - combobox "Selected 2023년형. 연식" [ref=e185]
+            - img "open" [ref=e187]
+        - generic [ref=e190]:
+          - paragraph [ref=e194]: 세부 트림
+          - textbox "세부 트림" [ref=e197]:
+            - /placeholder: ""
+            - text: 2.0 가솔린 익스클루시브
+        - heading "선택 가능한 트림" [level=4] [ref=e203]: 선택 가능한 트림
+        - generic [ref=e205]:
+          - generic [ref=e209]:
+            - generic [ref=e214]:
+              - img "쏘나타 디 엣지 예시 이미지" [ref=e216]
+              - generic [ref=e217]:
+                - generic [ref=e218]: 쏘나타 디 엣지 · 2023년형
+                - generic [ref=e219]: 2.0 가솔린 익스클루시브
+            - button "2.0 가솔린 익스클루시브 선택" [ref=e222] [cursor=pointer]:
+              - paragraph [ref=e226]: 2.0 가솔린 익스클루시브 선택
+          - generic [ref=e230]:
+            - generic [ref=e235]:
+              - img "쏘나타 디 엣지 예시 이미지" [ref=e237]
+              - generic [ref=e238]:
+                - generic [ref=e239]: 쏘나타 디 엣지 · 2023년형
+                - generic [ref=e240]: 2.0 가솔린 프리미엄
+            - button "2.0 가솔린 프리미엄 선택" [ref=e243] [cursor=pointer]:
+              - paragraph [ref=e247]: 2.0 가솔린 프리미엄 선택
+        - group [ref=e250]:
+          - generic "keyboard_arrow_right 더 자세히 입력하면 더 잘 알 수 있어요" [ref=e251] [cursor=pointer]:
+            - generic [ref=e252]:
+              - generic [ref=e254]: keyboard_arrow_right
+              - paragraph [ref=e257]: 더 자세히 입력하면 더 잘 알 수 있어요
+      - generic [ref=e260]:
+        - generic [ref=e262]:
+          - heading "입력 요약" [level=5] [ref=e268]: 입력 요약
+          - generic [ref=e270]:
+            - paragraph [ref=e277]: 브랜드
+            - paragraph [ref=e284]:
+              - strong [ref=e285]: 현대
+          - generic [ref=e287]:
+            - paragraph [ref=e294]: 모델
+            - paragraph [ref=e301]:
+              - strong [ref=e302]: 쏘나타
+          - generic [ref=e304]:
+            - paragraph [ref=e311]: 연식
+            - paragraph [ref=e318]:
+              - strong [ref=e319]: 2023년형
+          - generic [ref=e321]:
+            - paragraph [ref=e328]: 세부 트림
+            - paragraph [ref=e335]:
+              - strong [ref=e336]: 2.0 가솔린 익스클루시브
+          - generic [ref=e338]:
+            - paragraph [ref=e345]: 차량 색상
+            - paragraph [ref=e352]:
+              - strong [ref=e353]: 화이트 펄
+        - button "현재 차량 예측 가격 보러가기" [ref=e356] [cursor=pointer]:
+          - paragraph [ref=e360]: 현재 차량 예측 가격 보러가기
+    - separator [ref=e365]
+    - generic [ref=e369]:
+      - generic [ref=e371]:
+        - generic [ref=e373]:
+          - heading "차량 예상 판매가 서비스" [level=5] [ref=e379]: 차량 예상 판매가 서비스
+          - paragraph [ref=e384]: Vehicle Price Service
+        - generic [ref=e386]:
+          - paragraph [ref=e391]: Page
+          - paragraph [ref=e396]:
+            - strong [ref=e397]: Entry
+      - generic [ref=e399]:
+        - generic [ref=e401]:
+          - paragraph [ref=e406]: Service
+          - paragraph [ref=e411]: 차량 시세 예측 · 차량 정보 입력 · 가격 흐름 확인
+        - generic [ref=e413]:
+          - paragraph [ref=e418]: Theme
+          - paragraph [ref=e423]: Light mode · Blue accent
+      - paragraph [ref=e428]: Copyright 2026. Vehicle Price Service.

@@ -1,7 +1,7 @@
 from collections.abc import Mapping, Sequence
 from functools import lru_cache
 
-from external.predict_engine import (
+from ..external.predict_engine import (
     PredictEngineClient,
     PredictEnginePrediction,
     PredictEngineProjection,

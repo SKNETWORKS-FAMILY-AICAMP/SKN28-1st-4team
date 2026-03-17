@@ -1,0 +1,79 @@
+<svg width="1280" height="900" viewBox="0 0 1280 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="900" rx="44" fill="url(#bg)"/>
+  <rect x="54" y="60" width="1172" height="780" rx="36" fill="url(#panel)" stroke="rgba(22,93,255,0.12)"/>
+  <g opacity="0.3">
+    <path d="M100 190H1180" stroke="#C9D9FF" stroke-width="2"/>
+    <path d="M100 290H1180" stroke="#D9E6FF" stroke-width="2"/>
+    <path d="M100 390H1180" stroke="#D9E6FF" stroke-width="2"/>
+    <path d="M100 490H1180" stroke="#D9E6FF" stroke-width="2"/>
+    <path d="M100 590H1180" stroke="#D9E6FF" stroke-width="2"/>
+    <path d="M100 690H1180" stroke="#D9E6FF" stroke-width="2"/>
+    <path d="M230 120V780" stroke="#D9E6FF" stroke-width="2"/>
+    <path d="M410 120V780" stroke="#D9E6FF" stroke-width="2"/>
+    <path d="M590 120V780" stroke="#D9E6FF" stroke-width="2"/>
+    <path d="M770 120V780" stroke="#D9E6FF" stroke-width="2"/>
+    <path d="M950 120V780" stroke="#D9E6FF" stroke-width="2"/>
+  </g>
+  <g opacity="0.95">
+    <rect x="110" y="118" width="206" height="42" rx="21" fill="#0F172A"/>
+    <text x="150" y="145" fill="#F8FBFF" font-size="20" font-family="Arial, sans-serif" font-weight="700">CARBODY AI</text>
+  </g>
+  <g opacity="0.82">
+    <circle cx="978" cy="222" r="118" fill="url(#radial)"/>
+    <circle cx="978" cy="222" r="83" stroke="#0E42BD" stroke-width="10"/>
+    <path d="M920 244C937 216 961 194 990 177C1015 196 1035 220 1048 248" stroke="#0E42BD" stroke-width="12" stroke-linecap="round"/>
+    <path d="M910 227L950 186L987 215L1041 169" stroke="#165DFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="910" cy="227" r="10" fill="#165DFF"/>
+    <circle cx="950" cy="186" r="10" fill="#165DFF"/>
+    <circle cx="987" cy="215" r="10" fill="#165DFF"/>
+    <circle cx="1041" cy="169" r="10" fill="#165DFF"/>
+  </g>
+  <g opacity="0.92">
+    <rect x="126" y="216" width="420" height="228" rx="28" fill="#FFFFFF" stroke="#DCE8FF"/>
+    <text x="162" y="266" fill="#6681B7" font-size="21" font-family="Arial, sans-serif" font-weight="700">Scientific valuation workflow</text>
+    <text x="162" y="320" fill="#102A56" font-size="44" font-family="Arial, sans-serif" font-weight="700">CARBODY</text>
+    <text x="162" y="360" fill="#102A56" font-size="44" font-family="Arial, sans-serif" font-weight="700">Predictive intelligence</text>
+    <text x="162" y="411" fill="#5C729A" font-size="22" font-family="Arial, sans-serif">AI scoring, depreciation modeling,</text>
+    <text x="162" y="442" fill="#5C729A" font-size="22" font-family="Arial, sans-serif">and structured vehicle analysis.</text>
+  </g>
+  <g opacity="0.94">
+    <rect x="126" y="484" width="494" height="256" rx="30" fill="#F9FBFF" stroke="#DCE8FF"/>
+    <path d="M188 668L274 620L358 642L445 540L532 566L602 476" stroke="#165DFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="188" cy="668" r="11" fill="#165DFF"/>
+    <circle cx="274" cy="620" r="11" fill="#165DFF"/>
+    <circle cx="358" cy="642" r="11" fill="#165DFF"/>
+    <circle cx="445" cy="540" r="11" fill="#165DFF"/>
+    <circle cx="532" cy="566" r="11" fill="#165DFF"/>
+    <circle cx="602" cy="476" r="11" fill="#165DFF"/>
+    <text x="166" y="534" fill="#7890BC" font-size="18" font-family="Arial, sans-serif" font-weight="700">AI depreciation curve</text>
+  </g>
+  <g opacity="0.9">
+    <rect x="692" y="404" width="454" height="336" rx="30" fill="#FFFFFF" stroke="#DCE8FF"/>
+    <rect x="730" y="456" width="170" height="96" rx="20" fill="#F5F9FF"/>
+    <rect x="918" y="456" width="190" height="96" rx="20" fill="#F5F9FF"/>
+    <rect x="730" y="574" width="378" height="122" rx="20" fill="#F7FAFF"/>
+    <text x="760" y="502" fill="#7F95BE" font-size="16" font-family="Arial, sans-serif" font-weight="700">Model signals</text>
+    <text x="760" y="538" fill="#10305F" font-size="33" font-family="Arial, sans-serif" font-weight="700">84 pt</text>
+    <text x="948" y="502" fill="#7F95BE" font-size="16" font-family="Arial, sans-serif" font-weight="700">Predicted value</text>
+    <text x="948" y="538" fill="#165DFF" font-size="33" font-family="Arial, sans-serif" font-weight="700">20.7M KRW</text>
+    <text x="760" y="620" fill="#7F95BE" font-size="16" font-family="Arial, sans-serif" font-weight="700">AI inspection notes</text>
+    <path d="M760 650H1078" stroke="#C6D8FF" stroke-width="8" stroke-linecap="round"/>
+    <path d="M760 676H1040" stroke="#D5E4FF" stroke-width="8" stroke-linecap="round"/>
+    <path d="M760 702H980" stroke="#D5E4FF" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <defs>
+    <linearGradient id="bg" x1="64" y1="42" x2="1204" y2="838" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7FAFF"/>
+      <stop offset="0.54" stop-color="#EEF4FF"/>
+      <stop offset="1" stop-color="#F3F8FF"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="80" y1="84" x2="1162" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#F5F9FF" stop-opacity="0.9"/>
+    </linearGradient>
+    <radialGradient id="radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(978 222) rotate(90) scale(118)">
+      <stop stop-color="#B6D4FF"/>
+      <stop offset="1" stop-color="#EAF3FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

@@ -17,4 +17,4 @@ dist/
 *.onnx
 artifacts/
 checkpoints/
-predict_engine_research/models/
+predict_engine_research/src/models/

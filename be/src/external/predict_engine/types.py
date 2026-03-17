@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from datetime import datetime
 
 
 PredictScalar = float | int | str | bool | None
@@ -66,16 +67,12 @@ class PredictEnginePrediction:
 
 @dataclass(frozen=True)
 class PredictEngineProjectionPoint:
-    label: str
-    feature_name: str
-    feature_value: PredictScalar
+    projected_at: datetime
     predicted_price: float
 
     def as_dict(self) -> dict[str, object]:
         return {
-            "label": self.label,
-            "feature_name": self.feature_name,
-            "feature_value": self.feature_value,
+            "projected_at": self.projected_at.isoformat(),
             "predicted_price": self.predicted_price,
         }
 
@@ -83,14 +80,18 @@ class PredictEngineProjectionPoint:
 @dataclass(frozen=True)
 class PredictEngineProjection:
     request_id: str
-    feature_name: str
+    time_feature_name: str
+    start_datetime: datetime
+    interval_months: int
     feature_columns: tuple[str, ...]
     points: tuple[PredictEngineProjectionPoint, ...]
 
     def as_dict(self) -> dict[str, object]:
         return {
             "request_id": self.request_id,
-            "feature_name": self.feature_name,
+            "time_feature_name": self.time_feature_name,
+            "start_datetime": self.start_datetime.isoformat(),
+            "interval_months": self.interval_months,
             "feature_columns": list(self.feature_columns),
             "points": [point.as_dict() for point in self.points],
         }

@@ -85,7 +85,7 @@ class PredictEngineClient:
             manifest_error=manifest_error,
         )
 
-    def predict(
+    def _predict(
         self,
         record: Mapping[str, PredictScalar] | None = None,
         *,
