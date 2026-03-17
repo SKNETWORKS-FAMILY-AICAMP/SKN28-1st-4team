@@ -19,3 +19,10 @@ class PriceResult:
     confidence: int
     suggestion: str
     chart_points: tuple[PricePoint, ...]
+
+
+@dataclass(frozen=True)
+class PriceFactorResult:
+    positive_factors: tuple[str, ...]
+    negative_factors: tuple[str, ...]
+    logic_note: str

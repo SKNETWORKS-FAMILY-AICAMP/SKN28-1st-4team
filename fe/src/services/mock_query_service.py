@@ -4,8 +4,10 @@ from typing import Any
 from mock_data.vehicle_catalog import (
     ACCIDENT_DETAIL_FIELDS,
     ACCIDENT_HISTORY_OPTIONS,
+    BRAND_KEY_BY_LABEL,
     CATALOG,
     COLOR_HISTORY_OPTIONS,
+    COLOR_OPTIONS,
     COLOR_TONE,
     DOCUMENT_OPTIONS,
     FUEL_OPTIONS,
@@ -20,6 +22,7 @@ from mock_data.vehicle_catalog import (
     VIN_CONDITION_OPTIONS,
     WARRANTY_OPTIONS,
     _CANDIDATE_LIBRARY,
+    build_model_options_for_page,
 )
 from models.query import PricePredictionRequestDTO
 
@@ -30,6 +33,7 @@ def build_mock_catalog_payload() -> dict[str, Any]:
             brand: {model: list(years) for model, years in models.items()}
             for brand, models in CATALOG.items()
         },
+        "brand_keys_by_label": dict(BRAND_KEY_BY_LABEL),
         "candidates_by_model": {
             model: [
                 {
@@ -48,7 +52,7 @@ def build_mock_catalog_payload() -> dict[str, Any]:
         "base_prices_by_model": dict(MODEL_BASE_PRICE),
         "color_tones": dict(COLOR_TONE),
         "options": {
-            "colors": list(COLOR_TONE.keys()),
+            "colors": list(COLOR_OPTIONS),
             "transmissions": list(TRANSMISSION_OPTIONS),
             "fuels": list(FUEL_OPTIONS),
             "warranty_types": list(WARRANTY_OPTIONS),
@@ -70,62 +74,51 @@ def build_mock_catalog_payload() -> dict[str, Any]:
     }
 
 
+def build_mock_model_image_page_payload(
+    brand_key: str,
+    brand_label: str,
+    model_names: list[str],
+) -> dict[str, Any]:
+    return {
+        "brand_key": brand_key,
+        "brand_label": brand_label,
+        "models": [
+            {
+                "id": item.id,
+                "brand": item.brand,
+                "model": item.model,
+                "image_src": item.image_src,
+            }
+            for item in build_model_options_for_page(brand_label, model_names)
+        ],
+    }
+
+
 def build_mock_price_prediction_payload(request: PricePredictionRequestDTO) -> dict[str, Any]:
-    mileage_penalty = max(request.mileage - 30000, 0) * 0.0028
+    purchase_age_days = max((date.today() - date.fromisoformat(request.purchase_date)).days, 0)
+    vehicle_age_years = max(round(purchase_age_days / 365.25, 2), 0.1)
+    annual_mileage_km = request.mileage_km / max(vehicle_age_years, 1.0)
+
+    mileage_penalty = max(request.mileage_km - 30000, 0) * 0.0028
     used_penalty = 95 if request.is_used_purchase else 0
     color_delta = COLOR_TONE.get(request.color, 0)
-    accident_detail_penalty = sum(
-        34
-        for field_key, _ in ACCIDENT_DETAIL_FIELDS
-        if request.accident_details.get(field_key) == "문제 있음"
-    )
-    frame_penalty = 90 if request.accident_details.get("accident_frame") == "문제 있음" else 0
-    accident_penalty = (180 + accident_detail_penalty + frame_penalty) if request.accident_history == "있음" else 0
-    repair_penalty = 55 if request.simple_repair == "있음" else 0
-    special_penalty = len(request.special_history) * 120
-    usage_penalty = len(request.usage_change) * 80
-    color_history_penalty = len(request.color_history) * 40
-    option_bonus = len(request.major_options) * 22
-    document_bonus = len(request.documents) * 6
-    condition_bonus = (
-        request.body_condition + request.interior_condition + request.wheel_tire_condition
-    ) * 9
 
     current_price = int(
         max(
             650,
             round(
-                MODEL_BASE_PRICE.get(request.model, 2200)
+                MODEL_BASE_PRICE.get(request.model_name, 2200)
                 - mileage_penalty
                 - used_penalty
-                - accident_penalty
-                - repair_penalty
-                - special_penalty
-                - usage_penalty
-                - color_history_penalty
-                + option_bonus
-                + document_bonus
-                + condition_bonus
                 + color_delta
             ),
         )
     )
 
-    confidence = 72 + min(len(request.major_options) * 2, 8)
-    confidence += 6 if request.vin_condition == "양호" else 0
-    confidence += 4 if request.meter_condition == "양호" else 0
-    confidence = min(confidence, 94)
+    confidence = 78
 
     current_year = date.today().year
     chart_points = [
-        {
-            "label": "최근 시세",
-            "year_label": f"{current_year - 1}년",
-            "price": int(round(current_price * 0.94)),
-            "segment": "과거 더미",
-            "phase": "past",
-            "show_label": False,
-        },
         {
             "label": "현재",
             "year_label": f"{current_year}년",
@@ -137,25 +130,27 @@ def build_mock_price_prediction_payload(request: PricePredictionRequestDTO) -> d
     ]
 
     projected_price = current_price
+    projected_mileage = float(request.mileage_km)
     for offset, decline_rate in enumerate((0.18, 0.15, 0.17, 0.16, 0.14), start=1):
-        projected_price = int(round(projected_price * (1 - decline_rate)))
+        projected_mileage += annual_mileage_km
+        projected_price = int(round(projected_price * (1 - decline_rate) - (annual_mileage_km * 0.0006)))
         chart_points.append(
             {
                 "label": f"{offset}년 후",
                 "year_label": f"{current_year + offset}년",
                 "price": projected_price,
-                "segment": "완만한 하락" if offset <= 2 else "하락 폭 확대",
+                "segment": "연식·주행거리 반영" if offset <= 2 else "연식·주행거리 누적",
                 "phase": "future",
                 "show_label": True,
             }
         )
 
-    fair_span = 110 + len(request.major_options) * 12
+    fair_span = 256
     third_year_price = next(point["price"] for point in chart_points if point["label"] == "3년 후")
     suggestion = (
-        "2~3년 차부터 감가가 더 가팔라지는 설정이라, 중기 이전 매도 시점을 먼저 보는 편이 유리합니다."
+        "구매일 기준 차량 경과 연수와 누적 주행거리를 함께 반영한 단순 예측입니다."
         if third_year_price < current_price * 0.65
-        else "감가 추세가 완만한 편이라 1~2년 내 매도 압박은 크지 않습니다."
+        else "현재 정보 기준으로는 단기 급락보다는 점진적 감가 흐름에 가깝습니다."
     )
 
     return {
@@ -165,4 +160,39 @@ def build_mock_price_prediction_payload(request: PricePredictionRequestDTO) -> d
         "confidence": confidence,
         "suggestion": suggestion,
         "chart_points": chart_points,
+    }
+
+
+def build_mock_price_factor_payload(request: PricePredictionRequestDTO) -> dict[str, Any]:
+    purchase_age_days = max((date.today() - date.fromisoformat(request.purchase_date)).days, 0)
+    vehicle_age_years = max(round(purchase_age_days / 365.25, 2), 0.1)
+    annual_mileage_km = request.mileage_km / max(vehicle_age_years, 1.0)
+
+    positive_factors: list[str] = []
+    negative_factors: list[str] = []
+
+    if annual_mileage_km <= 13140 * 0.85:
+        positive_factors.append("연간 주행거리 추정치가 평균보다 낮아 주행거리 부담이 적은 편입니다.")
+    elif annual_mileage_km >= 13140 * 1.15:
+        negative_factors.append("연간 주행거리 추정치가 평균보다 높아 감가 압력이 크게 반영될 수 있습니다.")
+    else:
+        positive_factors.append("연간 주행거리 추정치가 평균 구간에 가까워 과도한 주행 부담은 아닌 편입니다.")
+
+    if request.color in {"흰색", "진주색", "화이트 펄", "검정", "검정색"}:
+        positive_factors.append("무난한 인기 색상 계열이라 재판매 수요 확보에 유리한 편입니다.")
+    else:
+        negative_factors.append("비주류 색상 계열일 수 있어 비교 매물 대비 선택 폭이 좁아질 수 있습니다.")
+
+    if vehicle_age_years <= 3.0:
+        positive_factors.append("구매일 기준 경과 연수가 짧아 최근 연식 체감에 유리한 편입니다.")
+    elif vehicle_age_years >= 7.0:
+        negative_factors.append("구매일 기준 경과 연수가 길어 연식 감가 압력이 누적된 상태입니다.")
+
+    if request.transmission == "자동":
+        positive_factors.append("자동 변속기 기준이라 일반적인 중고차 수요와 맞는 편입니다.")
+
+    return {
+        "positive_factors": positive_factors[:3],
+        "negative_factors": negative_factors[:3],
+        "logic_note": "구매일 기준 경과 연수, 추정 연간 주행거리, 색상 선호도, 변속기를 기준으로 더미 분석을 생성했습니다.",
     }

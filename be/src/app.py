@@ -1,7 +1,8 @@
+from datetime import date
 from typing import Annotated
 from urllib.parse import quote
 
-from fastapi import Depends, FastAPI, HTTPException, Query, Response
+from fastapi import Depends, FastAPI, HTTPException, Query, Request, Response
 from pydantic import BaseModel, Field
 
 # global useages
@@ -10,8 +11,19 @@ from env import * # for simplicity , just Types and configueration getters
 # external dependencies
 from external.db import get_db_client, MySQLClient
 from services.predict_engine import PredictEngineService, get_predict_engine_service
+from services.frontend_price_prediction import (
+    FrontendPricePredictionInput,
+    FrontendPricePredictionService,
+    get_frontend_price_prediction_service,
+)
+from services.frontend_price_factors import (
+    FrontendPriceFactorService,
+    get_frontend_price_factor_service,
+)
 from services.vehicle_model_image import (
+    VehicleModelImagePageService,
     VehicleModelImageService,
+    get_vehicle_model_image_page_service,
     get_vehicle_model_image_service,
 )
 
@@ -31,6 +43,26 @@ class PredictEngineProjectionRequest(BaseModel):
     base_record: dict[str, PredictValue] = Field(default_factory=dict)
     feature_name: str
     feature_values: list[PredictValue] = Field(min_length=1)
+
+
+class FrontendModelImagePageRequest(BaseModel):
+    brand_key: str = Field(min_length=1)
+    brand_label: str = Field(min_length=1)
+    model_names: list[str] = Field(min_length=1)
+
+
+class FrontendPricePredictionRequest(BaseModel):
+    request_id: str | None = None
+    brand_key: str = Field(min_length=1)
+    brand_label: str = Field(min_length=1)
+    model_name: str = Field(min_length=1)
+    trim_name: str = Field(min_length=1)
+    plate: str = ""
+    purchase_date: date
+    is_used_purchase: bool = False
+    mileage_km: int = Field(ge=0)
+    color: str = Field(min_length=1)
+    transmission: str = ""
 
 
 @app.get("/")
@@ -129,3 +161,95 @@ def get_vehicle_model_image(
             "Content-Disposition": f"inline; filename*=UTF-8''{filename}",
         },
     )
+
+
+@app.post("/api/v1/frontend/model-images")
+def get_frontend_model_images(
+    payload: FrontendModelImagePageRequest,
+    request: Request,
+    vehicle_model_image_page_service: Annotated[
+        VehicleModelImagePageService,
+        Depends(get_vehicle_model_image_page_service),
+    ],
+) -> dict[str, object]:
+    try:
+        models = vehicle_model_image_page_service.get_model_cards(
+            brand_key=payload.brand_key,
+            brand_label=payload.brand_label,
+            model_names=payload.model_names,
+            image_url_builder=lambda brand_key, model_name: str(
+                request.url_for("get_vehicle_model_image")
+                .include_query_params(brand_key=brand_key, model_name=model_name)
+            ),
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+    return {
+        "brand_key": payload.brand_key,
+        "brand_label": payload.brand_label,
+        "models": [
+            {
+                "id": model.id,
+                "brand": model.brand,
+                "model": model.model,
+                "image_src": model.image_src,
+            }
+            for model in models
+        ],
+    }
+
+
+@app.post("/api/v1/frontend/price-prediction")
+def get_frontend_price_prediction(
+    payload: FrontendPricePredictionRequest,
+    frontend_price_prediction_service: Annotated[
+        FrontendPricePredictionService,
+        Depends(get_frontend_price_prediction_service),
+    ],
+) -> dict[str, object]:
+    try:
+        result = frontend_price_prediction_service.predict(
+            FrontendPricePredictionInput(
+                brand_key=payload.brand_key,
+                brand_label=payload.brand_label,
+                model_name=payload.model_name,
+                trim_name=payload.trim_name,
+                plate=payload.plate,
+                purchase_date=payload.purchase_date,
+                is_used_purchase=payload.is_used_purchase,
+                mileage_km=payload.mileage_km,
+                color=payload.color,
+                transmission=payload.transmission,
+            ),
+            request_id=payload.request_id,
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+    return result.as_dict()
+
+
+@app.post("/api/v1/frontend/price-factors")
+def get_frontend_price_factors(
+    payload: FrontendPricePredictionRequest,
+    frontend_price_factor_service: Annotated[
+        FrontendPriceFactorService,
+        Depends(get_frontend_price_factor_service),
+    ],
+) -> dict[str, object]:
+    result = frontend_price_factor_service.analyze(
+        FrontendPricePredictionInput(
+            brand_key=payload.brand_key,
+            brand_label=payload.brand_label,
+            model_name=payload.model_name,
+            trim_name=payload.trim_name,
+            plate=payload.plate,
+            purchase_date=payload.purchase_date,
+            is_used_purchase=payload.is_used_purchase,
+            mileage_km=payload.mileage_km,
+            color=payload.color,
+            transmission=payload.transmission,
+        )
+    )
+    return result.as_dict()

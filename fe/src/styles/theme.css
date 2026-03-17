@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap');
 
 :root {
+  color-scheme: light;
   --bg: #f4f7fb;
   --surface: rgba(255, 255, 255, 0.98);
   --line: #dbe7f7;
@@ -17,6 +18,64 @@ body,
 [class*="css"] {
   font-family: "Plus Jakarta Sans", "Noto Sans KR", sans-serif;
   color: var(--text);
+  color-scheme: light !important;
+}
+
+html,
+body,
+.stApp,
+[data-testid="stApp"],
+[data-testid="stAppViewContainer"],
+[data-testid="stMainBlockContainer"],
+input,
+textarea,
+select,
+button {
+  background-color: #f7fbff !important;
+  color-scheme: light !important;
+  forced-color-adjust: none !important;
+}
+
+* {
+  color-scheme: light !important;
+}
+
+[data-testid="stHeadingWithActionElements"] h1,
+[data-testid="stHeadingWithActionElements"] h2,
+[data-testid="stHeadingWithActionElements"] h3,
+[data-testid="stHeadingWithActionElements"] h4 {
+  color: #0f172a !important;
+}
+
+[data-testid="stCaptionContainer"] p {
+  color: #475569 !important;
+}
+
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] li,
+[data-testid="stText"] {
+  color: #334155 !important;
+}
+
+[data-testid="stWidgetLabel"] p,
+[data-testid="stWidgetLabel"] span,
+[data-testid="stWidgetLabel"] label {
+  color: #334155 !important;
+  font-weight: 700;
+}
+
+.stTextInput input,
+.stDateInput input,
+.stNumberInput input,
+.stTextArea textarea,
+.stSelectbox div[data-baseweb="select"] > div,
+.stMultiSelect div[data-baseweb="select"] > div {
+  color: #0f172a !important;
+}
+
+.stCheckbox label,
+.stToggle label {
+  color: #334155 !important;
 }
 
 [data-testid="stAppViewContainer"] {
@@ -73,13 +132,13 @@ a[href="#top"] {
 .st-key-landing-hero {
   max-width: 920px;
   margin: 0 auto;
-  min-height: calc(100vh - 104px);
+  min-height: calc(100vh - 240px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  gap: 1.35rem;
-  padding: clamp(72px, 10vh, 120px) 0 clamp(24px, 3vw, 36px) 0;
+  gap: 0.95rem;
+  padding: clamp(24px, 5vh, 56px) 0 clamp(18px, 3vw, 28px) 0;
 }
 
 .st-key-landing-hero [data-testid="stHeadingWithActionElements"] h1 {
@@ -88,12 +147,32 @@ a[href="#top"] {
   letter-spacing: -0.06em;
   margin: 0 auto;
   max-width: 1040px;
+  color: #0f172a;
+}
+
+.st-key-landing-hero [data-testid="stCaptionContainer"] p {
+  color: #334155 !important;
+  font-weight: 700;
 }
 
 .st-key-landing-hero p {
   max-width: 760px;
   margin: 0 auto;
   text-align: center;
+  color: #334155 !important;
+}
+
+.st-key-landing-showcase [data-testid="stCaptionContainer"] p {
+  color: #475569 !important;
+  font-weight: 700;
+}
+
+.st-key-landing-showcase [data-testid="stHeadingWithActionElements"] h3 {
+  color: #0f172a !important;
+}
+
+.st-key-landing-showcase [data-testid="stMarkdownContainer"] p {
+  color: #475569 !important;
 }
 
 .st-key-landing-showcase {
@@ -134,6 +213,11 @@ a[href="#top"] {
     linear-gradient(180deg, #152846 0%, #101c34 100%);
   color: #ffffff;
   box-shadow: 0 28px 64px rgba(17, 30, 56, 0.22);
+}
+
+.landing-preview-shell,
+.landing-preview-shell * {
+  color: #ffffff !important;
 }
 
 .landing-preview-pill {
@@ -258,10 +342,19 @@ a[href="#top"] {
   display: inline-flex;
   padding: 9px 14px;
   border-radius: 999px;
-  background: rgba(22, 93, 255, 0.08);
-  color: var(--blue-deep);
+  background: linear-gradient(135deg, #165dff, #0e42bd);
+  color: #ffffff;
   font-size: 12px;
   font-weight: 800;
+}
+
+.eyebrow-tag,
+.eyebrow-tag *,
+.fair-range,
+.fair-range *,
+.factor-badge,
+.factor-badge * {
+  color: #ffffff !important;
 }
 
 .hero-price {
@@ -277,8 +370,8 @@ a[href="#top"] {
   margin-top: 18px;
   padding: 12px 14px;
   border-radius: 18px;
-  background: var(--blue-soft);
-  color: var(--blue-deep);
+  background: linear-gradient(135deg, #165dff, #0e42bd);
+  color: #ffffff;
   font-size: 13px;
   font-weight: 800;
 }
@@ -332,6 +425,46 @@ a[href="#top"] {
   line-height: 1.65;
 }
 
+[data-testid="stPlotlyChart"] {
+  margin-top: 8px;
+  padding: 14px 14px 6px 14px;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid rgba(219, 231, 247, 0.96);
+  box-shadow: var(--shadow);
+}
+
+.projection-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.projection-card {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(214, 228, 255, 0.96);
+  box-shadow: 0 8px 18px rgba(24, 54, 112, 0.05);
+}
+
+.projection-card span,
+.timing-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.projection-card strong,
+.timing-card strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--text);
+  font-size: 18px;
+}
+
 .insight-card {
   margin-top: 18px;
   padding: 18px 20px;
@@ -363,13 +496,73 @@ a[href="#top"] {
 }
 
 .factor-badge-positive {
-  background: rgba(22, 93, 255, 0.12);
-  color: #0e42bd;
+  background: linear-gradient(135deg, #165dff, #0e42bd);
+  color: #ffffff;
 }
 
 .factor-badge-negative {
-  background: rgba(229, 70, 92, 0.12);
-  color: #c4344a;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #ffffff;
+}
+
+.factor-section {
+  margin-top: 12px;
+  padding: 18px 20px;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid rgba(214, 228, 255, 0.96);
+  box-shadow: var(--shadow);
+}
+
+.factor-section-positive {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border-color: rgba(22, 93, 255, 0.18);
+}
+
+.factor-section-negative {
+  background: linear-gradient(180deg, #ffffff 0%, #fff8f9 100%);
+  border-color: rgba(229, 70, 92, 0.18);
+}
+
+.factor-list {
+  margin: 2px 0 0 0;
+  padding-left: 18px;
+}
+
+.factor-list li {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.72;
+  margin: 10px 0;
+}
+
+.timing-card-shell {
+  margin-top: 18px;
+  padding: 18px 20px;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid rgba(214, 228, 255, 0.96);
+  box-shadow: var(--shadow);
+}
+
+.timing-card-title {
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.timing-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.timing-card {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: #fbfdff;
+  border: 1px solid var(--line);
 }
 
 div[data-testid="stExpander"] {
@@ -401,24 +594,58 @@ div[data-testid="stExpander"] summary svg,
 }
 
 .stButton > button,
-[data-testid="baseButton-secondary"] {
+[data-testid="stBaseButton-secondary"],
+[data-testid="stBaseButton-secondaryFormSubmit"],
+[data-testid="stBaseLinkButton-secondary"] {
   border-radius: 16px;
   min-height: 46px;
   border: 1px solid transparent;
   font-weight: 800;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
 
 .stButton > button[kind="primary"] {
-  background: linear-gradient(135deg, #165dff, #0d42bd);
-  color: #ffffff;
+  background: linear-gradient(135deg, #165dff, #0d42bd) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
   box-shadow: 0 10px 22px rgba(22, 93, 255, 0.18);
 }
 
 .stButton > button[kind="secondary"] {
-  background: rgba(255, 255, 255, 0.98);
-  color: var(--text);
-  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.98) !important;
+  color: var(--text) !important;
+  border-color: var(--line) !important;
   box-shadow: 0 10px 20px rgba(24, 54, 112, 0.05);
+}
+
+.stButton > button p,
+[data-testid="stBaseButton-secondary"] p,
+[data-testid="stBaseButton-secondaryFormSubmit"] p,
+[data-testid="stBaseButton-primary"] p,
+[data-testid="stBaseLinkButton-secondary"] p {
+  color: inherit !important;
+}
+
+.stButton > button:hover,
+[data-testid="stBaseButton-secondary"]:hover,
+[data-testid="stBaseButton-secondaryFormSubmit"]:hover,
+[data-testid="stBaseLinkButton-secondary"]:hover {
+  border-color: rgba(22, 93, 255, 0.32) !important;
+}
+
+[data-testid="stBaseButton-secondaryFormSubmit"],
+[data-testid="stBaseLinkButton-secondary"] {
+  background: rgba(255, 255, 255, 0.98) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: 0 10px 20px rgba(24, 54, 112, 0.05) !important;
+}
+
+[data-testid="stBaseLinkButton-secondary"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
 }
 
 .stButton > button[kind="secondary"]:disabled {

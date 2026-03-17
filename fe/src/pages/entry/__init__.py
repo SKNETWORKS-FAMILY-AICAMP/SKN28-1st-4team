@@ -20,7 +20,7 @@ def render_entry_page(
 
     nav_col, _ = st.columns([0.2, 0.8], gap="small")
     with nav_col:
-        if st.button("← 돌아가기", width="stretch", type="primary"):
+        if st.button("← 돌아가기", width="stretch"):
             on_back()
 
     st.title("차량 정보 입력")
@@ -38,7 +38,7 @@ def render_entry_page(
                 on_mileage_change=sync_mileage_text,
                 on_purchase_date_change=sync_purchase_date_text,
             )
-            render_vehicle_selector(catalog)
+            render_vehicle_selector(catalog, facade)
             render_history_tabs(options)
 
         with right:

@@ -6,7 +6,6 @@ from datetime import date
 class VehicleFormState:
     brand: str
     model: str
-    year: str
     plate: str
     purchase_date: date
     purchase_date_input: str

@@ -18,7 +18,7 @@ title: 실행 가이드
 
 ```bash
 cp be/.env.sample be/.env
-cp fe/.env.sample fe/.env
+cp fe/.env.example fe/.env
 cp predict_engine_host/.env.sample predict_engine_host/.env
 ```
 

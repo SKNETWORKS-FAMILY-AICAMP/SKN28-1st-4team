@@ -86,9 +86,8 @@ flowchart TD
     FormModel["models/form.py\nVehicleFormState"]
     RequestDTO["models/query.py\nPricePredictionRequestDTO"]
     ResponseDTO["models/query.py\nPricePredictionResponseDTO"]
-    Settings["core/settings.py\nAPP_ENV / query settings"]
-    MockService["services/mock_query_service.py"]
-    MockCatalog["mock_data/vehicle_catalog.py"]
+    Settings["core/settings.py\nquery settings"]
+    MockCatalog["services/mock_query_service.py\nbuild_mock_catalog_payload()"]
     QueryHelper["services/query_helper.py\nhttpx Client"]
     Backend["Backend API"]
     Result["models/price.py\nPriceResult"]
@@ -102,12 +101,10 @@ flowchart TD
     Facade --> Mapper
     Mapper --> RequestDTO
 
-    Facade -->|APP_ENV=development| MockService
-    Facade -->|APP_ENV!=development| QueryHelper
-    MockCatalog --> MockService
+    Facade --> MockCatalog
     QueryHelper --> Backend
 
-    MockService --> ResponseDTO
+    MockCatalog --> Facade
     Backend --> QueryHelper
     QueryHelper --> Facade
     Facade --> Mapper
@@ -127,7 +124,12 @@ flowchart TD
 - `httpx`: facade 내부 query helper가 백엔드 API를 호출할 때 사용합니다.
 
 `fe/ideas/designs ideas/requirements.txt`에 있던 디자인 프로토타입 의존성은 현재 `pyproject.toml`로 옮겨 관리합니다.
-프런트엔드의 데이터 접근은 `src/services/query_facade.py`를 통해 단일 진입점으로 모으고, `APP_ENV=development`일 때는 mock payload를 DTO로 매핑해 사용합니다.
+프런트엔드의 데이터 접근은 `src/services/query_facade.py`를 통해 단일 진입점으로 모읍니다.
+
+현재 기준 동작은 아래와 같습니다.
+- 차량 선택용 `catalog` 데이터는 프런트 로컬 JSON을 항상 사용합니다.
+- `model-images`, `price-prediction`, `price-factors` 는 백엔드 API를 호출합니다.
+- 즉 `APP_ENV=development` 라도 위 세 API는 `FE_QUERY_BASE_URL` 기준으로 실제 백엔드에 요청됩니다.
 
 ## 로컬 실행
 
@@ -154,7 +156,33 @@ docker compose up --build fe
 - `STREAMLIT_SERVER_PORT`: Streamlit 포트입니다.
 - `STREAMLIT_SERVER_HEADLESS`: 헤드리스 실행 여부입니다.
 - `STREAMLIT_BROWSER_GATHER_USAGE_STATS`: Streamlit 사용 통계 수집 여부입니다.
-- `FE_QUERY_BASE_URL`: 비개발 환경에서 query helper가 붙을 백엔드 기본 URL입니다.
-- `FE_QUERY_CATALOG_PATH`: 차량 카탈로그 조회 경로입니다.
+- `FE_QUERY_BASE_URL`: 프런트가 백엔드 API를 호출할 기본 URL입니다.
+- `FE_QUERY_CATALOG_PATH`: 현재는 사용하지 않는 예약 설정값입니다.
+- `FE_QUERY_MODEL_IMAGE_PAGE_PATH`: 모델 이미지 조회 경로입니다.
 - `FE_QUERY_PRICE_PATH`: 가격 예측 조회 경로입니다.
+- `FE_QUERY_PRICE_FACTORS_PATH`: 가격 상승/하락 요인 분석 경로입니다.
 - `FE_QUERY_TIMEOUT_SECONDS`: httpx query timeout 초 단위 값입니다.
+
+## 백엔드 URL 설정
+
+`FE_QUERY_BASE_URL` 은 [fe/src/core/settings.py](/Users/iwonbin/workspace/Study/boot/SKN28-1st-4team/fe/src/core/settings.py) 에서 읽습니다.
+설정하지 않으면 기본값은 `http://127.0.0.1:8000` 입니다.
+
+권장값:
+- 로컬에서 프런트와 백엔드를 각각 직접 실행할 때: `http://127.0.0.1:8000`
+- Docker Compose 안에서 프런트 컨테이너가 백엔드 컨테이너를 호출할 때: `http://be:8000`
+
+예시:
+
+```bash
+FE_QUERY_BASE_URL=http://127.0.0.1:8000
+```
+
+```bash
+FE_QUERY_BASE_URL=http://be:8000
+```
+
+현재 프런트가 호출하는 백엔드 경로:
+- `POST /api/v1/frontend/model-images`
+- `POST /api/v1/frontend/price-prediction`
+- `POST /api/v1/frontend/price-factors`

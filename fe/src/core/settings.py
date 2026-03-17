@@ -7,7 +7,9 @@ import os
 class QuerySettings:
     base_url: str
     catalog_path: str
+    model_image_page_path: str
     price_prediction_path: str
+    price_factors_path: str
     timeout_seconds: float
 
 
@@ -31,10 +33,18 @@ def get_app_settings() -> AppSettings:
         query=QuerySettings(
             base_url=os.environ.get("FE_QUERY_BASE_URL", "http://127.0.0.1:8000"),
             catalog_path=os.environ.get("FE_QUERY_CATALOG_PATH", "/api/v1/frontend/catalog"),
+            model_image_page_path=os.environ.get(
+                "FE_QUERY_MODEL_IMAGE_PAGE_PATH",
+                "/api/v1/frontend/model-images",
+            ),
             price_prediction_path=os.environ.get(
                 "FE_QUERY_PRICE_PATH",
                 "/api/v1/frontend/price-prediction",
             ),
-            timeout_seconds=float(os.environ.get("FE_QUERY_TIMEOUT_SECONDS", "10.0")),
+            price_factors_path=os.environ.get(
+                "FE_QUERY_PRICE_FACTORS_PATH",
+                "/api/v1/frontend/price-factors",
+            ),
+            timeout_seconds=float(os.environ.get("FE_QUERY_TIMEOUT_SECONDS", "35.0")),
         ),
     )

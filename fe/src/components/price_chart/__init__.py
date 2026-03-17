@@ -1,6 +1,7 @@
 from html import escape
 
 import pandas as pd
+import plotly.graph_objects as go
 import streamlit as st
 
 from models.price import PriceResult
@@ -8,36 +9,21 @@ from models.price import PriceResult
 
 def render_price_chart(price: PriceResult) -> None:
     chart_frame = _build_chart_frame(price)
-    recent_price = int(chart_frame.loc[chart_frame["phase"] == "past", "예측가격"].iloc[0])
 
     st.subheader("향후 5년 가격 하락 그래프")
-    st.caption(f"최근 시세 가이드 {recent_price:,}만원부터 현재 기준가와 향후 하락 폭을 같이 봅니다.")
+    st.caption("현재 예측가를 기준으로 향후 5년 감가 흐름을 함께 봅니다.")
 
-    st.line_chart(
-        chart_frame[["연도값", "예측가격"]].copy(),
-        x="연도값",
-        y="예측가격",
-        color="#165DFF",
-        height=360,
-        width="stretch",
+    st.plotly_chart(
+        _build_price_figure(chart_frame),
+        use_container_width=True,
+        config={"displayModeBar": False, "responsive": True},
     )
 
-    point_columns = st.columns(len(chart_frame), gap="small")
-    for column, (_, row) in zip(point_columns, chart_frame.iterrows()):
-        with column:
-            with st.container(border=True):
-                st.caption(str(row["시점"]))
-                st.markdown(f"**{int(row['예측가격']):,}만원**")
+    st.markdown(_build_projection_cards_markup(chart_frame), unsafe_allow_html=True)
 
     st.markdown(f'<div class="chart-caption">{escape(price.suggestion)}</div>', unsafe_allow_html=True)
 
-    with st.container(border=True):
-        st.markdown("##### 매도 타이밍 힌트")
-        columns = st.columns(4, gap="small")
-        for column, (label, value) in zip(columns, _build_timing_metrics(chart_frame)):
-            with column:
-                st.caption(label)
-                st.markdown(f"**{value}**")
+    st.markdown(_build_timing_cards_markup(chart_frame), unsafe_allow_html=True)
 
 
 def _build_chart_frame(price: PriceResult) -> pd.DataFrame:
@@ -52,13 +38,83 @@ def _build_chart_frame(price: PriceResult) -> pd.DataFrame:
         }
         for point in price.chart_points
     )
-    chart_frame["연도값"] = chart_frame["연도"].str.replace("년", "", regex=False).astype(int)
+    chart_frame["순서"] = range(len(chart_frame))
     return chart_frame
+
+
+def _build_price_figure(chart_frame: pd.DataFrame) -> go.Figure:
+    figure = go.Figure()
+    figure.add_trace(
+        go.Scatter(
+            x=chart_frame["시점"],
+            y=chart_frame["예측가격"],
+            mode="lines+markers",
+            line={"color": "#165DFF", "width": 3},
+            marker={"color": "#165DFF", "size": 8},
+            hovertemplate="<b>%{x}</b><br>%{y:,}만원<extra></extra>",
+        )
+    )
+    figure.update_layout(
+        height=360,
+        margin={"l": 20, "r": 20, "t": 18, "b": 20},
+        paper_bgcolor="#ffffff",
+        plot_bgcolor="#ffffff",
+        showlegend=False,
+        font={"color": "#132342", "family": "Plus Jakarta Sans, Noto Sans KR, sans-serif"},
+    )
+    figure.update_xaxes(
+        title_text="시점",
+        showgrid=False,
+        linecolor="#dbe7f7",
+        tickfont={"color": "#475569"},
+        title_font={"color": "#475569"},
+    )
+    figure.update_yaxes(
+        title_text="예측가격(만원)",
+        gridcolor="#e7eefb",
+        zeroline=False,
+        linecolor="#dbe7f7",
+        tickfont={"color": "#475569"},
+        title_font={"color": "#475569"},
+    )
+    return figure
+
+
+def _build_projection_cards_markup(chart_frame: pd.DataFrame) -> str:
+    card_markup = "".join(
+        (
+            '<div class="projection-card">'
+            f'<span>{escape(str(row["시점"]))}</span>'
+            f'<strong>{int(row["예측가격"]):,}만원</strong>'
+            "</div>"
+        )
+        for _, row in chart_frame.iterrows()
+    )
+    return f'<div class="projection-card-grid">{card_markup}</div>'
+
+
+def _build_timing_cards_markup(chart_frame: pd.DataFrame) -> str:
+    metric_markup = "".join(
+        (
+            '<div class="timing-card">'
+            f"<span>{escape(label)}</span>"
+            f"<strong>{escape(value)}</strong>"
+            "</div>"
+        )
+        for label, value in _build_timing_metrics(chart_frame)
+    )
+    return (
+        '<div class="timing-card-shell">'
+        '<div class="timing-card-title">매도 타이밍 힌트</div>'
+        f'<div class="timing-card-grid">{metric_markup}</div>'
+        "</div>"
+    )
 
 
 def _build_timing_metrics(chart_frame: pd.DataFrame) -> tuple[tuple[str, str], ...]:
     biggest_window, biggest_drop = _biggest_drop_window(chart_frame)
     return (
+        ("현재", f"{int(chart_frame.loc[chart_frame['시점'] == '현재', '예측가격'].iloc[0]):,}만원"),
         ("1년 후", f"{int(chart_frame.loc[chart_frame['시점'] == '1년 후', '예측가격'].iloc[0]):,}만원"),
         ("3년 후", f"{int(chart_frame.loc[chart_frame['시점'] == '3년 후', '예측가격'].iloc[0]):,}만원"),
         ("5년 후", f"{int(chart_frame.loc[chart_frame['시점'] == '5년 후', '예측가격'].iloc[0]):,}만원"),
@@ -67,9 +123,11 @@ def _build_timing_metrics(chart_frame: pd.DataFrame) -> tuple[tuple[str, str], .
 
 
 def _biggest_drop_window(chart_frame: pd.DataFrame) -> tuple[str, int]:
-    future_points = chart_frame[chart_frame["phase"].isin(["current", "future"])].copy()
-    future_points["prev_price"] = future_points["예측가격"].shift(1)
-    future_points["prev_label"] = future_points["시점"].shift(1)
-    future_points["drop_amount"] = (future_points["prev_price"] - future_points["예측가격"]).abs()
-    biggest = future_points.dropna(subset=["drop_amount"]).sort_values("drop_amount", ascending=False).iloc[0]
+    comparison_points = chart_frame[chart_frame["phase"].isin(["current", "future"])].copy()
+    comparison_points["prev_price"] = comparison_points["예측가격"].shift(1)
+    comparison_points["prev_label"] = comparison_points["시점"].shift(1)
+    comparison_points["drop_amount"] = (
+        comparison_points["prev_price"] - comparison_points["예측가격"]
+    ).abs()
+    biggest = comparison_points.dropna(subset=["drop_amount"]).sort_values("drop_amount", ascending=False).iloc[0]
     return f"{biggest['prev_label']} -> {biggest['시점']}", int(biggest["drop_amount"])

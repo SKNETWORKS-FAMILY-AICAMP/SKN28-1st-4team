@@ -20,22 +20,16 @@ def default_session_values(facade: "FrontendQueryFacade | None" = None) -> dict[
     options = catalog.options
 
     brand = "현대" if "현대" in catalog.brands else catalog.brands[0]
-    model_options = tuple(catalog.catalog[brand].keys())
-    model = "쏘나타" if "쏘나타" in model_options else model_options[0]
-    year_options = catalog.catalog[brand][model]
-    year = "2023년형" if "2023년형" in year_options else year_options[0]
-    candidate_options = [candidate for candidate in catalog.candidates_by_model.get(model, ()) if candidate.year == year]
-    selected_candidate = next(
-        (candidate for candidate in candidate_options if candidate.id == "sonata-1"),
-        candidate_options[0] if candidate_options else None,
-    )
-    color = selected_candidate.color if selected_candidate else (
-        "화이트 펄" if "화이트 펄" in options.color_options else options.color_options[0]
+    default_color = next(
+        (
+            color
+            for color in ("흰색", "진주색", "화이트 펄", "검정", "검정색")
+            if color in options.color_options
+        ),
+        options.color_options[0],
     )
     transmission = "자동" if "자동" in options.transmission_options else options.transmission_options[0]
-    fuel = selected_candidate.fuel if selected_candidate else (
-        "가솔린" if "가솔린" in options.fuel_options else options.fuel_options[0]
-    )
+    fuel = "가솔린" if "가솔린" in options.fuel_options else options.fuel_options[0]
     warranty_type = "보험사보증" if "보험사보증" in options.warranty_options else options.warranty_options[0]
     recall_status = "리콜 이행" if "리콜 이행" in options.recall_options else options.recall_options[0]
     vin_condition = "양호" if "양호" in options.vin_condition_options else options.vin_condition_options[0]
@@ -50,16 +44,15 @@ def default_session_values(facade: "FrontendQueryFacade | None" = None) -> dict[
 
     defaults: dict[str, Any] = {
         "brand": brand,
-        "model": model,
-        "year": year,
+        "model": "",
         "plate": "128가 4321",
         "purchase_date": date(2021, 5, 14),
         "purchase_date_input": "2021/05/14",
         "is_used_purchase": True,
-        "mileage": selected_candidate.mileage if selected_candidate else 58400,
-        "mileage_input": str(selected_candidate.mileage if selected_candidate else 58400),
-        "color": color,
-        "trim_input": selected_candidate.trim if selected_candidate else "기본 트림",
+        "mileage": 58400,
+        "mileage_input": "58400",
+        "color": default_color,
+        "trim_input": "",
         "transmission": transmission,
         "fuel": fuel,
         "warranty_type": warranty_type,
@@ -76,7 +69,7 @@ def default_session_values(facade: "FrontendQueryFacade | None" = None) -> dict[
         "interior_condition": 4,
         "wheel_tire_condition": 4,
         "documents": documents,
-        "selected_candidate_id": selected_candidate.id if selected_candidate else f"{brand}-{model}-{year}-basic",
+        "selected_candidate_id": "",
         "_accident_detail_keys": accident_detail_keys,
     }
     for field_key in accident_detail_keys:
@@ -95,14 +88,9 @@ def reset_demo_state(facade: "FrontendQueryFacade | None" = None) -> None:
 
 
 def sync_purchase_date_text() -> None:
-    raw_value = str(st.session_state.purchase_date_input).strip()
-    try:
-        parsed = date.fromisoformat(raw_value.replace(".", "-").replace("/", "-"))
-    except ValueError:
-        return
-
-    st.session_state.purchase_date = parsed
-    st.session_state.purchase_date_input = parsed.strftime("%Y/%m/%d")
+    purchase_date = st.session_state.get("purchase_date")
+    if isinstance(purchase_date, date):
+        st.session_state.purchase_date_input = purchase_date.strftime("%Y/%m/%d")
 
 
 def sync_mileage_text() -> None:
@@ -124,7 +112,6 @@ def read_form_state() -> VehicleFormState:
     return VehicleFormState(
         brand=str(st.session_state.brand),
         model=str(st.session_state.model),
-        year=str(st.session_state.year),
         plate=str(st.session_state.plate),
         purchase_date=st.session_state.purchase_date,
         purchase_date_input=str(st.session_state.purchase_date_input),

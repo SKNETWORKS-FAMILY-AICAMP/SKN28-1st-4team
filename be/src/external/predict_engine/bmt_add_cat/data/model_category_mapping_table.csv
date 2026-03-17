@@ -1,0 +1,268 @@
+brand,model_name,major_category,search_used,note
+chevrolet,더 넥스트 스파크,hatchback,False,"Derived from Chevrolet Spark, a subcompact hatchback."
+chevrolet,더 뉴 말리부,sedan,False,
+chevrolet,더 뉴 스파크,hatchback,True,The user wants mapping only. We have answer.
+chevrolet,더 뉴 아베오,hatchback,False,"Based on class trims (L, LS, LT) and level name '1.4 터보 해치백' indicating hatchback body style."
+chevrolet,더 뉴 카마로 SS,coupe_convertible,False,"Chevrolet Camaro SS is a 2-door coupe, categorised under coupe_convertible."
+chevrolet,더 뉴 트랙스,suv,False,
+chevrolet,더 뉴 트레일블레이저,suv,False,Chevrolet Trailblazer is sold in Korea as a compact/subcompact SUV crossover.
+chevrolet,리얼 뉴 콜로라도,truck,False,쉐보레 콜로라도는 중형 픽업트럭 모델
+chevrolet,말리부,sedan,False,Chevrolet Malibu is a midsize 4-door sedan.
+chevrolet,볼트 (VOLT),hatchback,False,Chevrolet Volt (EREV) is a 5-door compact hatchback body style.
+chevrolet,스파크,hatchback,False,Chevrolet Spark is a subcompact 5-door hatchback model.
+chevrolet,아베오,unknown,True,공식·참고 자료에서 아베오는 소형 세단과 해치백 두 가지 차체로 모두 판매됨; 단일 안정적 차체로 특정하기 어려움
+chevrolet,어메이징 뉴 크루즈,sedan,True,공식·위키 자료에서 크루즈는 준중형 세단으로 분류됨(국내에 5도어 해치백도 있었으나 모델의 기본 차체는 세단).
+chevrolet,올 뉴 말리부,sedan,False,쉐보레 말리부는 중형급 4도어 세단 모델
+chevrolet,올 뉴 카마로 SS,coupe_convertible,False,Camaro is a two-door sports/muscle coupe; SS is a trim level.
+chevrolet,올 뉴 콜로라도,truck,False,Chevrolet Colorado is a midsize pickup truck model
+chevrolet,올 뉴 크루즈,sedan,False,국내 판매된 올 뉴 크루즈는 4도어 중형 세단
+chevrolet,올란도,van,False,쉐보레 올란도는 5~7인승 MPV(다목적 미니밴)로 판매된 모델
+chevrolet,이쿼녹스,suv,False,쉐보레 이쿼녹스는 공식적으로 컴팩트 SUV 모델
+chevrolet,임팔라,sedan,False,Chevrolet Impala is a full-size sedan model.
+chevrolet,카마로,coupe_convertible,False,Chevrolet Camaro is a two-door sports coupe/convertible model
+chevrolet,캡티바,suv,False,GM코리아에서 판매된 캡티바는 중형급 SUV 모델로 분류됨
+chevrolet,콜로라도,truck,False,쉐보레 콜로라도는 중형 픽업트럭 모델
+chevrolet,콜벳,coupe_convertible,False,Chevrolet Corvette is a sports car offered as coupe and convertible depending on generation.
+chevrolet,크루즈,sedan,False,한국 쉐보레 크루즈는 주력 차체가 준중형 세단이며 5도어 해치백도 병행 판매됨; 모델 단위로는 세단으로 분류
+chevrolet,타호,suv,False,쉐보레 타호는 대표적인 풀사이즈 SUV 모델
+chevrolet,트래버스,suv,False,쉐보레 트래버스는 3열 중대형 SUV 모델
+chevrolet,트랙스,suv,False,쉐보레 트랙스는 공식적으로 소형 SUV(서브컴팩트 SUV)로 판매된 모델
+chevrolet,트랙스 크로스오버,suv,False,쉐보레 트랙스 크로스오버는 소형 SUV(크로스오버) 모델
+chevrolet,트레일블레이저,suv,False,한국 GM에서 소형 SUV(크로스오버)로 판매되는 트레일블레이저 모델
+hyundai,LF쏘나타,sedan,False,"LF쏘나타는 현대 쏘나타 LF 세대로, 중형 세단 모델"
+hyundai,LF쏘나타 하이브리드,sedan,False,쏘나타는 현대의 중형 세단 라인업이며 하이브리드도 동일한 세단 차체
+hyundai,YF쏘나타,sedan,False,YF 쏘나타는 현대자동차의 중형 세단 모델
+hyundai,i20,hatchback,False,Hyundai i20 is a subcompact 5-door hatchback model.
+hyundai,i30,hatchback,False,Hyundai i30 is a compact C-segment hatchback model; trims and engines do not change body type.
+hyundai,i30 PD,hatchback,False,Hyundai i30 (PD generation) is a C-segment 5-door hatchback; trims like N Line do not change body type.
+hyundai,i30CW,wagon,False,i30 CW is the station wagon (estate) variant of the Hyundai i30.
+hyundai,i40,wagon,False,i40 is sold as i40 Wagon (Tourer); level names explicitly reference 왜건 (wagon).
+hyundai,i40 살룬,sedan,False,‘살룬(Saloon)’ denotes the sedan body of the Hyundai i40 model.
+hyundai,그랜드스타렉스,van,False,현대 그랜드 스타렉스는 승합·밴 기반의 대형 밴/미니버스 모델
+hyundai,그랜저HG,sedan,False,그랜저 HG는 현대의 준대형 세단 모델
+hyundai,그랜저HG 하이브리드,sedan,False,그랜저(HG)는 현대의 대형 세단 라인업이며 하이브리드 트림도 차체 형태는 세단
+hyundai,그랜저IG,sedan,False,현대 그랜저 IG는 대형 세단 모델
+hyundai,그랜저IG 하이브리드,sedan,False,그랜저(IG)는 현대의 대형 세단 모델이며 하이브리드도 동일한 세단 차체
+hyundai,뉴 i30,hatchback,False,Hyundai i30 is a compact hatchback model
+hyundai,뉴 에쿠스,sedan,False,현대차 플래그십 대형 럭셔리 세단(리무진 트림 포함하나 기본 차체는 세단)
+hyundai,뉴 카운티,bus,True,Hyundai New County is a mid-size commercial bus; official pages describe it as a 25-seat bus.
+hyundai,뉴 투싼ix,suv,False,Hyundai Tucson ix (뉴 투싼ix) is a compact SUV model
+hyundai,더 뉴 i30,hatchback,False,
+hyundai,더 뉴 i40,sedan,False,현대 i40는 국내에서 중형 세단으로 판매됨(왜건은 별도 i40 왜건으로 구분)
+hyundai,더 뉴 i40 살룬,sedan,False,i40 살룬은 i40의 세단형(살룬) 모델
+hyundai,더 뉴 그랜드스타렉스,van,False,그랜드스타렉스는 현대의 대형 승합/밴 모델로 3~15인승 밴·미니버스 기반
+hyundai,더 뉴 그랜저,sedan,False,현대 그랜저는 대표적인 대형 세단 모델
+hyundai,더 뉴 그랜저 하이브리드,sedan,False,그랜저는 현대의 대표적인 대형 세단 모델이며 하이브리드도 동일한 세단 차체
+hyundai,더 뉴 맥스크루즈,suv,False,현대 맥스크루즈는 싼타페 기반의 중형 SUV 모델
+hyundai,더 뉴 벨로스터,hatchback,False,현대 벨로스터는 비대칭 도어 구조의 컴팩트 해치백 모델
+hyundai,더 뉴 스타리아,van,False,현대 스타리아는 다인승 MPV/미니버스 형태의 대형 밴 모델
+hyundai,더 뉴 싼타페,suv,False,현대 싼타페는 중형 SUV로 판매되는 모델
+hyundai,더 뉴 싼타페 하이브리드,suv,False,싼타페는 현대의 대표적인 중형 SUV 모델이며 하이브리드 여부와 무관하게 차체 유형은 SUV
+hyundai,더 뉴 아반떼,sedan,False,현대 아반떼(Elantra)로 알려진 준중형 세단
+hyundai,더 뉴 아반떼 [CN7],sedan,False,아반떼(CN7)는 현대자동차의 준중형 세단 모델
+hyundai,더 뉴 아반떼 하이브리드 [CN7],sedan,False,아반떼(CN7)는 현대의 준중형 4도어 세단이며 하이브리드 트림도 동일한 세단 바디
+hyundai,더 뉴 아반떼AD,sedan,False,아반떼(AD)는 현대의 준중형 4도어 세단 모델
+hyundai,더 뉴 아이오닉 플러그인,hatchback,False,아이오닉 플러그인 하이브리드는 기존 아이오닉과 동일한 5도어 해치백 바디
+hyundai,더 뉴 아이오닉 하이브리드,hatchback,False,Hyundai Ioniq Hybrid (original Ioniq) is a 5-door hatchback/liftback body.
+hyundai,더 뉴 제네시스 쿠페,coupe_convertible,False,제네시스 쿠페는 현대의 2도어 스포츠 쿠페 모델
+hyundai,더 뉴 캐스퍼,suv,False,현대 캐스퍼는 경형 SUV(소형 크로스오버)로 공식 분류됨
+hyundai,더 뉴 코나,suv,False,현대 코나(KONA)는 공식적으로 소형 SUV로 분류됨
+hyundai,더 뉴 코나 하이브리드,suv,False,코나는 현대의 소형 크로스오버 SUV 모델이며 하이브리드 트림도 동일한 차체 유형
+hyundai,더 뉴 투싼,suv,False,Hyundai Tucson is a compact SUV; trims and drivetrains do not change body type.
+hyundai,더 뉴 투싼 하이브리드,suv,False,투싼은 현대의 대표적인 준중형 SUV 모델
+hyundai,더 뉴 팰리세이드,suv,False,현대 팰리세이드는 대형 3열 SUV 모델
+hyundai,디 올 뉴 그랜저,sedan,False,현대 그랜저는 브랜드의 대표적인 대형 세단 모델
+hyundai,디 올 뉴 그랜저 하이브리드,sedan,False,"그랜저는 현대의 대형 세단 라인업으로, 하이브리드 트림도 동일한 세단 바디"
+hyundai,디 올 뉴 싼타페,suv,False,싼타페는 현대자동차의 중형 SUV 모델
+hyundai,디 올 뉴 싼타페 하이브리드,suv,False,싼타페는 현대의 중형 SUV 모델이며 하이브리드 여부나 트림은 차체 유형에 영향 없음
+hyundai,디 올 뉴 코나,suv,False,현대 코나는 공식적으로 소형 SUV(크로스오버) 모델
+hyundai,디 올 뉴 코나 하이브리드,suv,False,현대 코나 라인업의 하이브리드 소형 SUV
+hyundai,디 올 뉴 투싼,suv,False,투싼은 현대의 대표적인 준중형 SUV 모델
+hyundai,디 올 뉴 투싼 하이브리드,suv,False,투싼(Tucson)은 현대의 대표적인 준중형 SUV 모델이며 하이브리드 여부와 트림은 차체 유형에 영향 없음
+hyundai,디 올 뉴 팰리세이드,suv,False,현대자동차의 대형 SUV 모델
+hyundai,맥스크루즈,suv,False,Hyundai 맥스크루즈(Maxcruz)는 대형화된 산타페 기반의 중형 SUV 모델
+hyundai,베뉴,suv,False,현대 소형 SUV (Venue)
+hyundai,베라크루즈,suv,False,현대 베라크루즈(Veracruz)는 중대형 SUV 모델
+hyundai,벨로스터,hatchback,False,현대 벨로스터는 3도어 구조의 컴팩트 해치백으로 공식적으로도 해치백 모델로 분류됨
+hyundai,벨로스터 N,hatchback,False,"Veloster N is the high-performance trim of the Veloster, which is a compact 3-door hatchback."
+hyundai,벨로스터 [JS],hatchback,False,현대 벨로스터는 3도어 구조의 컴팩트 해치백으로 공식 분류됨
+hyundai,스타리아,van,False,"Hyundai Staria is a large MPV/van platform (passenger, cargo, camper variants)."
+hyundai,싼타페 더 프라임,suv,False,현대 싼타페는 중형 SUV 모델
+hyundai,싼타페 더스타일,suv,False,싼타페는 현대자동차의 중형 SUV 모델이며 '더스타일'은 해당 세대의 페이스리프트 명칭
+hyundai,싼타페CM,suv,False,싼타페(CM)는 현대자동차의 중형 SUV 모델
+hyundai,싼타페DM,suv,False,현대 싼타페(DM)는 중형 SUV 모델
+hyundai,싼타페TM,suv,False,현대 싼타페(TM)는 중형 SUV 모델
+hyundai,쏘나타 DN8,sedan,False,현대 쏘나타 DN8은 중형 세단 모델
+hyundai,쏘나타 뉴 라이즈,sedan,False,현대 쏘나타 뉴 라이즈는 중형 세단 모델
+hyundai,쏘나타 뉴 라이즈 하이브리드,sedan,False,"쏘나타(Sonata)는 현대의 중형 세단이며, 하이브리드/플러그인 하이브리드 트림도 동일한 세단 바디"
+hyundai,쏘나타 더 브릴리언트,sedan,False,쏘나타(The Brilliant)는 현대자동차의 중형 세단 모델
+hyundai,쏘나타 디 엣지,sedan,False,"현대 쏘나타의 최신 페이스리프트 모델로, 중형 세단"
+hyundai,쏘나타 디 엣지 하이브리드,sedan,False,쏘나타(The Edge) 하이브리드는 현대 쏘나타 중형 세단의 하이브리드 파워트레인 모델
+hyundai,쏘나타 하이브리드,sedan,False,쏘나타 하이브리드는 현대 쏘나타 기반의 중형 세단 하이브리드 모델
+hyundai,쏘나타 하이브리드 [DN8],sedan,False,쏘나타(DN8)는 현대자동차의 중형 세단 모델이며 하이브리드 파워트레인도 동일한 세단 차체
+hyundai,쏠라티,bus,True,"현대 쏠라티는 공식적으로 대형 미니버스/소형 버스로 분류되며 15~23인승, 어린이버스 등 버스 용도로 판매됨"
+hyundai,아반떼 LPi 하이브리드,sedan,False,아반떼(엘란트라)는 연료·파워트레인과 무관하게 기본 차체가 준중형 세단
+hyundai,아반떼 N,sedan,False,아반떼(Elantra) 기반 고성능 N 트림으로 기본 차체는 컴팩트 세단
+hyundai,아반떼 쿠페,coupe_convertible,False,아반떼의 2도어 쿠페 모델
+hyundai,아반떼AD,sedan,False,아반떼(Elantra) AD 세대는 현대의 대표적인 준중형 4도어 세단
+hyundai,아반떼MD,sedan,False,현대 아반떼 MD는 국내 판매된 준중형 4도어 세단 모델
+hyundai,아슬란,sedan,False,국내 출시된 현대 아슬란은 대형급 4도어 세단 모델
+hyundai,아이오닉 플러그인,hatchback,False,Hyundai Ioniq Plug-in Hybrid is a 5-door compact hatchback/liftback body.
+hyundai,아이오닉 하이브리드,hatchback,False,현대 아이오닉(HEV)은 5도어 해치백/리프트백 형태의 친환경 모델
+hyundai,엑센트 (신형),sedan,False,"현대 엑센트는 기본적으로 소형 세단 모델이며, 위트(WIT)는 해치백 파생형"
+hyundai,올 뉴 아반떼 [CN7],sedan,False,현대 아반떼(CN7)는 전형적인 준중형 세단
+hyundai,올 뉴 아반떼 하이브리드 [CN7],sedan,False,아반떼(CN7)는 현대의 준중형 세단 라인업
+hyundai,올 뉴 투싼,suv,False,현대 투싼은 제조사 공식 분류상 준중형 SUV 모델
+hyundai,제네시스,sedan,False,Hyundai Genesis (BH series) is a full-size luxury sedan; BH330/BH380/GP engines confirm sedan body.
+hyundai,제네시스 DH,sedan,False,현대 제네시스 DH는 대형 럭셔리 세단 모델
+hyundai,제네시스 쿠페,coupe_convertible,False,Hyundai Genesis Coupe is a 2-door sports coupe model
+hyundai,캐스퍼,suv,False,현대 캐스퍼는 국내에서 경형 SUV(마이크로 SUV)로 공식 분류됨
+hyundai,코나,suv,False,현대 코나는 제조사 기준 소형 SUV로 판매되는 모델
+hyundai,코나 N,suv,False,"코나 N은 현대 코나 기반의 고성능 트림으로, 기본 차체는 소형 SUV(크로스오버)"
+hyundai,코나 하이브리드,suv,False,코나는 현대의 소형 SUV(크로스오버) 모델
+hyundai,투싼ix,suv,False,현대 투싼(ix)으로 판매된 컴팩트 SUV 모델
+hyundai,팰리세이드,suv,False,현대자동차 공식 대형 SUV 모델
+hyundai,포레스트,van,True,"현대 포레스트는 포터Ⅱ 초장축 기반으로 제작된 모터홈 캠핑카로, 공식 자료에서 캠핑 전용 특장차(캠퍼 밴)로 소개됨"
+hyundai,포터2,truck,False,현대자동차의 1톤급 경상용 픽업 트럭(포터 II)
+kgm,G4 렉스턴,suv,False,G4 렉스턴은 바디온프레임 기반의 대형 SUV 모델
+kgm,뉴 로디우스,van,False,"쌍용 로디우스 기반 대형 MPV/미니밴, 9~11인승 구성"
+kgm,뉴 스타일 코란도 C,suv,False,코란도 C는 쌍용/현 KGM의 대표적인 컴팩트 SUV 모델
+kgm,뉴 체어맨W,sedan,False,KGM(구 쌍용) 플래그십 대형 럭셔리 세단 모델
+kgm,뉴 코란도 C,suv,False,Korando C is a compact SUV model (formerly SsangYong Korando C).
+kgm,뉴카이런,suv,False,구 쌍용자동차(현 KG모빌리티) 카이런으로 판매된 중형 SUV 모델
+kgm,더 뉴 렉스턴 스포츠,truck,False,렉스턴 스포츠는 적재함을 가진 중형 픽업 트럭 모델
+kgm,더 뉴 렉스턴 스포츠 칸,truck,False,렉스턴 스포츠 칸은 적재함을 갖춘 픽업 트럭 모델
+kgm,더 뉴 코란도 스포츠,truck,False,코란도 스포츠는 적재함을 갖춘 픽업트럭 모델
+kgm,렉스턴 뉴 아레나,suv,False,KGM(구 쌍용) 렉스턴 라인업의 대형 프레임 기반 SUV
+kgm,렉스턴 스포츠,truck,False,렉스턴 스포츠는 쌍용/KGM의 픽업트럭 모델
+kgm,렉스턴 스포츠 칸,truck,False,렉스턴 스포츠의 적재함을 확장한 픽업트럭(상용·레저용) 모델
+kgm,렉스턴W,suv,False,쌍용(현 KGM) 렉스턴 W는 프레임 기반 중대형 SUV 모델
+kgm,무쏘,suv,False,쌍용 무쏘(현 KGM)는 바디온프레임 기반의 중형 SUV 모델
+kgm,무쏘 스포츠,truck,False,쌍용(현 KGM) 무쏘 스포츠는 적재함을 갖춘 픽업트럭 모델
+kgm,베리 뉴 티볼리,suv,False,티볼리는 KG모빌리티(구 쌍용)의 소형 SUV 모델
+kgm,뷰티풀 코란도,suv,False,쌍용/ KGM 코란도의 후속으로 판매된 컴팩트 SUV 모델
+kgm,슈퍼 렉스턴,suv,False,쌍용(현 KGM) 렉스턴 기반의 바디온프레임 대형 SUV
+kgm,액티언 2세대,suv,True,공식·참고 자료에서 2세대 액티언은 쿠페형 SUV로 소개됨
+kgm,올 뉴 렉스턴,suv,False,KG모빌리티(구 쌍용) 플래그십 바디온프레임 대형 SUV 모델
+kgm,체어맨H 뉴 클래식,sedan,False,쌍용(현 KGM) 체어맨 H는 대형 플래그십 럭셔리 세단 모델
+kgm,코란도 C,suv,False,쌍용(현 KGM) 코란도 C는 C세그먼트 컴팩트 SUV로 판매됨
+kgm,코란도 스포츠,truck,False,쌍용(현 KGM) 코란도 스포츠는 적재함을 가진 픽업 트럭 모델
+kgm,코란도 투리스모,van,False,9·11인승 대형 MPV로 판매된 코란도 투리스모는 미니밴/밴 계열 모델
+kgm,토레스,suv,False,KGM(구 쌍용) 토레스는 중형 SUV 모델
+kgm,티볼리,suv,False,국내에서 소형 SUV로 잘 알려진 KGM(구 쌍용) 티볼리 모델
+kgm,티볼리 아머,suv,False,쌍용(현 KGM) 티볼리 아머는 소형 SUV 모델
+kgm,티볼리 에어,suv,False,티볼리의 롱바디 파생 모델로 분류상 소형 SUV
+kia,K3,sedan,False,Kia K3 is a compact sedan; trims and engines listed do not change the sedan body style.
+kia,K3 쿱,coupe_convertible,False,K3의 2도어 쿠페(쿱) 바디 모델
+kia,K5,sedan,False,Kia K5 (Optima) is a midsize sedan across all trims and engines.
+kia,K5 2세대,sedan,False,Kia K5 2세대는 중형 세단으로 공식 모델 포지션이 세단임
+kia,K5 3세대,sedan,False,Kia K5 3세대는 중형 4도어 세단으로 공식 모델 포지션이 세단임
+kia,K5 하이브리드,sedan,False,Kia K5 (Optima) is a midsize 4-door sedan; hybrid powertrain does not change body type
+kia,K5 하이브리드 2세대,sedan,False,Kia K5 (Optima) is a midsize sedan; hybrid powertrain does not change body type
+kia,K5 하이브리드 3세대,sedan,False,Kia K5 (Optima) is a midsize sedan; hybrid powertrain does not change body type
+kia,K7,sedan,False,Kia K7 is a large/mid-full size passenger sedan (known as Cadenza in some markets).
+kia,K7 프리미어,sedan,False,기아 K7(프리미어)는 국내 준대형 4도어 세단 모델
+kia,K7 프리미어 하이브리드,sedan,False,Kia K7 (Cadenza) is a large sedan; hybrid powertrain does not change body type
+kia,K7 하이브리드,sedan,False,Kia K7(카덴자)는 준대형 세단이며 하이브리드도 동일한 세단 차체
+kia,K8,sedan,False,기아 공식 대형 세단(K7 후속 모델)
+kia,K8 하이브리드,sedan,False,Kia K8 is a large sedan; hybrid powertrain does not change body type.
+kia,K9,sedan,False,Kia K9 is a flagship full-size luxury sedan (known as K900 in some markets).
+kia,뉴 쏘렌토R,suv,False,쏘렌토 R은 기아의 중형 SUV 모델
+kia,뉴 카니발 R,van,False,카니발은 기아의 대표적인 미니밴(MPV) 모델
+kia,뉴 페이스 카렌스,van,False,카렌스는 기아의 MPV/미니밴 계열 패밀리 차량으로 세단이나 SUV가 아닌 밴(사람 운송 중심 RV)
+kia,뉴모닝,hatchback,False,기아 모닝(뉴모닝)은 경형 해치백으로 판매됨
+kia,니로,suv,False,Kia Niro is marketed as a subcompact crossover SUV (HEV/PHEV variants share same body).
+kia,더 K9,sedan,False,기아의 플래그십 대형 럭셔리 세단 (K9/K900)
+kia,더 뉴 K3,sedan,False,Kia K3 (Forte/Cerato) is a compact sedan; official model positioning and dimensions confirm sedan body.
+kia,더 뉴 K3 [2세대],sedan,False,K3 is primarily sold as a compact sedan in Korea; GT 5도어 hatchback exists as a variant but core model is sedan.
+kia,더 뉴 K3 쿱,coupe_convertible,False,K3의 2도어 쿠페(쿱) 바디 모델
+kia,더 뉴 K5,sedan,False,Kia K5 is a midsize sedan; trims and LPi/turbo variants do not change body type.
+kia,더 뉴 K5 2세대,sedan,False,Kia K5 (Optima) 2세대는 중형 4도어 세단 모델
+kia,더 뉴 K5 3세대,sedan,False,"Kia K5 (3세대, 더 뉴) is a midsize passenger sedan per official model classification."
+kia,더 뉴 K5 하이브리드 2세대,sedan,False,K5(옵티마) 하이브리드는 중형 세단 모델
+kia,더 뉴 K5 하이브리드 3세대,sedan,False,
+kia,더 뉴 K7,sedan,False,Kia K7 (Cadenza) is a mid-to-large executive sedan; all trims share sedan body.
+kia,더 뉴 K8,sedan,False,
+kia,더 뉴 K8 하이브리드,sedan,False,Kia K8 is a full-size/mid-large sedan; hybrid powertrain does not change body type
+kia,더 뉴 K9,sedan,False,기아 K9은 브랜드 플래그십 대형 세단 모델
+kia,더 뉴 K9 [RJ],sedan,False,기아 플래그십 대형 럭셔리 세단 (K9/K900)
+kia,더 뉴 기아 레이,hatchback,False,"기아 레이는 박스형 경차로 기본 차체는 해치백이며, 밴 트림이 있어도 모델 레벨 분류는 해치백"
+kia,더 뉴 니로,suv,False,기아 니로는 하이브리드/플러그인 하이브리드 기반의 소형 크로스오버 SUV 모델
+kia,더 뉴 레이,van,True,Official and reference sources describe Kia Ray as a box-type mini/microvan (minivan-style body).
+kia,더 뉴 모닝,hatchback,False,기아 모닝은 국내 경차급 5도어 해치백 모델
+kia,더 뉴 모닝 [JA],hatchback,False,기아 모닝(JA)은 경형 5도어 해치백
+kia,더 뉴 모하비,suv,False,기아 모하비는 프레임 바디 기반의 대형 SUV 모델
+kia,더 뉴 봉고3,truck,False,기아 봉고3는 국내 경상용 픽업/트럭 모델
+kia,더 뉴 셀토스,suv,False,Kia Seltos is a subcompact SUV; trims like X-Line or Gravity do not change body type.
+kia,더 뉴 스포티지R,suv,False,스포티지 R는 기아의 대표적인 컴팩트 SUV 모델
+kia,더 뉴 쏘렌토,suv,False,쏘렌토는 기아의 중형 SUV 모델
+kia,더 뉴 쏘렌토 4세대,suv,False,쏘렌토는 기아의 대표적인 중형 SUV 모델
+kia,더 뉴 쏘렌토 4세대 하이브리드,suv,False,쏘렌토는 기아의 중형 SUV 모델
+kia,더 뉴 쏘울,suv,False,기아 공식 분류에서 박스형 소형 SUV(크로스오버)로 판매됨
+kia,더 뉴 카니발,van,False,카니발은 기아의 대표적인 미니밴(MPV) 모델로 다인승 중심의 밴 바디
+kia,더 뉴 카니발 4세대,van,False,"카니발은 기아의 대표적인 대형 미니밴(다인승 RV) 모델로, 모든 트림이 밴/미니밴 차체에 해당"
+kia,더 뉴 카렌스,van,False,카렌스는 기아의 컴팩트 MPV/미니밴(국내 RV) 모델
+kia,더 뉴 프라이드,hatchback,True,"공식·중고차 자료에서 프라이드는 소형 해치백(5도어)으로 주로 분류되며, 국내에서 해치백 이미지가 대표적임"
+kia,더 프레스티지 K7,sedan,False,Kia K7 (Cadenza) is a full-size/mid-large sedan; trims like 프레스티지 do not change body type
+kia,디 올 뉴 니로,suv,False,기아 니로는 소형 크로스오버 SUV로 공식 분류됨
+kia,디 올 뉴 셀토스,suv,False,기아 셀토스는 제조사 기준 소형 SUV 모델
+kia,디 올 뉴 스포티지,suv,False,Kia Sportage is a compact SUV; official model positioning is SUV regardless of trim or powertrain.
+kia,디 올 뉴 스포티지 하이브리드,suv,False,스포티지는 기아의 대표적인 컴팩트 SUV 모델이며 하이브리드 여부와 무관하게 차체 유형은 SUV
+kia,레이,hatchback,False,"기아 레이는 박스형 경차로 기본 차체는 해치백이며, 밴 트림도 동일 차체 기반"
+kia,모닝 어반,hatchback,False,기아 모닝(피칸토) 기반의 경차 5도어 해치백 모델
+kia,모하비,suv,False,기아 모하비는 프레임 바디 기반의 대형 SUV 모델
+kia,모하비 더 마스터,suv,False,기아 모하비(더 마스터)는 바디온프레임 구조의 대형 SUV로 공식적으로 SUV로 분류됨
+kia,봉고3,truck,False,Kia Bongo 3 is a light commercial pickup truck (표준캡/킹캡/더블캡).
+kia,셀토스,suv,False,기아 셀토스는 소형 SUV 모델
+kia,스토닉,suv,False,기아 스토닉은 소형 크로스오버 SUV 모델
+kia,스팅어,sedan,False,기아 스팅어는 4도어 패스트백(리프트백) 형태의 스포츠 세단으로 공식적으로 세단 라인업에 속함
+kia,스팅어 마이스터,sedan,False,Kia Stinger is a 4-door sports sedan (liftback); Meister is a trim level.
+kia,스포티지 4세대,suv,False,기아 스포티지는 전 세대에 걸쳐 준중형 SUV로 판매된 모델
+kia,스포티지 더 볼드,suv,False,기아 스포티지는 대표적인 준중형 SUV 모델
+kia,스포티지R,suv,False,기아 스포티지 R은 3세대 스포티지로 분류되는 준중형 SUV
+kia,쏘렌토 4세대,suv,False,기아 쏘렌토는 4세대 포함 전 세대가 중형 SUV로 공식 분류됨
+kia,쏘렌토 4세대 하이브리드,suv,False,기아 쏘렌토는 중형 SUV 모델이며 하이브리드 여부나 트림은 차체 유형을 바꾸지 않음
+kia,쏘렌토R,suv,False,쏘렌토 R는 기아 쏘렌토 2세대 모델로 중형 SUV
+kia,쏘울,suv,False,기아 공식 분류 및 시장 포지셔닝상 소형 SUV(박스형 크로스오버)
+kia,쏘울 부스터,suv,False,기아 쏘울은 제조사 및 국내 시장에서 소형 SUV(박스형 크로스오버)로 분류됨
+kia,오피러스 프리미엄,sedan,False,기아 오피러스(Amanti)는 대형 세단 모델
+kia,올 뉴 K3,sedan,False,"K3는 기본적으로 4도어 준중형 세단이며, GT 5도어 해치백 트림이 존재하지만 모델 레벨에서는 세단으로 분류됨"
+kia,올 뉴 K7,sedan,False,Kia K7 (Cadenza) is a mid-to-large size passenger sedan
+kia,올 뉴 K7 하이브리드,sedan,False,Kia K7 (Cadenza) is a full-size/mid-large sedan; hybrid powertrain does not change body type
+kia,올 뉴 모닝,hatchback,False,기아 모닝(피칸토)은 소형 5도어 해치백 모델
+kia,올 뉴 모닝 [JA],hatchback,False,Kia Morning (Picanto) is a subcompact 5-door hatchback city car.
+kia,올 뉴 쏘렌토,suv,False,기아 쏘렌토는 중형 SUV 모델로 공식 분류됨
+kia,올 뉴 쏘울,suv,False,Kia Soul is marketed and commonly classified as a subcompact/crossover SUV despite hatchback-like form.
+kia,올 뉴 카니발,van,False,카니발은 기아의 대표적인 대형 미니밴(MPV)으로 공식 모델 포지션이 승합/밴
+kia,올 뉴 카렌스,van,False,카렌스는 5·7인승 MPV/미니밴 계열 모델
+kia,올 뉴 프라이드,hatchback,False,국내에서 올 뉴 프라이드는 주로 소형 5도어 해치백 모델로 판매됨
+kia,카니발 4세대,van,False,카니발은 기아의 대표적인 대형 미니밴(MPV) 모델
+kia,타스만,truck,False,기아 타스만은 중형급 픽업 트럭으로 공식 발표된 모델
+kia,텔루라이드,suv,False,기아 텔루라이드는 3열 중대형 SUV로 공식 모델 포지셔닝이 SUV임
+kia,포르테,sedan,False,국내 판매된 기아 포르테는 기본 차체가 준중형 세단 모델
+kia,포르테 쿱,coupe_convertible,False,포르테의 2도어 쿠페(Koup) 모델
+kia,포르테 해치백,hatchback,False,포르테의 해치백 바디 타입 모델
+renault,QM3,suv,False,Renault QM3 is a subcompact SUV/crossover (Captur-based model in Korea).
+renault,QM5,suv,False,Renault Samsung QM5 is a compact SUV (Korean-market version related to Renault Koleos).
+renault,QM5 네오,suv,False,르노삼성 QM5 네오는 콜레오스 기반의 컴팩트 SUV 모델
+renault,QM6,suv,False,Renault QM6 is a midsize SUV (Korean-market version related to Renault Koleos).
+renault,SM3 네오,sedan,False,국내 르노삼성 SM3 네오는 4도어 컴팩트 세단 모델
+renault,SM5 노바,sedan,False,Renault Samsung SM5 Nova is a D-segment midsize sedan in the Korean market
+renault,SM6,sedan,False,Renault Samsung SM6 is a mid-size four-door sedan model.
+renault,SM7 노바,sedan,False,르노삼성 SM7 노바는 국내 판매된 대형 세단 모델
+renault,SM7 뉴 아트,sedan,False,르노삼성 SM7 뉴 아트는 국내 판매된 대형 세단 모델
+renault,XM3,suv,False,Renault Korea XM3 is marketed as a coupe-style compact SUV (based on Renault Arkana).
+renault,그랑 콜레오스,suv,False,르노코리아 중형 SUV 모델
+renault,뉴 QM3,suv,False,르노삼성 QM3는 르노 캡처 기반의 소형 SUV로 국내에서 소형 SUV로 판매
+renault,뉴 QM5,suv,False,르노삼성 QM5는 콜레오스 기반의 컴팩트 SUV 모델
+renault,뉴 SM3,sedan,False,Korean-market Renault Samsung SM3; compact/midsize 4-door sedan across all trims
+renault,뉴 SM5 (신형),sedan,False,르노삼성 SM5는 중형 세단으로 판매된 모델
+renault,뉴 마스터,van,False,"르노 마스터는 대형 밴/미니버스 기반 상용·승합 차량으로 밴, 13·15인승, 캠핑카 등 파생 트림이 모두 밴 계열"
+renault,뉴SM5 플래티넘,sedan,False,국내 판매된 르노삼성 SM5 플래티넘은 중형급 4도어 세단 모델
+renault,더 뉴 QM6,suv,False,르노코리아 QM6는 중형 SUV 모델
+renault,더 뉴 SM6,sedan,False,Renault Korea SM6 is a midsize 4-door sedan; trims and engines do not change body type.
+renault,마스터,van,False,"르노 마스터는 대형 상용 밴/미니버스 기반 모델로 13·15인승, 밴, 캠핑카 등 파생형이 있음"
+renault,올 뉴 SM7,sedan,False,
+renault,캡처,suv,False,르노 캡처는 B세그먼트 소형 SUV(크로스오버)로 공식 판매됨
+renault,클리오,hatchback,False,르노 클리오는 전 세계적으로 판매된 소형 5도어 해치백 모델
+renault,필랑트,sedan,True,"국내 자료 및 모델 설명에서 중대형 하이브리드 세단으로 소개됨 (차체 길이 약 4,915mm)."

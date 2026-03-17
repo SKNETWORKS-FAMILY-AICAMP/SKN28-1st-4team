@@ -1,0 +1,20 @@
+{
+  "target_column": "price_manwon",
+  "feature_columns": [
+    "brand",
+    "model_name",
+    "trim_name",
+    "major_category",
+    "size_score",
+    "vehicle_age_years",
+    "color",
+    "mileage_km"
+  ],
+  "categorical_columns": [
+    "brand",
+    "model_name",
+    "trim_name",
+    "major_category",
+    "color"
+  ]
+}

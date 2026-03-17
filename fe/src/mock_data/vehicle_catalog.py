@@ -1,4 +1,7 @@
+import json
+import re
 from dataclasses import dataclass
+from pathlib import Path
 
 
 @dataclass(frozen=True)
@@ -12,43 +15,26 @@ class VehicleCandidate:
     color: str
 
 
-CATALOG: dict[str, dict[str, list[str]]] = {
-    "현대": {
-        "아반떼": ["2025년형", "2024년형", "2023년형", "2022년형"],
-        "쏘나타": ["2025년형", "2024년형", "2023년형", "2022년형", "2021년형"],
-        "그랜저": ["2025년형", "2024년형", "2023년형", "2022년형"],
-        "투싼": ["2025년형", "2024년형", "2023년형", "2022년형"],
-        "싼타페": ["2025년형", "2024년형", "2023년형", "2022년형"],
-    },
-    "기아": {
-        "K5": ["2025년형", "2024년형", "2023년형", "2022년형"],
-        "K8": ["2025년형", "2024년형", "2023년형", "2022년형"],
-        "쏘렌토": ["2025년형", "2024년형", "2023년형", "2022년형", "2021년형"],
-        "스포티지": ["2025년형", "2024년형", "2023년형", "2022년형"],
-        "카니발": ["2025년형", "2024년형", "2023년형", "2022년형"],
-    },
-    "제네시스": {
-        "G70": ["2025년형", "2024년형", "2023년형", "2022년형"],
-        "G80": ["2025년형", "2024년형", "2023년형", "2022년형"],
-        "GV70": ["2025년형", "2024년형", "2023년형", "2022년형"],
-        "GV80": ["2025년형", "2024년형", "2023년형", "2022년형"],
-    },
-    "쉐보레": {
-        "트레일블레이저": ["2025년형", "2024년형", "2023년형", "2022년형"],
-        "말리부": ["2024년형", "2023년형", "2022년형", "2021년형"],
-        "트래버스": ["2025년형", "2024년형", "2023년형", "2022년형"],
-    },
-    "BMW": {
-        "3시리즈": ["2025년형", "2024년형", "2023년형", "2022년형"],
-        "5시리즈": ["2025년형", "2024년형", "2023년형", "2022년형"],
-        "X3": ["2025년형", "2024년형", "2023년형", "2022년형"],
-    },
-    "벤츠": {
-        "C-클래스": ["2025년형", "2024년형", "2023년형", "2022년형"],
-        "E-클래스": ["2025년형", "2024년형", "2023년형", "2022년형"],
-        "GLC": ["2025년형", "2024년형", "2023년형", "2022년형"],
-    },
+@dataclass(frozen=True)
+class VehicleModelOption:
+    id: str
+    brand: str
+    model: str
+    image_src: str
+
+
+ASSET_PATH = Path(__file__).resolve().parent.parent / "assets" / "brand_model_trim_reference.json"
+COLOR_OPTIONS_ASSET_PATH = Path(__file__).resolve().parent.parent / "assets" / "training_color_options.json"
+IMAGE_SOURCE_DIR = Path(__file__).resolve().parents[3] / "data_insert" / "source" / "images"
+
+BRAND_DISPLAY_NAME = {
+    "hyundai": "현대",
+    "kia": "기아",
+    "kgm": "KG모빌리티",
+    "chevrolet": "쉐보레",
+    "renault": "르노",
 }
+BRAND_KEY_BY_LABEL = {label: key for key, label in BRAND_DISPLAY_NAME.items()}
 
 MODEL_BASE_PRICE = {
     "아반떼": 1780,
@@ -56,24 +42,18 @@ MODEL_BASE_PRICE = {
     "그랜저": 3120,
     "투싼": 2480,
     "싼타페": 2970,
+    "팰리세이드": 3950,
+    "K3": 1680,
     "K5": 2090,
     "K8": 3250,
     "쏘렌토": 3180,
     "스포티지": 2360,
     "카니발": 3390,
-    "G70": 3380,
-    "G80": 4680,
-    "GV70": 4550,
-    "GV80": 6120,
     "트레일블레이저": 1940,
     "말리부": 1760,
     "트래버스": 3880,
-    "3시리즈": 4510,
-    "5시리즈": 6120,
-    "X3": 5280,
-    "C-클래스": 4980,
-    "E-클래스": 6710,
-    "GLC": 5890,
+    "QM6": 2490,
+    "SM6": 2140,
 }
 
 COLOR_TONE = {
@@ -117,19 +97,112 @@ COLOR_HISTORY_OPTIONS = ("전체도색", "색상변경")
 MAJOR_OPTION_OPTIONS = ("썬루프", "네비게이션", "헤드업 디스플레이", "드라이브 어시스트", "통풍시트")
 DOCUMENT_OPTIONS = ("사용설명서", "안전삼각대", "잭", "스패너")
 
-_CANDIDATE_LIBRARY: dict[str, tuple[VehicleCandidate, ...]] = {
-    "쏘나타": (
-        VehicleCandidate("sonata-1", "쏘나타 디 엣지", "2023년형", "2.0 가솔린 익스클루시브", 58400, "가솔린", "화이트 펄"),
-        VehicleCandidate("sonata-1b", "쏘나타 디 엣지", "2023년형", "2.0 가솔린 프리미엄", 46300, "가솔린", "티타늄 실버"),
-        VehicleCandidate("sonata-2", "쏘나타 디 엣지", "2024년형", "1.6 터보 인스퍼레이션", 22100, "가솔린", "어비스 블루"),
-        VehicleCandidate("sonata-3", "쏘나타 센슈어스", "2021년형", "1.6 터보 프리미엄 플러스", 71200, "가솔린", "미드나잇 블랙"),
-    ),
-    "K5": (
-        VehicleCandidate("k5-1", "더 뉴 K5", "2024년형", "2.0 가솔린 노블레스", 31800, "가솔린", "미드나잇 블랙"),
-        VehicleCandidate("k5-2", "더 뉴 K5", "2023년형", "1.6 터보 시그니처", 42700, "가솔린", "화이트 펄"),
-    ),
-    "그랜저": (
-        VehicleCandidate("grandeur-1", "디 올 뉴 그랜저", "2023년형", "2.5 캘리그래피", 18600, "가솔린", "티타늄 실버"),
-        VehicleCandidate("grandeur-2", "디 올 뉴 그랜저", "2024년형", "하이브리드 익스클루시브", 9700, "하이브리드", "미드나잇 블랙"),
-    ),
-}
+
+def _load_color_options() -> tuple[str, ...]:
+    fallback_colors = tuple(COLOR_TONE.keys())
+    if not COLOR_OPTIONS_ASSET_PATH.exists():
+        return fallback_colors
+
+    raw_payload = json.loads(COLOR_OPTIONS_ASSET_PATH.read_text(encoding="utf-8"))
+    raw_colors = raw_payload.get("colors", raw_payload) if isinstance(raw_payload, dict) else raw_payload
+    colors = tuple(
+        color.strip()
+        for color in raw_colors
+        if isinstance(color, str) and color.strip()
+    )
+    return colors or fallback_colors
+
+
+def _load_reference_map() -> dict[str, dict[str, list[str]]]:
+    raw_payload = json.loads(ASSET_PATH.read_text(encoding="utf-8"))
+    brand_model_trim_map = raw_payload["brand_model_trim_map"]
+    catalog: dict[str, dict[str, list[str]]] = {}
+
+    for canonical_brand, models in brand_model_trim_map.items():
+        brand_label = BRAND_DISPLAY_NAME.get(canonical_brand, canonical_brand)
+        normalized_models: dict[str, list[str]] = {}
+        for model_name, trims in models.items():
+            normalized_models[model_name] = trims if trims else ["기본 트림"]
+        catalog[brand_label] = normalized_models
+
+    return catalog
+
+
+def _build_candidate_library(catalog: dict[str, dict[str, list[str]]]) -> dict[str, tuple[VehicleCandidate, ...]]:
+    color_cycle = COLOR_OPTIONS
+    fuel_cycle = ("가솔린", "디젤", "하이브리드", "전기")
+    candidates_by_model: dict[str, tuple[VehicleCandidate, ...]] = {}
+
+    for brand, models in catalog.items():
+        for model_name, trims in models.items():
+            candidates = []
+            for index, trim_name in enumerate(trims):
+                slug_brand = brand.lower().replace(" ", "-")
+                slug_model = model_name.lower().replace(" ", "-").replace("/", "-")
+                candidates.append(
+                    VehicleCandidate(
+                        id=f"{slug_brand}-{slug_model}-{index + 1}",
+                        title=model_name,
+                        year="",
+                        trim=trim_name,
+                        mileage=24000 + (index * 6300),
+                        fuel=fuel_cycle[index % len(fuel_cycle)],
+                        color=color_cycle[index % len(color_cycle)],
+                    )
+                )
+            candidates_by_model[model_name] = tuple(candidates)
+
+    return candidates_by_model
+
+
+def _build_model_image(brand: str, model_name: str) -> str:
+    matched_image = _find_model_image(brand, model_name)
+    if matched_image is not None:
+        return str(matched_image)
+    return ""
+
+
+def _normalize_image_token(value: str) -> str:
+    lowered = value.casefold()
+    collapsed = re.sub(r"[^0-9a-z가-힣]+", "", lowered)
+    return collapsed
+
+
+def _find_model_image(brand: str, model_name: str) -> Path | None:
+    canonical_brand = next(
+        (key for key, label in BRAND_DISPLAY_NAME.items() if label == brand),
+        brand.casefold(),
+    )
+    brand_files = sorted(IMAGE_SOURCE_DIR.glob(f"{canonical_brand}_*.jpg"))
+    if not brand_files:
+        return None
+
+    normalized_model = _normalize_image_token(model_name)
+    for image_path in brand_files:
+        image_model_name = image_path.stem.split("_", 1)[1]
+        if _normalize_image_token(image_model_name) == normalized_model:
+            return image_path
+
+    for image_path in brand_files:
+        image_model_name = image_path.stem.split("_", 1)[1]
+        if normalized_model in _normalize_image_token(image_model_name):
+            return image_path
+
+    return brand_files[0]
+
+
+CATALOG = _load_reference_map()
+COLOR_OPTIONS = _load_color_options()
+_CANDIDATE_LIBRARY = _build_candidate_library(CATALOG)
+
+
+def build_model_options_for_page(brand: str, model_names: list[str] | tuple[str, ...]) -> tuple[VehicleModelOption, ...]:
+    return tuple(
+        VehicleModelOption(
+            id=f"{brand.lower().replace(' ', '-')}-{model_name.lower().replace(' ', '-')}-{index}",
+            brand=brand,
+            model=model_name,
+            image_src=_build_model_image(brand, model_name),
+        )
+        for index, model_name in enumerate(model_names, start=1)
+    )

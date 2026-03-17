@@ -1,79 +1,52 @@
 from typing import Any, cast
 
 from models.form import VehicleFormState
-from models.price import PricePoint, PriceResult
+from models.price import PriceFactorResult, PricePoint, PriceResult
 from models.query import (
     AccidentDetailFieldDTO,
+    PriceFactorResponseDTO,
     PricePredictionPointDTO,
     PricePredictionRequestDTO,
     PricePredictionResponseDTO,
     VehicleCandidateDTO,
     VehicleCatalogDTO,
+    VehicleModelOptionDTO,
     VehicleOptionsDTO,
 )
 
 
 class FrontendQueryMapper:
-    def to_price_prediction_request(self, form_state: VehicleFormState) -> PricePredictionRequestDTO:
+    def to_price_prediction_request(
+        self,
+        form_state: VehicleFormState,
+        *,
+        brand_key: str,
+    ) -> PricePredictionRequestDTO:
         return PricePredictionRequestDTO(
-            brand=form_state.brand,
-            model=form_state.model,
-            year=form_state.year,
+            brand_key=brand_key,
+            brand_label=form_state.brand,
+            model_name=form_state.model,
+            trim_name=form_state.trim_input,
             plate=form_state.plate,
             purchase_date=form_state.purchase_date.isoformat(),
             is_used_purchase=form_state.is_used_purchase,
-            mileage=form_state.mileage,
+            mileage_km=form_state.mileage,
             color=form_state.color,
-            trim=form_state.trim_input,
             transmission=form_state.transmission,
-            fuel=form_state.fuel,
-            warranty_type=form_state.warranty_type,
-            vin_condition=form_state.vin_condition,
-            meter_condition=form_state.meter_condition,
-            accident_history=form_state.accident_history,
-            simple_repair=form_state.simple_repair,
-            special_history=tuple(form_state.special_history),
-            usage_change=tuple(form_state.usage_change),
-            color_history=tuple(form_state.color_history),
-            major_options=tuple(form_state.major_options),
-            recall_status=form_state.recall_status,
-            body_condition=form_state.body_condition,
-            interior_condition=form_state.interior_condition,
-            wheel_tire_condition=form_state.wheel_tire_condition,
-            documents=tuple(form_state.documents),
-            selected_candidate_id=form_state.selected_candidate_id,
-            accident_details=dict(form_state.accident_details),
         )
 
     def to_price_prediction_payload(self, request_dto: PricePredictionRequestDTO) -> dict[str, Any]:
         return {
-            "brand": request_dto.brand,
-            "model": request_dto.model,
-            "year": request_dto.year,
+            "brand_key": request_dto.brand_key,
+            "brand_label": request_dto.brand_label,
+            "model_name": request_dto.model_name,
+            "trim_name": request_dto.trim_name,
             "plate": request_dto.plate,
             "purchase_date": request_dto.purchase_date,
             "is_used_purchase": request_dto.is_used_purchase,
-            "mileage": request_dto.mileage,
+            "mileage_km": request_dto.mileage_km,
             "color": request_dto.color,
-            "trim": request_dto.trim,
             "transmission": request_dto.transmission,
-            "fuel": request_dto.fuel,
-            "warranty_type": request_dto.warranty_type,
-            "vin_condition": request_dto.vin_condition,
-            "meter_condition": request_dto.meter_condition,
-            "accident_history": request_dto.accident_history,
-            "simple_repair": request_dto.simple_repair,
-            "special_history": list(request_dto.special_history),
-            "usage_change": list(request_dto.usage_change),
-            "color_history": list(request_dto.color_history),
-            "major_options": list(request_dto.major_options),
-            "recall_status": request_dto.recall_status,
-            "body_condition": request_dto.body_condition,
-            "interior_condition": request_dto.interior_condition,
-            "wheel_tire_condition": request_dto.wheel_tire_condition,
-            "documents": list(request_dto.documents),
-            "selected_candidate_id": request_dto.selected_candidate_id,
-            "accident_details": dict(request_dto.accident_details),
         }
 
     def to_vehicle_catalog(self, payload: dict[str, Any]) -> VehicleCatalogDTO:
@@ -125,6 +98,10 @@ class FrontendQueryMapper:
         )
         return VehicleCatalogDTO(
             brands=tuple(catalog.keys()),
+            brand_keys_by_label={
+                str(label): str(key)
+                for label, key in cast(dict[str, Any], payload["brand_keys_by_label"]).items()
+            },
             catalog=catalog,
             candidates_by_model=candidates_by_model,
             base_prices_by_model={
@@ -136,6 +113,18 @@ class FrontendQueryMapper:
                 for color, delta in cast(dict[str, Any], payload["color_tones"]).items()
             },
             options=options,
+        )
+
+    def to_vehicle_model_options(self, payload: dict[str, Any]) -> tuple[VehicleModelOptionDTO, ...]:
+        models_payload = cast(list[dict[str, Any]], payload["models"])
+        return tuple(
+            VehicleModelOptionDTO(
+                id=str(model["id"]),
+                brand=str(model["brand"]),
+                model=str(model["model"]),
+                image_src=str(model["image_src"]),
+            )
+            for model in models_payload
         )
 
     def to_price_prediction_response(self, payload: dict[str, Any]) -> PricePredictionResponseDTO:
@@ -158,6 +147,13 @@ class FrontendQueryMapper:
             ),
         )
 
+    def to_price_factor_response(self, payload: dict[str, Any]) -> PriceFactorResponseDTO:
+        return PriceFactorResponseDTO(
+            positive_factors=tuple(str(item) for item in cast(list[Any], payload["positive_factors"])),
+            negative_factors=tuple(str(item) for item in cast(list[Any], payload["negative_factors"])),
+            logic_note=str(payload["logic_note"]),
+        )
+
     def to_price_result(self, dto: PricePredictionResponseDTO) -> PriceResult:
         return PriceResult(
             current_price=dto.current_price,
@@ -176,4 +172,11 @@ class FrontendQueryMapper:
                 )
                 for point in dto.chart_points
             ),
+        )
+
+    def to_price_factor_result(self, dto: PriceFactorResponseDTO) -> PriceFactorResult:
+        return PriceFactorResult(
+            positive_factors=dto.positive_factors,
+            negative_factors=dto.negative_factors,
+            logic_note=dto.logic_note,
         )

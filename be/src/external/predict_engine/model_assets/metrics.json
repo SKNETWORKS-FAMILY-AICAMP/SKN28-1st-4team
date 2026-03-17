@@ -1,0 +1,81 @@
+{
+  "target_column": "price_manwon",
+  "use_cross_validation": true,
+  "n_splits": 5,
+  "holdout_valid_size": 0.2,
+  "max_iterations": 2000,
+  "early_stopping_rounds": 300,
+  "train_log_period": 25,
+  "final_iteration_strategy": "p75",
+  "model_params": {
+    "loss_function": "RMSE",
+    "eval_metric": "RMSE",
+    "iterations": 496,
+    "learning_rate": 0.05,
+    "depth": 8,
+    "verbose": 25,
+    "allow_writing_files": false,
+    "random_seed": 42
+  },
+  "fold_results": [
+    {
+      "fold": 1,
+      "split_name": "cv_fold_1",
+      "mae_price_manwon": 246.74388176067302,
+      "rmse_price_manwon": 504.1965694560558,
+      "r2_price_manwon": 0.8558498826113097,
+      "valid_loss": 504.1965694560558,
+      "best_iteration": 401,
+      "tree_count": 401
+    },
+    {
+      "fold": 2,
+      "split_name": "cv_fold_2",
+      "mae_price_manwon": 265.8878996829161,
+      "rmse_price_manwon": 412.11536534550453,
+      "r2_price_manwon": 0.9007573711207585,
+      "valid_loss": 412.11536534550453,
+      "best_iteration": 478,
+      "tree_count": 478
+    },
+    {
+      "fold": 3,
+      "split_name": "cv_fold_3",
+      "mae_price_manwon": 277.59607160824726,
+      "rmse_price_manwon": 888.463711207507,
+      "r2_price_manwon": 0.6807249629583457,
+      "valid_loss": 888.463711207507,
+      "best_iteration": 496,
+      "tree_count": 496
+    },
+    {
+      "fold": 4,
+      "split_name": "cv_fold_4",
+      "mae_price_manwon": 213.7747926599878,
+      "rmse_price_manwon": 342.6867268131587,
+      "r2_price_manwon": 0.9297920202030284,
+      "valid_loss": 342.6867268131587,
+      "best_iteration": 955,
+      "tree_count": 955
+    },
+    {
+      "fold": 5,
+      "split_name": "cv_fold_5",
+      "mae_price_manwon": 274.8016453265512,
+      "rmse_price_manwon": 408.98640357258984,
+      "r2_price_manwon": 0.892768386166782,
+      "valid_loss": 408.98640357258984,
+      "best_iteration": 82,
+      "tree_count": 82
+    }
+  ],
+  "aggregate_metrics": {
+    "mae_price_manwon": 255.76085820767508,
+    "rmse_price_manwon": 511.2897552789632,
+    "r2_price_manwon": 0.8519785246120449,
+    "valid_loss": 511.2897552789632
+  },
+  "final_iterations": 496,
+  "tree_count": 496,
+  "training_rows": 2130
+}

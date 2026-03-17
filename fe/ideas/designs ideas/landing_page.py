@@ -9,7 +9,7 @@ def render_landing_page(on_entry: Callable[[], None], on_expect: Callable[[], No
     del on_expect
 
     logo_path = Path(__file__).with_name("carbody.png")
-    expect_preview_path = Path(__file__).parent / "output" / "playwright" / "expect-factors-layout.png"
+    expect_preview_path = Path(__file__).parent / "images" / "playwright" / "expect-factors-layout.png"
 
     with st.container(key="landing-nav"):
         nav_left, nav_right = st.columns([0.26, 0.74], gap="small")

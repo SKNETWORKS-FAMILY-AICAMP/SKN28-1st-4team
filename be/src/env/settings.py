@@ -36,11 +36,11 @@ class DatabaseSettings(EnvSettings):
 
 class PredictEngineSettings(EnvSettings):
     model_path: Path = Field(
-        default=Path("../predict_engine_research/images/model.cbm"),
+        default=Path("src/external/predict_engine/model_assets/model.cbm"),
         validation_alias="PREDICT_ENGINE_MODEL_PATH",
     )
     feature_manifest_path: Path = Field(
-        default=Path("../predict_engine_research/images/feature_manifest.json"),
+        default=Path("src/external/predict_engine/model_assets/feature_manifest.json"),
         validation_alias="PREDICT_ENGINE_FEATURE_MANIFEST_PATH",
     )
 

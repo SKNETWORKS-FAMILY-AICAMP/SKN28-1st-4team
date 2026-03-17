@@ -45,6 +45,7 @@ def main() -> None:
         render_expect_page(
             facade=facade,
             on_back=lambda: go("entry"),
+            on_home=lambda: go("landing", reset=True),
         )
 
     render_site_footer(route)

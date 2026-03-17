@@ -1,10 +1,12 @@
 from collections.abc import Callable
 from html import escape
+from pathlib import Path
 
 import streamlit as st
 
 
 _DOCS_URL = "https://sknetworks-family-aicamp.github.io/SKN28-1st-4team/"
+_LOGO_PATH = Path(__file__).resolve().parents[3] / "assets" / "Carbody_logo.png"
 _DETAIL_CARDS = (
     ("현재 차량 예측 가격", "기본 정보와 세부 트림 선택값을 바로 반영합니다."),
     ("향후 가격 흐름", "감가 변화가 큰 시점을 빠르게 확인할 수 있습니다."),
@@ -21,16 +23,16 @@ def render_landing_page(on_entry: Callable[[], None]) -> None:
     with st.container(key="landing-nav"):
         left, right = st.columns([0.28, 0.72], gap="small")
         with left:
-            st.markdown('<div class="brand-mark">CARBODY</div>', unsafe_allow_html=True)
+            st.image(str(_LOGO_PATH), width=164)
         with right:
             st.empty()
 
     with st.container(key="landing-hero"):
-        st.caption("현재 차량 예측 가격 서비스")
+        st.caption("차량 판매가 예측 서비스")
         st.title("내 차 판매가를 빠르게 예측하세요")
         st.markdown(
-            "차량 번호와 기본 차량 정보, 세부 트림만 정리하면 현재 차량 예측 가격과 "
-            "향후 가격 흐름, 매도 타이밍까지 한 번에 확인할 수 있습니다."
+            "차량을 선택하고 몇 가지 기본 정보만 입력하면 현재 예측 가격과 "
+            "향후 가격 흐름을 바로 확인할 수 있습니다."
         )
 
         _, action_left, action_right, _ = st.columns([1.1, 0.82, 0.82, 1.1], gap="small")
@@ -43,11 +45,11 @@ def render_landing_page(on_entry: Callable[[], None]) -> None:
     with st.container(key="landing-showcase"):
         left, right = st.columns([0.48, 0.52], gap="large")
         with left:
-            st.caption("빠르게 시작하기")
-            st.subheader("입력 페이지와 결과 페이지를 각자 역할에 맞게 단순하게 구성했습니다")
+            st.caption("가볍게 시작하기")
+            st.subheader("차량을 선택하고 내 차 가격을 바로 확인해보세요")
             st.markdown(
-                "지금 구조는 `src/app.py`가 라우팅을 맡고, 각 페이지는 필요한 데이터만 모아서 "
-                "컴포넌트에 내려주는 식으로 정리돼 있습니다."
+                "브랜드, 모델, 세부 트림과 기본 차량 정보만 입력하면 "
+                "현재 예측 가격과 향후 가격 흐름을 빠르게 살펴볼 수 있습니다."
             )
             for title, body in _DETAIL_CARDS:
                 st.markdown(

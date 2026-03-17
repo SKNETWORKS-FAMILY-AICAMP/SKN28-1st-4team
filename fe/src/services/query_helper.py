@@ -11,6 +11,24 @@ class QueryHelper:
     def get_json(self, path: str, *, params: dict[str, Any] | None = None) -> dict[str, Any]:
         return self._request_json("GET", path, params=params)
 
+    def get_vehicle_model_images(
+        self,
+        path: str,
+        *,
+        brand_key: str,
+        brand_label: str,
+        model_names: list[str],
+    ) -> dict[str, Any]:
+        return self._request_json(
+            "POST",
+            path,
+            json_payload={
+                "brand_key": brand_key,
+                "brand_label": brand_label,
+                "model_names": model_names,
+            },
+        )
+
     def post_json(self, path: str, *, payload: dict[str, Any]) -> dict[str, Any]:
         return self._request_json("POST", path, json_payload=payload)
 

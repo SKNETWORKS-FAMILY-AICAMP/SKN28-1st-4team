@@ -101,6 +101,19 @@ class PredictEngineClient:
             feature_columns=feature_vector.feature_names,
         )
 
+    def predict(
+        self,
+        record: Mapping[str, PredictScalar] | None = None,
+        *,
+        request_id: str | None = None,
+        **kwargs: PredictScalar,
+    ) -> PredictEnginePrediction:
+        return self._predict(
+            record,
+            request_id=request_id,
+            **kwargs,
+        )
+
     def _get_feature_vectorizer(self) -> PredictEngineFeatureVectorizer:
         if self._feature_vectorizer is not None:
             return self._feature_vectorizer
