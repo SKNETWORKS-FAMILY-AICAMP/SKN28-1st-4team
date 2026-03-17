@@ -1,0 +1,5 @@
+SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE `app_db`;
+
+TRUNCATE TABLE `vehicle_model_image`;
