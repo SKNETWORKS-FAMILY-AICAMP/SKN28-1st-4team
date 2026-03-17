@@ -1,0 +1,2002 @@
+﻿brand,model_name,class_name,major_category,size_score,source_row_count
+hyundai,쏠라티,럭셔리 4인승,bus,0.000000,1
+hyundai,쏠라티,-,bus,50.000000,5
+hyundai,쏠라티,15인승,bus,50.000000,1
+hyundai,쏠라티,23인승,bus,50.000000,1
+hyundai,쏠라티,디럭스,bus,50.000000,4
+hyundai,쏠라티,럭셔리,bus,50.000000,2
+hyundai,쏠라티,스탠다드,bus,50.000000,2
+hyundai,뉴 카운티,25인승 골드,bus,100.000000,1
+chevrolet,콜벳,-,coupe_convertible,0.000000,1
+kia,포르테 쿱,기본형,coupe_convertible,4.545455,1
+kia,포르테 쿱,럭셔리,coupe_convertible,4.545455,2
+kia,포르테 쿱,고급형,coupe_convertible,12.121212,2
+kia,포르테 쿱,고급형 레드프리미엄,coupe_convertible,12.121212,2
+kia,포르테 쿱,프레스티지,coupe_convertible,12.121212,4
+kia,K3 쿱,노블레스,coupe_convertible,27.272727,2
+kia,K3 쿱,럭셔리,coupe_convertible,27.272727,2
+kia,K3 쿱,트렌디,coupe_convertible,27.272727,1
+kia,K3 쿱,프레스티지,coupe_convertible,27.272727,4
+kia,더 뉴 K3 쿱,노블레스,coupe_convertible,27.272727,2
+kia,더 뉴 K3 쿱,럭셔리,coupe_convertible,27.272727,2
+kia,더 뉴 K3 쿱,프레스티지,coupe_convertible,27.272727,2
+hyundai,아반떼 쿠페,스마트,coupe_convertible,43.939394,3
+hyundai,아반떼 쿠페,튜익스 화이트팩,coupe_convertible,43.939394,2
+hyundai,아반떼 쿠페,프리미엄,coupe_convertible,43.939394,3
+hyundai,아반떼 쿠페,프리미엄 튜익스 화이트팩,coupe_convertible,43.939394,1
+hyundai,더 뉴 제네시스 쿠페,D,coupe_convertible,59.090909,3
+hyundai,더 뉴 제네시스 쿠페,S,coupe_convertible,59.090909,3
+hyundai,제네시스 쿠페,D,coupe_convertible,59.090909,2
+hyundai,제네시스 쿠페,P,coupe_convertible,59.090909,2
+hyundai,제네시스 쿠페,R,coupe_convertible,59.090909,2
+hyundai,제네시스 쿠페,RW,coupe_convertible,59.090909,2
+hyundai,더 뉴 제네시스 쿠페,GT P,coupe_convertible,75.757576,1
+hyundai,더 뉴 제네시스 쿠페,GT R,coupe_convertible,75.757576,3
+hyundai,제네시스 쿠페,GT P,coupe_convertible,75.757576,2
+hyundai,제네시스 쿠페,GT R,coupe_convertible,75.757576,2
+hyundai,제네시스 쿠페,GT RW,coupe_convertible,75.757576,2
+chevrolet,더 뉴 카마로 SS,-,coupe_convertible,89.393939,1
+chevrolet,더 뉴 카마로 SS,볼케이노 레드,coupe_convertible,89.393939,1
+chevrolet,올 뉴 카마로 SS,-,coupe_convertible,89.393939,2
+chevrolet,올 뉴 카마로 SS,볼케이노 레드,coupe_convertible,89.393939,1
+chevrolet,카마로,-,coupe_convertible,96.969697,4
+chevrolet,카마로,RS,coupe_convertible,100.000000,1
+hyundai,더 뉴 i30,수출형,hatchback,0.000000,1
+kia,뉴모닝,L,hatchback,2.331606,3
+kia,뉴모닝,LX 고급형,hatchback,2.331606,1
+kia,뉴모닝,LX 고급형 블랙프리미엄,hatchback,2.331606,1
+kia,뉴모닝,LX 기본형,hatchback,2.331606,1
+kia,뉴모닝,SLX 고급형,hatchback,2.331606,1
+kia,뉴모닝,SLX 고급형 블랙 프리미엄,hatchback,2.331606,1
+kia,뉴모닝,SLX 뷰티,hatchback,2.331606,1
+kia,뉴모닝,SLX 뷰티 블랙 프리미엄,hatchback,2.331606,1
+chevrolet,더 넥스트 스파크,LS,hatchback,7.253886,1
+chevrolet,더 넥스트 스파크,LS 베이직,hatchback,7.253886,2
+chevrolet,더 넥스트 스파크,LT,hatchback,7.253886,1
+chevrolet,더 넥스트 스파크,LT 플러스,hatchback,7.253886,3
+chevrolet,더 넥스트 스파크,LTZ,hatchback,7.253886,3
+chevrolet,더 넥스트 스파크,스페셜 에디션 패션,hatchback,7.253886,3
+chevrolet,더 넥스트 스파크,스페셜 에디션 퍼펙트 블랙,hatchback,7.253886,2
+chevrolet,더 넥스트 스파크,에코 LS,hatchback,7.253886,2
+chevrolet,더 넥스트 스파크,에코 LS 베이직,hatchback,7.253886,3
+chevrolet,더 넥스트 스파크,에코 LT 플러스,hatchback,7.253886,3
+chevrolet,더 넥스트 스파크,에코 LTZ,hatchback,7.253886,3
+kia,뉴모닝,LX 기본형 블랙프리미엄,hatchback,10.362694,6
+kia,뉴모닝,LX 스페셜,hatchback,11.139896,2
+kia,뉴모닝,SLX 스페셜,hatchback,11.139896,2
+kia,뉴모닝,SLX 고급형 블랙프리미엄,hatchback,11.917098,3
+kia,더 뉴 모닝,-,hatchback,22.797927,1
+kia,더 뉴 모닝,고급형,hatchback,22.797927,1
+kia,더 뉴 모닝,디럭스,hatchback,22.797927,1
+kia,더 뉴 모닝,럭셔리,hatchback,22.797927,3
+kia,더 뉴 모닝,스마트,hatchback,22.797927,2
+kia,더 뉴 모닝,스포츠 런 하이,hatchback,22.797927,2
+kia,더 뉴 모닝,스프츠 런,hatchback,22.797927,1
+kia,더 뉴 모닝 [JA],GT-Line,hatchback,22.797927,1
+kia,더 뉴 모닝 [JA],시그니처,hatchback,22.797927,1
+kia,더 뉴 모닝 [JA],트렌디,hatchback,22.797927,1
+kia,더 뉴 모닝 [JA],프레스티지,hatchback,22.797927,1
+kia,모닝 어반,-,hatchback,22.797927,1
+kia,모닝 어반,스탠다드,hatchback,22.797927,1
+kia,모닝 어반,스탠다드 마이너스,hatchback,22.797927,1
+kia,모닝 어반,스페셜,hatchback,22.797927,1
+kia,모닝 어반,시그니처,hatchback,22.797927,1
+kia,모닝 어반,시그니처 엣지-업,hatchback,22.797927,1
+kia,모닝 어반,프레스티지,hatchback,22.797927,1
+kia,올 뉴 모닝,W 스페셜,hatchback,22.797927,1
+kia,올 뉴 모닝,디럭스,hatchback,22.797927,3
+kia,올 뉴 모닝,디럭스 스페셜,hatchback,22.797927,2
+kia,올 뉴 모닝,디럭스 트렌디,hatchback,22.797927,1
+kia,올 뉴 모닝,럭셔리,hatchback,22.797927,3
+kia,올 뉴 모닝,럭셔리 스포츠,hatchback,22.797927,1
+kia,올 뉴 모닝,스마트,hatchback,22.797927,3
+kia,올 뉴 모닝,스마트 스페셜,hatchback,22.797927,2
+kia,올 뉴 모닝,스포츠,hatchback,22.797927,1
+kia,올 뉴 모닝,에코 다이나믹스 스마트,hatchback,22.797927,1
+kia,올 뉴 모닝,에코 다이나믹스 트렌디,hatchback,22.797927,1
+kia,올 뉴 모닝,에코플러스 디럭스 스페셜,hatchback,22.797927,1
+kia,올 뉴 모닝,에코플러스 럭셔리,hatchback,22.797927,1
+kia,올 뉴 모닝,에코플러스 스마트,hatchback,22.797927,1
+kia,올 뉴 모닝,트렌디,hatchback,22.797927,2
+kia,올 뉴 모닝 [JA],-,hatchback,22.797927,1
+kia,올 뉴 모닝 [JA],고급형,hatchback,22.797927,1
+kia,올 뉴 모닝 [JA],디럭스,hatchback,22.797927,4
+kia,올 뉴 모닝 [JA],럭셔리,hatchback,22.797927,5
+kia,올 뉴 모닝 [JA],레이디,hatchback,22.797927,1
+kia,올 뉴 모닝 [JA],베이직 플러스,hatchback,22.797927,2
+kia,올 뉴 모닝 [JA],트렌디,hatchback,22.797927,2
+kia,올 뉴 모닝 [JA],프레스티지,hatchback,22.797927,4
+chevrolet,더 뉴 스파크,LS,hatchback,35.233161,1
+chevrolet,더 뉴 스파크,LS 베이직,hatchback,35.233161,1
+chevrolet,더 뉴 스파크,LT,hatchback,35.233161,1
+chevrolet,더 뉴 스파크,레드픽 에디션,hatchback,35.233161,1
+chevrolet,더 뉴 스파크,마이핏 LT,hatchback,35.233161,1
+chevrolet,더 뉴 스파크,마이핏 에디션,hatchback,35.233161,1
+chevrolet,더 뉴 스파크,프리미어,hatchback,35.233161,1
+chevrolet,스파크,L,hatchback,40.414508,9
+chevrolet,스파크,LS,hatchback,40.414508,8
+chevrolet,스파크,LS 스타,hatchback,40.414508,8
+chevrolet,스파크,LS 플러스,hatchback,40.414508,4
+chevrolet,스파크,LT,hatchback,40.414508,10
+chevrolet,스파크,LT 스페셜 에디션,hatchback,40.414508,3
+chevrolet,스파크,비트 에디션,hatchback,40.414508,1
+chevrolet,스파크,스트라이프 에디션,hatchback,40.414508,1
+chevrolet,스파크,시티 팝 에디션,hatchback,40.414508,1
+chevrolet,스파크,씨티런 에디션,hatchback,40.414508,2
+chevrolet,스파크,타투 에디션,hatchback,40.414508,3
+chevrolet,스파크,트랜스포머 에디션,hatchback,40.414508,1
+chevrolet,스파크,팝 에디션,hatchback,40.414508,2
+kia,더 뉴 프라이드,디럭스,hatchback,44.300518,3
+kia,올 뉴 프라이드,스마트 스페셜,hatchback,44.300518,8
+hyundai,i20,(08~11년),hatchback,45.077720,1
+renault,클리오,스틸,hatchback,46.632124,1
+renault,클리오,아이코닉,hatchback,46.632124,1
+renault,클리오,인텐스,hatchback,46.632124,1
+renault,클리오,인텐스 파노라믹,hatchback,46.632124,1
+renault,클리오,젠,hatchback,46.632124,1
+kia,더 뉴 프라이드,럭셔리,hatchback,48.445596,3
+kia,올 뉴 프라이드,럭셔리,hatchback,48.445596,8
+kia,더 뉴 기아 레이,X-Line,hatchback,53.367876,1
+kia,더 뉴 기아 레이,그래비티,hatchback,53.367876,1
+kia,더 뉴 기아 레이,스탠다드,hatchback,53.367876,1
+kia,더 뉴 기아 레이,시그니처,hatchback,53.367876,1
+kia,더 뉴 기아 레이,트렌디,hatchback,53.367876,1
+kia,더 뉴 기아 레이,프레스티지,hatchback,53.367876,3
+kia,더 뉴 기아 레이,프레스티지 스페셜,hatchback,53.367876,2
+kia,레이,-,hatchback,53.367876,1
+kia,레이,고급형,hatchback,53.367876,2
+kia,레이,기본형,hatchback,53.367876,2
+kia,레이,디럭스,hatchback,53.367876,5
+kia,레이,디럭스 스페셜,hatchback,53.367876,3
+kia,레이,럭셔리,hatchback,53.367876,8
+kia,레이,럭셔리 에코플러스,hatchback,53.367876,1
+kia,레이,프레스티지,hatchback,53.367876,10
+kia,레이,프레스티지 에코 다이나믹스,hatchback,53.367876,1
+kia,레이,프레스티지 에코플러스,hatchback,53.367876,1
+hyundai,i20,(12~14년),hatchback,58.031088,1
+kia,올 뉴 프라이드,디럭스,hatchback,59.067358,6
+kia,올 뉴 프라이드,스마트,hatchback,59.067358,6
+kia,올 뉴 프라이드,트렌디,hatchback,59.067358,4
+kia,더 뉴 프라이드,스마트,hatchback,60.362694,2
+kia,더 뉴 프라이드,트렌디,hatchback,60.362694,2
+hyundai,벨로스터 [JS],모던,hatchback,61.398964,1
+hyundai,벨로스터 [JS],모던 코어,hatchback,61.398964,1
+hyundai,더 뉴 벨로스터,PYL,hatchback,63.730570,1
+hyundai,더 뉴 벨로스터,PYL DCT,hatchback,63.730570,1
+hyundai,더 뉴 벨로스터,유니크,hatchback,63.730570,1
+hyundai,벨로스터,DCT팩,hatchback,63.730570,1
+hyundai,벨로스터,PYL,hatchback,63.730570,2
+hyundai,벨로스터,PYL DCT팩,hatchback,63.730570,2
+hyundai,벨로스터,유니크,hatchback,63.730570,3
+kia,올 뉴 프라이드,럭셔리 에코 플러스,hatchback,66.321244,2
+kia,올 뉴 프라이드,프레스티지,hatchback,66.321244,6
+kia,올 뉴 프라이드,프레스티지 에코 플러스,hatchback,66.321244,2
+kia,더 뉴 프라이드,프레스티지,hatchback,67.357513,2
+hyundai,벨로스터,익스트림,hatchback,67.875648,2
+hyundai,벨로스터 [JS],JBL 익스트림 사운드 에디션,hatchback,69.170984,1
+hyundai,벨로스터 [JS],스포츠,hatchback,69.170984,1
+hyundai,벨로스터 [JS],스포츠 코어,hatchback,69.170984,1
+hyundai,벨로스터 [JS],익스트림 드라이빙 에디션,hatchback,69.170984,1
+hyundai,더 뉴 벨로스터,D 스펙,hatchback,71.502591,1
+hyundai,벨로스터,D 스펙,hatchback,71.502591,2
+hyundai,벨로스터,D 스펙 DCT,hatchback,71.502591,1
+hyundai,벨로스터,D 스펙 TUIX 레이싱,hatchback,71.502591,1
+hyundai,벨로스터,마멀레이드 스페셜 에디션,hatchback,71.502591,1
+hyundai,벨로스터 N,퍼포먼스팩,hatchback,73.056995,1
+hyundai,벨로스터 N,-,hatchback,73.575130,3
+hyundai,i30 PD,모던,hatchback,75.388601,3
+hyundai,i30 PD,스마트,hatchback,75.388601,3
+hyundai,i30 PD,스타일,hatchback,75.388601,2
+hyundai,i30 PD,스타일 베스트핏,hatchback,75.388601,1
+hyundai,i30 PD,튜너 패키지,hatchback,75.388601,2
+hyundai,i30 PD,프리미엄,hatchback,75.388601,4
+chevrolet,더 뉴 아베오,LS,hatchback,77.461140,6
+chevrolet,더 뉴 아베오,LT,hatchback,77.461140,6
+kia,포르테 해치백,디럭스,hatchback,79.015544,2
+kia,포르테 해치백,럭셔리,hatchback,79.015544,2
+kia,포르테 해치백,프레스티지,hatchback,79.015544,2
+kia,포르테 해치백,프레스티지 브라운,hatchback,79.015544,1
+hyundai,i30,트랜디,hatchback,80.310881,1
+hyundai,i30,디럭스,hatchback,82.383420,5
+hyundai,i30,럭셔리,hatchback,82.383420,11
+hyundai,i30,월드컵 스페셜 에디션,hatchback,82.383420,1
+hyundai,i30,트렌디,hatchback,82.383420,3
+hyundai,i30,프리미어,hatchback,82.383420,7
+hyundai,i30,프리미어 브라운,hatchback,82.383420,1
+hyundai,i30,프리미어 브라운 스페셜,hatchback,82.383420,1
+hyundai,i30,유니크,hatchback,84.715026,1
+hyundai,더 뉴 i30,튜익스 블랙 라이트,hatchback,84.715026,1
+hyundai,뉴 i30,PYL,hatchback,86.528497,4
+hyundai,뉴 i30,PYL 튜익스 블랙 라이트,hatchback,86.528497,4
+hyundai,뉴 i30,PYL 튜익스 크레용,hatchback,86.528497,2
+hyundai,뉴 i30,유니크,hatchback,86.528497,6
+hyundai,뉴 i30,익스트림,hatchback,86.528497,2
+hyundai,뉴 i30,블루세이버,hatchback,88.082902,1
+hyundai,i30 PD,N 라인,hatchback,89.378238,1
+hyundai,i30 PD,N 라인 스포츠 에센스 에디션,hatchback,89.378238,1
+hyundai,i30 PD,스포츠,hatchback,89.378238,2
+hyundai,i30 PD,스포츠 프리미엄,hatchback,89.378238,2
+hyundai,i30,익스트림,hatchback,90.673575,4
+hyundai,더 뉴 i30,PYL,hatchback,91.709845,2
+hyundai,더 뉴 i30,유니크,hatchback,91.709845,2
+hyundai,더 뉴 i30,튜익스,hatchback,91.709845,2
+chevrolet,더 뉴 아베오,L,hatchback,92.746114,3
+hyundai,뉴 i30,D 스펙,hatchback,93.523316,2
+hyundai,더 뉴 i30,D 스펙,hatchback,93.523316,1
+hyundai,더 뉴 아이오닉 플러그인,N,hatchback,96.891192,1
+hyundai,더 뉴 아이오닉 플러그인,Q,hatchback,96.891192,1
+hyundai,더 뉴 아이오닉 하이브리드,I,hatchback,96.891192,1
+hyundai,더 뉴 아이오닉 하이브리드,N,hatchback,96.891192,1
+hyundai,더 뉴 아이오닉 하이브리드,Q,hatchback,96.891192,1
+hyundai,아이오닉 플러그인,N,hatchback,96.891192,2
+hyundai,아이오닉 플러그인,Q,hatchback,96.891192,2
+hyundai,아이오닉 하이브리드,I,hatchback,96.891192,3
+hyundai,아이오닉 하이브리드,N,hatchback,96.891192,3
+hyundai,아이오닉 하이브리드,Q,hatchback,96.891192,3
+hyundai,아이오닉 하이브리드,밸류 플러스,hatchback,96.891192,1
+chevrolet,볼트 (VOLT),-,hatchback,100.000000,2
+hyundai,아반떼MD,-,sedan,0.000000,1
+hyundai,더 뉴 i40,-,sedan,0.128535,1
+hyundai,그랜저IG,-,sedan,0.257069,1
+hyundai,엑센트 (신형),모던 스페셜,sedan,0.385604,2
+hyundai,엑센트 (신형),프리미엄,sedan,0.514139,26
+hyundai,엑센트 (신형),블루세이버,sedan,0.642674,10
+hyundai,엑센트 (신형),밸류 플러스,sedan,0.835476,2
+hyundai,엑센트 (신형),스마트 스페셜,sedan,0.835476,2
+hyundai,엑센트 (신형),럭셔리,sedan,1.092545,4
+hyundai,엑센트 (신형),스타일,sedan,1.092545,10
+hyundai,엑센트 (신형),모던,sedan,1.478149,23
+hyundai,엑센트 (신형),스마트,sedan,1.478149,14
+hyundai,엑센트 (신형),스타일 플러스,sedan,1.478149,1
+hyundai,엑센트 (신형),프리미어,sedan,1.478149,10
+hyundai,엑센트 (신형),탑,sedan,1.799486,4
+hyundai,아반떼MD,M16 디럭스,sedan,2.377892,2
+hyundai,아반떼MD,M16 럭셔리,sedan,2.377892,2
+hyundai,아반떼MD,M16 블루세이버,sedan,2.377892,2
+hyundai,아반떼MD,M16 스마트,sedan,2.377892,1
+hyundai,아반떼MD,M16 스타일,sedan,2.377892,1
+hyundai,아반떼MD,M16 에비뉴,sedan,2.377892,1
+hyundai,아반떼MD,M16 탑,sedan,2.377892,1
+hyundai,아반떼MD,M16 프리미어,sedan,2.377892,1
+hyundai,더 뉴 아반떼,모던 튜익스 에디션 II,sedan,3.277635,2
+hyundai,더 뉴 아반떼,스마트 튜익스 에디션 I,sedan,3.277635,2
+hyundai,더 뉴 아반떼,월드컵 에디션,sedan,3.277635,2
+hyundai,더 뉴 아반떼,텐 밀리언 리미티드,sedan,3.277635,2
+hyundai,더 뉴 아반떼,텐 밀리언 튜익스 에디션 II,sedan,3.277635,2
+hyundai,더 뉴 아반떼,프리미엄 튜익스 에디션 II,sedan,3.277635,2
+hyundai,더 뉴 아반떼,모던,sedan,3.984576,6
+hyundai,더 뉴 아반떼,스마트,sedan,3.984576,7
+hyundai,더 뉴 아반떼,스타일,sedan,3.984576,7
+hyundai,아반떼MD,M16 모던,sedan,3.984576,5
+hyundai,아반떼MD,M16 프리미엄,sedan,3.984576,3
+kia,K3,럭셔리 트렌디,sedan,4.370180,1
+kia,K3,W 스페셜,sedan,4.691517,2
+kia,더 뉴 K3,디럭스,sedan,4.691517,6
+kia,더 뉴 K3,트렌디,sedan,4.691517,6
+kia,더 뉴 K3,트렌디 스타일,sedan,4.691517,4
+kia,K3,노블레스,sedan,5.462725,6
+kia,K3,디럭스,sedan,5.462725,3
+kia,K3,럭셔리,sedan,5.462725,5
+kia,K3,럭셔리 에코플러스,sedan,5.462725,1
+kia,K3,에코 플러스,sedan,5.462725,1
+kia,K3,트렌디,sedan,5.462725,4
+kia,K3,프레스티지,sedan,5.462725,6
+kia,더 뉴 K3,프레스티지 스페셜,sedan,5.462725,5
+hyundai,더 뉴 아반떼,프리미엄,sedan,6.041131,4
+hyundai,아반떼AD,모던,sedan,6.233933,6
+hyundai,아반떼AD,스타일,sedan,6.233933,10
+kia,더 뉴 K3,노블레스,sedan,6.683805,4
+kia,더 뉴 K3,트렌디 A,sedan,6.683805,2
+kia,더 뉴 K3,트렌디 C,sedan,6.683805,2
+kia,더 뉴 K3,트렌디 E,sedan,6.683805,2
+kia,더 뉴 K3,프레스티지,sedan,6.683805,4
+kia,올 뉴 K3,GT 시그니처,sedan,7.069409,1
+hyundai,아반떼AD,DCT,sedan,7.390746,2
+hyundai,아반떼AD,M/T,sedan,7.390746,2
+hyundai,아반떼AD,오리지널,sedan,7.390746,1
+hyundai,아반떼AD,익스트림 셀렉션,sedan,7.390746,2
+hyundai,아반떼AD,스마트 스페셜,sedan,7.712082,3
+hyundai,아반떼AD,모던 스페셜,sedan,8.033419,1
+hyundai,아반떼AD,밸류 플러스,sedan,8.033419,2
+hyundai,아반떼AD,스마트,sedan,8.033419,11
+hyundai,아반떼AD,프리미엄,sedan,8.033419,8
+kia,포르테,Si 블랙,sedan,8.354756,3
+kia,포르테,S 고급형,sedan,9.318766,5
+kia,포르테,S 기본형,sedan,9.318766,3
+kia,포르테,SLi,sedan,9.318766,3
+kia,포르테,Si,sedan,9.318766,6
+kia,포르테,W 에디션,sedan,9.318766,1
+kia,포르테,디럭스,sedan,9.318766,2
+kia,포르테,디럭스 에코플러스,sedan,9.318766,2
+kia,포르테,럭셔리,sedan,9.318766,3
+kia,포르테,럭셔리 에코플러스,sedan,9.318766,2
+kia,포르테,프레스티지,sedan,9.318766,2
+kia,포르테,프레스티지 브라운,sedan,9.318766,1
+kia,포르테,프리미엄 SLi 블랙 스페셜,sedan,9.318766,4
+kia,포르테,프리미엄 Si 브라운,sedan,9.318766,2
+kia,포르테,프리미엄 Si 블랙,sedan,9.318766,4
+kia,올 뉴 K3,GT 베이직,sedan,10.347044,2
+kia,올 뉴 K3,GT 플러스,sedan,10.347044,2
+kia,더 뉴 K3 [2세대],시그니처,sedan,10.539846,2
+kia,포르테,고급형,sedan,10.796915,2
+kia,포르테,기본형,sedan,10.796915,2
+kia,포르테,최고급형,sedan,10.796915,2
+hyundai,올 뉴 아반떼 하이브리드 [CN7],모던,sedan,11.182519,1
+hyundai,올 뉴 아반떼 하이브리드 [CN7],스마트,sedan,11.182519,1
+hyundai,올 뉴 아반떼 하이브리드 [CN7],인스퍼레이션,sedan,11.182519,1
+hyundai,올 뉴 아반떼 [CN7],모던,sedan,11.568123,3
+hyundai,올 뉴 아반떼 [CN7],스마트,sedan,11.568123,3
+hyundai,올 뉴 아반떼 [CN7],스타일,sedan,11.568123,2
+hyundai,올 뉴 아반떼 [CN7],인스퍼레이션,sedan,11.825193,1
+hyundai,더 뉴 아반떼AD,모던,sedan,12.146530,3
+hyundai,더 뉴 아반떼AD,스마트,sedan,12.146530,4
+hyundai,더 뉴 아반떼AD,스타일,sedan,12.146530,4
+hyundai,더 뉴 아반떼AD,프리미엄,sedan,12.146530,3
+hyundai,더 뉴 아반떼AD,스마트 베스트 초이스팩,sedan,12.532134,1
+hyundai,더 뉴 아반떼AD,스마트 초이스,sedan,12.532134,1
+hyundai,더 뉴 아반떼 하이브리드 [CN7],모던,sedan,12.853470,1
+hyundai,더 뉴 아반떼 하이브리드 [CN7],스마트,sedan,12.853470,1
+hyundai,더 뉴 아반떼 하이브리드 [CN7],인스퍼레이션,sedan,12.853470,1
+hyundai,더 뉴 아반떼 [CN7],모던,sedan,13.174807,4
+hyundai,더 뉴 아반떼 [CN7],스마트,sedan,13.174807,3
+hyundai,더 뉴 아반떼 [CN7],인스퍼레이션,sedan,13.367609,2
+hyundai,올 뉴 아반떼 [CN7],N 라인 모던,sedan,13.624679,1
+hyundai,올 뉴 아반떼 [CN7],N 라인 스포츠,sedan,13.624679,1
+hyundai,올 뉴 아반떼 [CN7],N 라인 인스퍼레이션,sedan,13.624679,1
+hyundai,아반떼 N,-,sedan,13.881748,1
+kia,올 뉴 K3,노블레스,sedan,14.203085,2
+kia,올 뉴 K3,럭셔리,sedan,14.203085,2
+kia,올 뉴 K3,트렌디,sedan,14.203085,2
+kia,올 뉴 K3,프레스티지,sedan,14.203085,2
+kia,더 뉴 K3 [2세대],노블레스,sedan,14.652956,1
+kia,더 뉴 K3 [2세대],트렌디,sedan,14.652956,1
+kia,더 뉴 K3 [2세대],프레스티지,sedan,14.652956,1
+kia,올 뉴 K3,시그니처,sedan,14.910026,1
+hyundai,더 뉴 아반떼 하이브리드 [CN7],N라인,sedan,15.038560,1
+hyundai,더 뉴 아반떼 [CN7],N라인,sedan,15.167095,1
+chevrolet,크루즈,LTZ 플러스 스타일팩,sedan,15.295630,2
+chevrolet,크루즈,LT 플러스 래더팩,sedan,15.424165,2
+chevrolet,크루즈,LTZ 플러스 더 퍼펙트 블랙,sedan,15.552699,12
+chevrolet,어메이징 뉴 크루즈,프레셜 에디션 퍼펙트 블랙,sedan,15.681234,1
+chevrolet,어메이징 뉴 크루즈,LTZ,sedan,15.809769,8
+hyundai,아반떼 LPi 하이브리드,Ⅰ기본형,sedan,16.195373,3
+hyundai,아반떼 LPi 하이브리드,Ⅰ이지팩,sedan,16.195373,3
+hyundai,아반떼 LPi 하이브리드,Ⅱ기본형,sedan,16.195373,3
+hyundai,아반떼 LPi 하이브리드,Ⅲ기본형,sedan,16.195373,3
+hyundai,아반떼 LPi 하이브리드,Ⅲ어드밴스팩,sedan,16.195373,1
+chevrolet,크루즈,LT 플러스 레더팩,sedan,16.580977,2
+chevrolet,어메이징 뉴 크루즈,LT 디럭스팩,sedan,16.709512,5
+chevrolet,올 뉴 크루즈,LS,sedan,16.902314,1
+chevrolet,올 뉴 크루즈,LTZ 디럭스,sedan,16.902314,1
+chevrolet,어메이징 뉴 크루즈,LS,sedan,17.802057,1
+chevrolet,어메이징 뉴 크루즈,LT,sedan,17.802057,1
+chevrolet,어메이징 뉴 크루즈,퍼펙트 블랙,sedan,17.802057,1
+chevrolet,크루즈,LS,sedan,17.802057,1
+chevrolet,크루즈,LS 플러스,sedan,17.802057,1
+chevrolet,크루즈,LT,sedan,17.802057,9
+chevrolet,크루즈,LT 스타일팩,sedan,17.802057,1
+chevrolet,크루즈,LT 플러스,sedan,17.802057,10
+chevrolet,크루즈,LTZ,sedan,17.802057,11
+chevrolet,크루즈,LTZ 더 퍼펙트 블랙,sedan,17.802057,4
+chevrolet,크루즈,LTZ 스타일팩,sedan,17.802057,1
+chevrolet,크루즈,LTZ 플러스,sedan,17.802057,19
+kia,스팅어,알칸타라 에디션,sedan,18.701799,2
+kia,스팅어,익스트림 팩,sedan,18.701799,2
+chevrolet,올 뉴 크루즈,LT,sedan,19.023136,2
+chevrolet,올 뉴 크루즈,LT 디럭스,sedan,19.023136,2
+chevrolet,올 뉴 크루즈,LTZ,sedan,19.023136,2
+kia,스팅어,드림 에디션,sedan,19.408740,4
+kia,스팅어,프라임,sedan,19.408740,6
+kia,스팅어,플래티넘,sedan,19.408740,6
+chevrolet,크루즈,LT 레더팩,sedan,19.665810,1
+kia,스팅어,프라임 라이트,sedan,19.794344,1
+kia,스팅어 마이스터,마스터즈,sedan,20.051414,2
+kia,스팅어 마이스터,마스터즈 아크로 에디션,sedan,20.051414,2
+kia,스팅어 마이스터,플래티넘,sedan,20.051414,2
+renault,SM3 네오,LE,sedan,20.694087,8
+renault,SM3 네오,LE 스페셜,sedan,20.694087,1
+renault,SM3 네오,PE,sedan,20.694087,6
+renault,SM3 네오,R4U,sedan,20.694087,1
+renault,SM3 네오,RE,sedan,20.694087,5
+renault,SM3 네오,SE,sedan,20.694087,8
+renault,SM3 네오,SE 스페셜,sedan,20.694087,1
+renault,SM3 네오,SE 플러스,sedan,21.208226,2
+renault,SM3 네오,SE 플러스 아트,sedan,22.365039,1
+renault,SM3 네오,XE,sedan,22.365039,1
+renault,SM3 네오,XE 리미티드 에디션,sedan,22.365039,1
+renault,뉴 SM3,LE,sedan,22.365039,2
+renault,뉴 SM3,LE 썸머 에디션,sedan,22.365039,1
+renault,뉴 SM3,LE 익스클루시브,sedan,22.365039,1
+renault,뉴 SM3,LE 플러스,sedan,22.365039,1
+renault,뉴 SM3,PE,sedan,22.365039,5
+renault,뉴 SM3,RE,sedan,22.365039,3
+renault,뉴 SM3,RE 썸머 에디션,sedan,22.365039,1
+renault,뉴 SM3,SE,sedan,22.365039,3
+renault,뉴 SM3,SE 블랙,sedan,22.365039,2
+renault,뉴 SM3,SE 블랙 썸머 에디션,sedan,22.365039,1
+renault,뉴 SM3,SE 플러스,sedan,22.365039,1
+renault,뉴 SM3,SE 플러스 아트,sedan,22.365039,1
+renault,뉴 SM3,XE,sedan,22.365039,1
+renault,뉴 SM3,XE 리미티드 에디션,sedan,22.365039,1
+kia,스팅어,GT,sedan,23.778920,3
+kia,스팅어,마스터즈,sedan,23.778920,2
+kia,스팅어 마이스터,GT,sedan,23.778920,2
+kia,스팅어 마이스터,GT 마스터즈 터보팩,sedan,23.778920,2
+kia,스팅어 마이스터,GT 아크로 에디션,sedan,23.778920,2
+renault,뉴 SM3,보스 스페셜 에디션,sedan,24.164524,2
+renault,뉴 SM3,LE20,sedan,24.614396,1
+renault,뉴 SM3,LE20 썸머 에디션,sedan,24.614396,1
+renault,뉴 SM3,LE20 익스클루시브,sedan,24.614396,1
+renault,뉴 SM3,RE20,sedan,24.614396,2
+renault,뉴 SM3,RE20 썸머 에디션,sedan,24.614396,1
+renault,뉴 SM3,SE20,sedan,24.614396,2
+hyundai,i40 살룬,PYL,sedan,25.192802,4
+hyundai,i40 살룬,디 스팩,sedan,25.192802,4
+hyundai,i40 살룬,유니크,sedan,25.192802,3
+hyundai,i40 살룬,모던,sedan,25.578406,2
+hyundai,i40 살룬,스마트,sedan,25.578406,2
+hyundai,i40 살룬,프리미엄,sedan,25.578406,2
+hyundai,더 뉴 i40 살룬,D 스펙,sedan,25.964010,2
+hyundai,더 뉴 i40 살룬,PYL,sedan,25.964010,2
+hyundai,더 뉴 i40 살룬,유니크,sedan,25.964010,2
+hyundai,더 뉴 i40 살룬,스마트,sedan,26.285347,3
+hyundai,더 뉴 i40 살룬,프리미엄,sedan,26.285347,3
+kia,K5 하이브리드,옵티마 (수출형),sedan,26.478149,1
+hyundai,더 뉴 i40,D 스펙,sedan,26.735219,2
+hyundai,더 뉴 i40,PYL,sedan,26.735219,2
+hyundai,더 뉴 i40,유니크,sedan,26.735219,2
+kia,K5,노블레스,sedan,27.377892,6
+kia,K5,디럭스,sedan,27.377892,4
+kia,K5,럭셔리,sedan,27.377892,3
+kia,K5,스마트,sedan,27.377892,4
+kia,K5,스마트 스페셜,sedan,27.377892,3
+kia,K5,프레스티지,sedan,27.377892,6
+kia,K5,프레스티지 브라운,sedan,27.377892,3
+kia,K5,트렌디,sedan,28.984576,1
+kia,K5,프레스티지 에코플러스,sedan,28.984576,1
+kia,K5 하이브리드,500H 노블레스,sedan,28.984576,2
+kia,K5 하이브리드,500H 럭셔리,sedan,28.984576,2
+kia,K5 하이브리드,500H 프레스티지,sedan,28.984576,2
+kia,K5 하이브리드,노블레스,sedan,28.984576,2
+kia,K5 하이브리드,디럭스,sedan,28.984576,2
+kia,K5 하이브리드,럭셔리,sedan,28.984576,2
+kia,K5 하이브리드,프레스티지,sedan,28.984576,2
+kia,더 뉴 K5,W 스페셜,sedan,28.984576,1
+kia,더 뉴 K5,노블레스,sedan,28.984576,5
+kia,더 뉴 K5,디럭스,sedan,28.984576,4
+kia,더 뉴 K5,럭셔리,sedan,28.984576,4
+kia,더 뉴 K5,럭셔리 스페셜,sedan,28.984576,1
+kia,더 뉴 K5,럭셔리 트렌디,sedan,28.984576,1
+kia,더 뉴 K5,스페셜,sedan,28.984576,1
+kia,더 뉴 K5,트렌디,sedan,28.984576,2
+kia,더 뉴 K5,프레스티지,sedan,28.984576,7
+hyundai,더 뉴 i40,스마트,sedan,30.269923,3
+hyundai,더 뉴 i40,프리미엄,sedan,30.269923,3
+hyundai,쏘나타 DN8,프리미엄 밀레니얼,sedan,30.462725,3
+kia,더 뉴 K5 3세대,베스트 셀렉션,sedan,30.591260,2
+renault,SM7 뉴 아트,LE23,sedan,31.041131,4
+renault,SM7 뉴 아트,RE23,sedan,31.041131,3
+renault,SM7 뉴 아트,SE23,sedan,31.041131,4
+renault,SM7 뉴 아트,SE23 플러스,sedan,31.041131,1
+renault,SM7 뉴 아트,SE23 플레저,sedan,31.041131,3
+renault,SM7 뉴 아트,프레스티지,sedan,31.041131,2
+hyundai,쏘나타 디 엣지,에스,sedan,31.491003,2
+hyundai,쏘나타 DN8,모던,sedan,32.519280,6
+hyundai,쏘나타 DN8,스마트,sedan,32.519280,5
+hyundai,쏘나타 DN8,스타일,sedan,32.519280,2
+hyundai,쏘나타 DN8,인스퍼레이션,sedan,32.519280,8
+hyundai,쏘나타 DN8,프리미어 밀레니얼,sedan,32.519280,1
+hyundai,쏘나타 DN8,프리미엄,sedan,32.519280,7
+hyundai,쏘나타 DN8,프리미엄 패밀리,sedan,32.519280,6
+hyundai,쏘나타 DN8,프리미엄 플러스,sedan,32.519280,3
+hyundai,쏘나타 하이브리드 [DN8],모던,sedan,32.519280,1
+hyundai,쏘나타 하이브리드 [DN8],스마트,sedan,32.519280,2
+hyundai,쏘나타 하이브리드 [DN8],인스퍼레이션,sedan,32.519280,3
+hyundai,쏘나타 하이브리드 [DN8],프리미엄,sedan,32.519280,2
+hyundai,쏘나타 하이브리드 [DN8],프리미엄 밀레니얼,sedan,32.519280,2
+hyundai,쏘나타 하이브리드 [DN8],프리미엄 패밀리,sedan,32.519280,2
+hyundai,쏘나타 하이브리드 [DN8],프리미엄 플러스,sedan,32.519280,1
+kia,K5 3세대,노블레스,sedan,34.640103,4
+kia,K5 3세대,스탠다드,sedan,34.640103,1
+kia,K5 3세대,시그니처,sedan,34.640103,4
+kia,K5 3세대,트렌디,sedan,34.640103,3
+kia,K5 3세대,프레스티지,sedan,34.640103,4
+kia,K5 하이브리드 3세대,노블레스,sedan,34.640103,1
+kia,K5 하이브리드 3세대,시그니처,sedan,34.640103,1
+kia,K5 하이브리드 3세대,트렌디,sedan,34.640103,1
+kia,K5 하이브리드 3세대,프레스티지,sedan,34.640103,1
+kia,더 뉴 K5 3세대,노블레스,sedan,34.640103,4
+kia,더 뉴 K5 3세대,스마트 셀렉션,sedan,34.640103,1
+kia,더 뉴 K5 3세대,시그니처,sedan,34.640103,4
+kia,더 뉴 K5 3세대,트렌디,sedan,34.640103,1
+kia,더 뉴 K5 3세대,프레스티지,sedan,34.640103,5
+kia,더 뉴 K5 하이브리드 3세대,노블레스,sedan,34.640103,1
+kia,더 뉴 K5 하이브리드 3세대,베스트 셀렉션,sedan,34.640103,1
+kia,더 뉴 K5 하이브리드 3세대,시그니처,sedan,34.640103,1
+kia,더 뉴 K5 하이브리드 3세대,프레스티지,sedan,34.640103,1
+hyundai,YF쏘나타,F20 고급형,sedan,36.953728,1
+hyundai,YF쏘나타,F20 최고급형,sedan,36.953728,1
+hyundai,YF쏘나타,Y20 그랜드,sedan,36.953728,3
+hyundai,YF쏘나타,Y20 로얄,sedan,36.953728,2
+hyundai,YF쏘나타,Y20 스포츠,sedan,36.953728,3
+hyundai,YF쏘나타,Y20 월드컵 스페셜 에디션,sedan,36.953728,3
+hyundai,YF쏘나타,Y20 탑,sedan,36.953728,1
+hyundai,YF쏘나타,Y20 탑 고급형,sedan,36.953728,2
+hyundai,YF쏘나타,Y20 탑 와인스페셜,sedan,36.953728,2
+hyundai,YF쏘나타,Y20 탑 최고급형,sedan,36.953728,3
+hyundai,YF쏘나타,Y20 프라임,sedan,36.953728,2
+hyundai,YF쏘나타,Y20 프라임 고급형,sedan,36.953728,2
+hyundai,YF쏘나타,Y20 프라임 블랙,sedan,36.953728,2
+hyundai,YF쏘나타,Y20 프라임 최고급형,sedan,36.953728,2
+hyundai,YF쏘나타,Y20 프리미어,sedan,36.953728,2
+hyundai,YF쏘나타,Y20 프리미어 고급형,sedan,36.953728,2
+hyundai,YF쏘나타,Y20 프리미어 베이지,sedan,36.953728,3
+hyundai,YF쏘나타,Y20 프리미어 최고급형,sedan,36.953728,2
+hyundai,쏘나타 더 브릴리언트,모던,sedan,38.239075,4
+hyundai,쏘나타 더 브릴리언트,프리미엄,sedan,38.239075,4
+hyundai,YF쏘나타,DTX,sedan,39.717224,1
+hyundai,YF쏘나타,LTX,sedan,39.717224,1
+hyundai,YF쏘나타,PTX,sedan,39.717224,1
+hyundai,YF쏘나타,그랜드,sedan,39.717224,2
+hyundai,YF쏘나타,디럭스,sedan,39.717224,1
+hyundai,YF쏘나타,럭셔리,sedan,39.717224,3
+hyundai,YF쏘나타,로얄,sedan,39.717224,2
+hyundai,YF쏘나타,블루세이버,sedan,39.717224,2
+hyundai,YF쏘나타,탑,sedan,39.717224,2
+hyundai,YF쏘나타,프라임,sedan,39.717224,2
+hyundai,YF쏘나타,프리미어,sedan,39.717224,4
+hyundai,쏘나타 더 브릴리언트,블루세이버,sedan,39.717224,2
+hyundai,쏘나타 더 브릴리언트,스마트,sedan,39.717224,3
+hyundai,쏘나타 더 브릴리언트,스타일,sedan,39.717224,2
+hyundai,쏘나타 더 브릴리언트,어트랙션,sedan,39.717224,1
+hyundai,쏘나타 하이브리드,로얄,sedan,39.717224,1
+hyundai,쏘나타 하이브리드,모던,sedan,39.717224,3
+hyundai,쏘나타 하이브리드,수출형,sedan,39.717224,1
+hyundai,쏘나타 하이브리드,스마트,sedan,39.717224,4
+hyundai,쏘나타 하이브리드,프리미어,sedan,39.717224,1
+hyundai,쏘나타 하이브리드,프리미엄,sedan,39.717224,3
+hyundai,쏘나타 디 엣지,N 라인,sedan,41.709512,3
+hyundai,쏘나타 디 엣지,비즈니스1,sedan,41.709512,1
+hyundai,쏘나타 디 엣지,비즈니스2,sedan,41.709512,1
+hyundai,쏘나타 디 엣지,익스클루시브,sedan,41.709512,4
+hyundai,쏘나타 디 엣지,인스퍼레이션,sedan,41.709512,3
+hyundai,쏘나타 디 엣지,프리미엄,sedan,41.709512,3
+hyundai,쏘나타 디 엣지 하이브리드,에스,sedan,41.709512,1
+hyundai,쏘나타 디 엣지 하이브리드,익스클루시브,sedan,41.709512,1
+hyundai,쏘나타 디 엣지 하이브리드,인스퍼레이션,sedan,41.709512,1
+hyundai,쏘나타 디 엣지 하이브리드,프리미엄,sedan,41.709512,1
+hyundai,YF쏘나타,Y20 럭셔리,sedan,42.416452,2
+hyundai,YF쏘나타,F24 고급형,sedan,42.609254,2
+hyundai,YF쏘나타,F24 최고급형,sedan,42.609254,2
+hyundai,쏘나타 DN8,N 라인 더 블랙,sedan,42.994859,1
+hyundai,쏘나타 DN8,N 라인 익스클루시브,sedan,42.994859,2
+hyundai,쏘나타 DN8,N 라인 인스퍼레이션,sedan,42.994859,2
+hyundai,쏘나타 DN8,N 라인 프리미엄,sedan,42.994859,2
+renault,뉴 SM5 (신형),LE 익스클루시브,sedan,43.380463,2
+renault,뉴 SM5 (신형),SE 블랙,sedan,43.380463,2
+renault,SM6,LE,sedan,43.573265,11
+renault,SM7 뉴 아트,LE35,sedan,43.766067,1
+renault,SM7 뉴 아트,RE35,sedan,43.766067,4
+renault,더 뉴 SM6,RE,sedan,44.151671,2
+renault,더 뉴 SM6,SE,sedan,44.151671,2
+renault,더 뉴 SM6,SE 플러스,sedan,44.151671,2
+renault,더 뉴 SM6,필,sedan,44.151671,2
+kia,K5 2세대,MX 노블레스 스페셜,sedan,44.601542,3
+kia,K5 2세대,SX 노블레스 스페셜,sedan,44.601542,5
+kia,K5 2세대,SX 프레스티지,sedan,44.601542,11
+chevrolet,더 뉴 말리부,LS,sedan,45.308483,1
+chevrolet,더 뉴 말리부,LS 디럭스,sedan,45.308483,1
+chevrolet,더 뉴 말리부,레드라인 프리미어,sedan,45.308483,1
+chevrolet,더 뉴 말리부,레드라인 프리미어 프라임 세이프티,sedan,45.308483,1
+chevrolet,더 뉴 말리부,프리미어,sedan,45.308483,1
+chevrolet,더 뉴 말리부,프리미어 퍼펙트 블랙 프라임 세이프티,sedan,45.308483,1
+chevrolet,더 뉴 말리부,프리미어 퍼펙트 블랙 프리미어,sedan,45.308483,1
+chevrolet,더 뉴 말리부,프리미어 프라임 세이프티,sedan,45.308483,1
+kia,K5 2세대,SX GT 라인,sedan,45.886889,2
+kia,K5 2세대,SX 스페셜 에디션,sedan,46.015424,2
+renault,더 뉴 SM6,LE,sedan,46.208226,3
+renault,더 뉴 SM6,프리미에르,sedan,46.208226,3
+kia,K5 2세대,SX 노블레스,sedan,46.401028,8
+chevrolet,말리부,LS 디럭스팩,sedan,46.593830,2
+chevrolet,말리부,LT 프리미엄팩,sedan,46.593830,1
+chevrolet,말리부,LS,sedan,47.107969,1
+chevrolet,말리부,LS 디럭스 팩,sedan,47.107969,4
+chevrolet,말리부,LT,sedan,47.107969,5
+chevrolet,말리부,LT 디럭스팩,sedan,47.107969,7
+chevrolet,말리부,LTZ 디럭스팩(블랙휠),sedan,47.107969,5
+chevrolet,말리부,LTZ 디럭스팩(알로이휠),sedan,47.107969,1
+chevrolet,더 뉴 말리부,LT 디럭스,sedan,47.557841,2
+kia,K5 2세대,SX GT,sedan,47.686375,1
+renault,SM6,LE 스페셜,sedan,48.071979,1
+renault,SM6,PE,sedan,48.071979,9
+renault,SM6,RE,sedan,48.071979,8
+renault,SM6,SE,sedan,48.071979,14
+renault,SM6,프리미에르,sedan,48.071979,1
+kia,K5 2세대,MX 노블레스,sedan,49.678663,7
+kia,K5 2세대,MX 디럭스,sedan,49.678663,3
+kia,K5 2세대,MX 럭셔리,sedan,49.678663,7
+kia,K5 2세대,MX 스타일 에디션,sedan,49.678663,1
+kia,K5 2세대,MX 스페셜 에디션,sedan,49.678663,1
+kia,K5 2세대,MX 시그니처,sedan,49.678663,3
+kia,K5 2세대,MX 프레스티지,sedan,49.678663,9
+kia,K5 2세대,SX 디럭스,sedan,49.678663,3
+kia,K5 2세대,SX 럭셔리,sedan,49.678663,9
+kia,K5 2세대,SX 스타일 에디션,sedan,49.678663,1
+kia,K5 2세대,SX 시그니처,sedan,49.678663,3
+kia,K5 하이브리드 2세대,노블레스,sedan,49.678663,3
+kia,K5 하이브리드 2세대,노블레스 스페셜,sedan,49.678663,5
+kia,K5 하이브리드 2세대,프레스티지,sedan,49.678663,3
+kia,더 뉴 K5 2세대,월드컵 에디션,sedan,49.678663,1
+kia,더 뉴 K5 2세대,인텔리전트,sedan,49.678663,2
+kia,더 뉴 K5 2세대,프레스티지,sedan,49.678663,10
+kia,더 뉴 K5 하이브리드 2세대,노블레스,sedan,49.678663,2
+kia,더 뉴 K5 하이브리드 2세대,노블레스 스페셜,sedan,49.678663,2
+kia,더 뉴 K5 하이브리드 2세대,프레스티지,sedan,49.678663,2
+chevrolet,더 뉴 말리부,LT,sedan,51.092545,3
+chevrolet,더 뉴 말리부,LT 프리미엄,sedan,51.092545,1
+chevrolet,말리부,LTZ,sedan,51.285347,10
+chevrolet,올 뉴 말리부,LS,sedan,51.863753,3
+chevrolet,올 뉴 말리부,LS 디럭스,sedan,51.863753,1
+chevrolet,올 뉴 말리부,LT,sedan,51.863753,5
+chevrolet,올 뉴 말리부,LT 디럭스,sedan,51.863753,5
+chevrolet,올 뉴 말리부,LTZ,sedan,51.863753,3
+chevrolet,올 뉴 말리부,LTZ 퍼펙트 블랙,sedan,51.863753,2
+chevrolet,올 뉴 말리부,LTZ 프리미엄 세이프티,sedan,51.863753,3
+chevrolet,올 뉴 말리부,LTZ 프리미엄 세이프티 퍼펙트 블랙,sedan,51.863753,2
+kia,더 뉴 K5 2세대,노블레스 스페셜,sedan,52.442159,8
+kia,더 뉴 K5 2세대,노블레스,sedan,52.634961,8
+kia,더 뉴 K5 2세대,럭셔리,sedan,52.634961,4
+hyundai,LF쏘나타,썸머 스페셜,sedan,53.084833,1
+hyundai,LF쏘나타,와일드 버건디,sedan,53.084833,1
+hyundai,LF쏘나타,윈터 스페셜,sedan,53.084833,1
+hyundai,쏘나타 뉴 라이즈,마이 시티 에디션,sedan,53.084833,1
+hyundai,쏘나타 뉴 라이즈,마이 트립 에디션,sedan,53.084833,1
+chevrolet,더 뉴 말리부,LT 스페셜,sedan,53.663239,1
+chevrolet,더 뉴 말리부,레드라인,sedan,53.663239,1
+chevrolet,더 뉴 말리부,퍼펙트 블랙,sedan,53.663239,1
+chevrolet,더 뉴 말리부,프리미어 스페셜,sedan,53.663239,1
+hyundai,LF쏘나타,스마트 스페셜,sedan,53.984576,6
+kia,더 뉴 K5 2세대,디럭스,sedan,54.113111,1
+hyundai,쏘나타 뉴 라이즈,스마트,sedan,54.241645,8
+hyundai,LF쏘나타,케어 플러스,sedan,54.370180,2
+chevrolet,올 뉴 말리부,LT 프리미엄,sedan,54.627249,3
+chevrolet,올 뉴 말리부,LTZ 프리미엄,sedan,54.627249,3
+chevrolet,올 뉴 말리부,퍼펙트 블랙,sedan,54.627249,2
+kia,K8 하이브리드,시그니처 스페셜,sedan,54.884319,1
+renault,뉴 SM5 (신형),LE,sedan,55.398458,3
+renault,뉴 SM5 (신형),PE,sedan,55.398458,3
+renault,뉴 SM5 (신형),RE,sedan,55.398458,5
+renault,뉴 SM5 (신형),SE,sedan,55.398458,3
+renault,뉴 SM5 (신형),SE 플러스,sedan,55.398458,5
+renault,뉴 SM5 (신형),XE,sedan,55.398458,3
+renault,뉴 SM5 (신형),보스 스페셜 에디션,sedan,55.398458,1
+hyundai,LF쏘나타,스마트,sedan,56.041131,12
+hyundai,LF쏘나타,익스클루시브,sedan,56.041131,4
+hyundai,쏘나타 뉴 라이즈,익스클루시브,sedan,56.041131,2
+hyundai,LF쏘나타,모던,sedan,57.647815,3
+hyundai,LF쏘나타,스타일,sedan,57.647815,9
+hyundai,LF쏘나타,스타일 스페셜,sedan,57.647815,2
+hyundai,LF쏘나타,프리미엄,sedan,57.647815,5
+hyundai,LF쏘나타,프리미엄 스페셜,sedan,57.647815,3
+hyundai,LF쏘나타 하이브리드,모던,sedan,57.647815,2
+hyundai,LF쏘나타 하이브리드,모던 스페셜,sedan,57.647815,1
+hyundai,LF쏘나타 하이브리드,스마트,sedan,57.647815,2
+hyundai,LF쏘나타 하이브리드,익스클루시브,sedan,57.647815,2
+hyundai,LF쏘나타 하이브리드,프리미엄,sedan,57.647815,4
+hyundai,LF쏘나타 하이브리드,프리미엄 스페셜,sedan,57.647815,1
+hyundai,쏘나타 뉴 라이즈,모던,sedan,57.647815,11
+hyundai,쏘나타 뉴 라이즈,스마트 스페셜,sedan,57.647815,1
+hyundai,쏘나타 뉴 라이즈,스마트 초이스,sedan,57.647815,1
+hyundai,쏘나타 뉴 라이즈,스타일,sedan,57.647815,11
+hyundai,쏘나타 뉴 라이즈,익스트림 셀렉션,sedan,57.647815,1
+hyundai,쏘나타 뉴 라이즈,프리미엄 스페셜,sedan,57.647815,2
+hyundai,쏘나타 뉴 라이즈 하이브리드,모던,sedan,57.647815,2
+hyundai,쏘나타 뉴 라이즈 하이브리드,스마트,sedan,57.647815,2
+hyundai,쏘나타 뉴 라이즈 하이브리드,익스클루시브,sedan,57.647815,2
+hyundai,쏘나타 뉴 라이즈 하이브리드,프리미엄,sedan,57.647815,4
+hyundai,쏘나타 뉴 라이즈 하이브리드,프리미엄 스페셜,sedan,57.647815,2
+kgm,체어맨H 뉴 클래식,500S VIP,sedan,59.318766,3
+kgm,체어맨H 뉴 클래식,500S 고급형,sedan,59.318766,3
+kgm,체어맨H 뉴 클래식,500S 브라운 에디션,sedan,59.318766,3
+kgm,체어맨H 뉴 클래식,500S 최고급형,sedan,59.318766,3
+renault,SM5 노바,D,sedan,59.897172,1
+renault,SM5 노바,D 프리미엄,sedan,59.897172,1
+renault,뉴SM5 플래티넘,D,sedan,59.897172,2
+renault,뉴SM5 플래티넘,D 스페셜,sedan,59.897172,1
+renault,뉴SM5 플래티넘,프리미엄 DCT,sedan,59.897172,1
+hyundai,그랜저HG,럭셔리,sedan,60.347044,1
+hyundai,그랜저HG,스페셜,sedan,60.347044,1
+hyundai,그랜저HG 하이브리드,프리미엄,sedan,60.539846,2
+renault,SM5 노바,TCE,sedan,60.796915,1
+renault,뉴SM5 플래티넘,TCE,sedan,60.796915,3
+renault,뉴SM5 플래티넘,TCE S/S 컬렉션,sedan,60.796915,1
+kgm,체어맨H 뉴 클래식,600S VIP,sedan,61.182519,3
+kgm,체어맨H 뉴 클래식,600S 브라운 에디션,sedan,61.182519,3
+kgm,체어맨H 뉴 클래식,600S 최고급형,sedan,61.182519,3
+hyundai,그랜저HG,모던,sedan,61.568123,6
+hyundai,그랜저HG,모던 컬렉션,sedan,61.568123,3
+hyundai,그랜저HG 하이브리드,프리미엄 컬렉션,sedan,61.568123,1
+kia,더 뉴 K8 하이브리드,노블레스,sedan,62.017995,1
+kia,더 뉴 K8 하이브리드,노블레스 라이트,sedan,62.017995,1
+kia,더 뉴 K8 하이브리드,베스트 셀렉션,sedan,62.017995,1
+kia,더 뉴 K8 하이브리드,시그니처,sedan,62.017995,1
+renault,뉴SM5 플래티넘,SE 플러스,sedan,62.339332,3
+hyundai,그랜저HG,프리미엄 컬렉션,sedan,62.467866,2
+kia,K8 하이브리드,노블레스,sedan,62.724936,1
+kia,K8 하이브리드,노블레스 라이트,sedan,62.724936,1
+kia,K8 하이브리드,시그니처,sedan,62.724936,1
+hyundai,디 올 뉴 그랜저 하이브리드,아너스,sedan,63.303342,1
+hyundai,디 올 뉴 그랜저 하이브리드,익스클루시브,sedan,63.303342,1
+hyundai,디 올 뉴 그랜저 하이브리드,캘리그래피,sedan,63.303342,1
+hyundai,디 올 뉴 그랜저 하이브리드,캘리그래피(블랙익스테리어),sedan,63.303342,1
+hyundai,디 올 뉴 그랜저 하이브리드,캘리그래피(블랙잉크),sedan,63.303342,1
+hyundai,디 올 뉴 그랜저 하이브리드,프리미엄,sedan,63.303342,1
+hyundai,그랜저IG,프리미엄,sedan,64.010283,6
+hyundai,그랜저IG,프리미엄 스페셜,sedan,64.010283,6
+hyundai,그랜저IG 하이브리드,익스클루시브,sedan,64.010283,3
+hyundai,그랜저IG 하이브리드,익스클루시브 스페셜,sedan,64.010283,3
+hyundai,그랜저IG 하이브리드,프리미엄,sedan,64.010283,3
+hyundai,그랜저HG,아제라(수출형),sedan,64.395887,2
+kia,더 프레스티지 K7,디럭스,sedan,64.524422,1
+hyundai,쏘나타 뉴 라이즈,경제형,sedan,64.845758,1
+hyundai,쏘나타 뉴 라이즈,고급형,sedan,64.845758,1
+hyundai,쏘나타 뉴 라이즈,인스퍼레이션,sedan,64.845758,1
+hyundai,쏘나타 뉴 라이즈,프리미엄,sedan,64.845758,7
+kia,K7 하이브리드,700h 럭셔리,sedan,65.295630,3
+kia,K7 하이브리드,700h 프레스티지,sedan,65.295630,3
+kia,더 뉴 K7,기본형,sedan,65.295630,1
+renault,SM5 노바,LE,sedan,67.159383,2
+renault,SM5 노바,LE 스타일팩,sedan,67.159383,1
+renault,SM5 노바,LE 아트 컬렉션II,sedan,67.159383,1
+renault,SM5 노바,PE,sedan,67.159383,6
+renault,SM5 노바,PE 스타일팩,sedan,67.159383,1
+renault,SM5 노바,PE 플러스,sedan,67.159383,1
+renault,SM5 노바,RE,sedan,67.159383,1
+renault,SM5 노바,RE 스타일팩,sedan,67.159383,1
+renault,SM5 노바,RE 아트 컬렉션II,sedan,67.159383,1
+renault,SM5 노바,SE,sedan,67.159383,2
+renault,SM5 노바,SE 스타일팩,sedan,67.159383,1
+renault,SM5 노바,SE 아트 컬렉션II,sedan,67.159383,1
+renault,SM5 노바,클래식,sedan,67.159383,3
+renault,뉴SM5 플래티넘,LE,sedan,67.159383,3
+renault,뉴SM5 플래티넘,LE S/S 컬렉션,sedan,67.159383,1
+renault,뉴SM5 플래티넘,LE 아트,sedan,67.159383,1
+renault,뉴SM5 플래티넘,LE 파노라마,sedan,67.159383,1
+renault,뉴SM5 플래티넘,PE,sedan,67.159383,3
+renault,뉴SM5 플래티넘,RE,sedan,67.159383,3
+renault,뉴SM5 플래티넘,RE S/S 컬렉션,sedan,67.159383,1
+renault,뉴SM5 플래티넘,RE 아트,sedan,67.159383,1
+renault,뉴SM5 플래티넘,RE 파노라마,sedan,67.159383,1
+renault,뉴SM5 플래티넘,SE,sedan,67.159383,3
+renault,뉴SM5 플래티넘,SE S/S 컬렉션,sedan,67.159383,1
+renault,뉴SM5 플래티넘,SE 아트,sedan,67.159383,1
+renault,뉴SM5 플래티넘,SE 파노라마,sedan,67.159383,1
+hyundai,그랜저HG,-,sedan,69.344473,1
+hyundai,그랜저HG,개인형,sedan,69.344473,1
+hyundai,그랜저HG,노블,sedan,69.344473,1
+hyundai,그랜저HG,로얄,sedan,69.344473,1
+hyundai,그랜저HG,모범형,sedan,69.344473,1
+hyundai,그랜저HG,모범형 VIP 패키지,sedan,69.344473,1
+hyundai,그랜저HG,이그제큐티브,sedan,69.344473,1
+hyundai,그랜저HG,프라임,sedan,69.344473,2
+kia,K7,디럭스 스페셜,sedan,69.922879,4
+hyundai,그랜저HG,더 타임리스,sedan,70.308483,1
+hyundai,그랜저HG,익스클루시브,sedan,70.308483,3
+hyundai,그랜저HG,익스클루시브 스페셜,sedan,70.308483,1
+hyundai,그랜저HG,익스클루시브 컬렉션,sedan,70.308483,1
+hyundai,그랜저HG,프리미엄,sedan,70.308483,6
+hyundai,그랜저IG,모던,sedan,70.694087,10
+kia,K7,디럭스,sedan,71.079692,5
+kia,K7,럭셔리,sedan,71.079692,3
+kia,K7,럭셔리 프리미엄,sedan,71.079692,3
+kia,K7,프레스티지,sedan,71.079692,3
+kia,K7,프레스티지 프리미엄,sedan,71.079692,3
+kia,더 프레스티지 K7,럭셔리,sedan,71.465296,4
+kia,더 뉴 K7,프레스티지 스페셜,sedan,71.593830,2
+hyundai,그랜저HG,셀러브리티,sedan,71.722365,2
+hyundai,그랜저IG,모던 베이직,sedan,72.043702,2
+hyundai,그랜저IG,모던 베이직 (렌터카),sedan,72.043702,4
+hyundai,그랜저IG,익스클루시브,sedan,72.043702,7
+hyundai,그랜저IG,익스클루시브 스페셜,sedan,72.043702,9
+kia,올 뉴 K7,리미티드,sedan,72.686375,4
+kia,올 뉴 K7,리미티드 에디션,sedan,72.686375,3
+kia,올 뉴 K7,월드컵 에디션,sedan,72.686375,1
+kia,올 뉴 K7 하이브리드,노블레스,sedan,72.686375,3
+kia,올 뉴 K7 하이브리드,노블레스 스페셜,sedan,72.686375,3
+kia,올 뉴 K7 하이브리드,프레스티지,sedan,72.686375,3
+kia,K8,노블레스 라이트,sedan,73.200514,2
+kia,K8,시그니처,sedan,73.200514,2
+kia,더 프레스티지 K7,프레스티지,sedan,73.393316,3
+kia,더 뉴 K7,디럭스,sedan,73.650386,1
+kia,더 뉴 K7,럭셔리,sedan,73.650386,2
+kia,더 뉴 K7,프레스티지,sedan,73.650386,7
+hyundai,아슬란,G300 모던,sedan,74.100257,3
+hyundai,아슬란,G300 모던 베이직,sedan,74.100257,1
+hyundai,아슬란,G300 모던 스페셜,sedan,74.100257,1
+hyundai,아슬란,G300 익스클루시브,sedan,74.100257,2
+hyundai,그랜저IG,셀러브리티,sedan,74.421594,3
+kia,K7 프리미어 하이브리드,노블레스,sedan,74.678663,1
+kia,K7 프리미어 하이브리드,시그니처,sedan,74.678663,1
+kia,K7 프리미어 하이브리드,프레스티지,sedan,74.678663,1
+kia,더 프레스티지 K7,노블레스,sedan,74.935733,3
+kia,올 뉴 K7,프레스티지,sedan,75.064267,12
+kia,더 뉴 K7,노블레스,sedan,75.192802,3
+kia,K7,노블레스,sedan,75.385604,2
+kia,K7,노블레스 프리미엄,sedan,75.385604,2
+kia,K8,노블레스,sedan,75.835476,4
+kia,K8,스탠다드,sedan,75.835476,2
+kia,K8,트렌디,sedan,75.835476,2
+kia,K8,프레스티지,sedan,75.835476,3
+kia,K8,플래티넘,sedan,75.835476,1
+kia,K7 프리미어,X 에디션,sedan,76.221080,1
+hyundai,아슬란,G330 모던,sedan,76.478149,2
+hyundai,아슬란,G330 익스클루시브,sedan,76.478149,3
+hyundai,아슬란,G330 프리미엄,sedan,76.478149,1
+hyundai,더 뉴 그랜저 하이브리드,르블랑,sedan,76.928021,1
+hyundai,더 뉴 그랜저 하이브리드,익스클루시브,sedan,76.928021,2
+hyundai,더 뉴 그랜저 하이브리드,캘리그래피,sedan,76.928021,2
+hyundai,더 뉴 그랜저 하이브리드,프리미엄,sedan,76.928021,2
+kia,더 뉴 K8,노블레스 라이트,sedan,77.313625,2
+kia,더 뉴 K8,베스트 셀렉션,sedan,77.313625,2
+kia,올 뉴 K7,노블레스,sedan,77.634961,8
+kia,올 뉴 K7,디럭스,sedan,77.634961,3
+kia,올 뉴 K7,럭셔리,sedan,77.634961,3
+hyundai,그랜저IG,개인형,sedan,78.020566,2
+hyundai,그랜저IG,모범형,sedan,78.020566,2
+hyundai,그랜저IG,모범형 VIP 패키지,sedan,78.020566,2
+kia,K7 프리미어,노블레스,sedan,78.534704,5
+kia,K7 프리미어,스탠다드,sedan,78.534704,2
+kia,K7 프리미어,시그니처,sedan,78.534704,1
+kia,K7 프리미어,트렌디,sedan,78.534704,2
+kia,K7 프리미어,프레스티지,sedan,78.534704,5
+kia,올 뉴 K7,노블레스 스페셜,sedan,78.984576,4
+kia,올 뉴 K7,리미티드 플러스,sedan,78.984576,2
+kia,오피러스 프리미엄,GH270 디럭스,sedan,79.370180,1
+kia,오피러스 프리미엄,GH270 디럭스 스페셜,sedan,79.370180,1
+kia,오피러스 프리미엄,GH270 스페셜,sedan,79.370180,2
+kia,오피러스 프리미엄,GH270 스페셜 럭셔리,sedan,79.370180,2
+kia,더 뉴 K8,노블레스,sedan,79.820051,5
+kia,더 뉴 K8,시그니처,sedan,79.820051,3
+kia,더 뉴 K8,프레스티지,sedan,79.820051,1
+hyundai,더 뉴 그랜저,르블랑,sedan,80.141388,2
+hyundai,더 뉴 그랜저,캘리그래피,sedan,80.141388,4
+hyundai,더 뉴 그랜저,고급형,sedan,80.912596,1
+hyundai,더 뉴 그랜저,고급형 VIP 패키지,sedan,80.912596,1
+hyundai,더 뉴 그랜저,모던,sedan,80.912596,1
+hyundai,더 뉴 그랜저,모범형,sedan,80.912596,1
+hyundai,더 뉴 그랜저,익스클루시브,sedan,80.912596,8
+hyundai,더 뉴 그랜저,익스클루시브 플러스,sedan,80.912596,1
+hyundai,더 뉴 그랜저,프리미엄,sedan,80.912596,7
+hyundai,더 뉴 그랜저,프리미엄 초이스,sedan,80.912596,3
+hyundai,더 뉴 그랜저,프리미엄 플러스,sedan,80.912596,1
+hyundai,더 뉴 그랜저 하이브리드,프리미엄 초이스,sedan,80.912596,1
+kia,더 뉴 K8 하이브리드,시그니처 블랙,sedan,81.619537,1
+renault,SM7 노바,-,sedan,82.776350,9
+renault,SM7 노바,LE,sedan,82.776350,2
+renault,SM7 노바,LE 스타일팩,sedan,82.776350,1
+renault,SM7 노바,RE,sedan,82.776350,2
+renault,SM7 노바,RE 스타일팩,sedan,82.776350,1
+renault,SM7 노바,RE 아트 컬렉션II,sedan,82.776350,1
+renault,SM7 노바,SE,sedan,82.776350,2
+renault,SM7 노바,SE 스타일팩,sedan,82.776350,1
+renault,올 뉴 SM7,LE,sedan,82.776350,3
+renault,올 뉴 SM7,LE AVM 패키지,sedan,82.776350,1
+renault,올 뉴 SM7,LE S/S 컬렉션,sedan,82.776350,1
+renault,올 뉴 SM7,LE 아트,sedan,82.776350,1
+renault,올 뉴 SM7,LE 파노라마,sedan,82.776350,1
+renault,올 뉴 SM7,RE,sedan,82.776350,3
+renault,올 뉴 SM7,RE S/S 컬렉션,sedan,82.776350,1
+renault,올 뉴 SM7,RE 파노라마,sedan,82.776350,1
+renault,올 뉴 SM7,SE,sedan,82.776350,3
+hyundai,디 올 뉴 그랜저,VIP,sedan,84.511568,1
+hyundai,디 올 뉴 그랜저,고급형,sedan,84.511568,1
+hyundai,디 올 뉴 그랜저,아너스,sedan,84.511568,3
+hyundai,디 올 뉴 그랜저,익스클루시브,sedan,84.511568,4
+hyundai,디 올 뉴 그랜저,익스클루시브 플러스,sedan,84.511568,1
+hyundai,디 올 뉴 그랜저,캘리그래피,sedan,84.511568,3
+hyundai,디 올 뉴 그랜저,캘리그래피(블랙익스테리어),sedan,84.511568,3
+hyundai,디 올 뉴 그랜저,캘리그래피(블랙잉크),sedan,84.511568,3
+hyundai,디 올 뉴 그랜저,프리미엄,sedan,84.511568,4
+hyundai,디 올 뉴 그랜저,프리미엄 플러스,sedan,84.511568,1
+kia,오피러스 프리미엄,GH330 고급형,sedan,85.732648,2
+kia,오피러스 프리미엄,GH330 고급형 럭셔리,sedan,85.732648,2
+kia,오피러스 프리미엄,GH330 노블레스,sedan,85.732648,1
+kia,오피러스 프리미엄,GH330 럭셔리,sedan,85.732648,1
+kia,오피러스 프리미엄,GH330 스페셜,sedan,85.732648,2
+kia,오피러스 프리미엄,GH330 스페셜 럭셔리,sedan,85.732648,2
+kia,오피러스 프리미엄,GH330 최고급형,sedan,85.732648,2
+kia,오피러스 프리미엄,GH330 프레스티지,sedan,85.732648,1
+kia,오피러스 프리미엄,GH330 프리미엄,sedan,85.732648,2
+kia,오피러스 프리미엄,GH380 노블레스,sedan,86.439589,1
+kia,오피러스 프리미엄,GH380 프리미엄,sedan,86.439589,2
+renault,SM7 노바,LE35,sedan,87.082262,3
+renault,SM7 노바,LE35 스타일팩,sedan,87.082262,1
+renault,SM7 노바,RE35,sedan,87.082262,3
+renault,SM7 노바,RE35 스타일팩,sedan,87.082262,1
+renault,SM7 노바,RE35 아트 컬렉션II,sedan,87.082262,1
+renault,올 뉴 SM7,LE35,sedan,87.082262,3
+renault,올 뉴 SM7,RE35,sedan,87.082262,4
+renault,올 뉴 SM7,SE35,sedan,87.082262,2
+hyundai,제네시스,그랜드,sedan,87.853470,3
+hyundai,제네시스,그랜드 프라임팩,sedan,87.853470,3
+hyundai,제네시스,럭셔리 VIP팩,sedan,87.853470,3
+hyundai,제네시스,럭셔리 프라임팩,sedan,87.853470,1
+hyundai,제네시스,모던,sedan,88.431877,1
+hyundai,제네시스,모던 스페셜,sedan,88.431877,1
+hyundai,제네시스,프리미엄,sedan,88.431877,1
+hyundai,제네시스,프리미엄 스페셜,sedan,88.431877,1
+hyundai,제네시스,프리미엄 스페셜 다이나믹 에디션,sedan,88.431877,1
+chevrolet,임팔라,LT,sedan,88.817481,3
+hyundai,제네시스 DH,모던,sedan,89.010283,4
+hyundai,제네시스 DH,프리미엄,sedan,89.010283,4
+hyundai,제네시스,럭셔리,sedan,89.331620,5
+hyundai,제네시스,로얄,sedan,89.331620,3
+hyundai,제네시스,로얄 VIP 팩,sedan,89.331620,3
+kia,더 뉴 K8,시그니처 블랙,sedan,89.588689,3
+hyundai,제네시스,익스클루시브,sedan,89.845758,1
+hyundai,제네시스,프레스티지,sedan,89.845758,1
+hyundai,제네시스,프레스티지 스페셜,sedan,89.845758,1
+hyundai,제네시스 DH,익스클루시브,sedan,90.231362,3
+hyundai,제네시스 DH,파이니스트 에디션,sedan,90.231362,3
+hyundai,제네시스 DH,프레스티지,sedan,90.231362,4
+hyundai,제네시스,프리미엄 다이나믹 에디션,sedan,90.488432,1
+chevrolet,임팔라,LTZ,sedan,90.745501,4
+chevrolet,임팔라,미드나이트 블랙,sedan,90.745501,2
+chevrolet,임팔라,프리미어,sedan,90.745501,2
+hyundai,제네시스,익스클루시브 다이나믹 에디션,sedan,91.066838,1
+hyundai,제네시스,프라다 다이나믹 에디션,sedan,91.066838,1
+hyundai,제네시스,프라다,sedan,91.259640,4
+kia,K9,프레지던트,sedan,91.388175,2
+kia,K9,VIP,sedan,91.516710,1
+kia,K9,이그제큐티브,sedan,91.709512,3
+kia,K9,프레스티지,sedan,91.709512,4
+kia,더 뉴 K9,프레스티지,sedan,91.902314,2
+kia,더 뉴 K9,VIP,sedan,92.030848,2
+kia,K9,노블레스 스페셜,sedan,92.223650,2
+kia,K9,프레스티지 스페셜,sedan,92.223650,2
+kia,더 뉴 K9,이그제큐티브,sedan,92.416452,4
+kia,K9,RVIP,sedan,92.609254,3
+kia,K9,노블레스,sedan,92.609254,3
+kia,더 뉴 K9,노블레스,sedan,92.802057,2
+kgm,뉴 체어맨W,CW600 VIP,sedan,92.930591,3
+kia,더 뉴 K9,-,sedan,93.123393,1
+kia,더 뉴 K9,퀀텀,sedan,93.123393,2
+kgm,뉴 체어맨W,CW700 VIP,sedan,93.380463,4
+kgm,뉴 체어맨W,CW700 이그제큐티브,sedan,93.380463,4
+hyundai,뉴 에쿠스,VS380 프레스티지,sedan,93.766067,5
+hyundai,뉴 에쿠스,VS380 프레스티지 VIP팩Ⅰ,sedan,93.766067,2
+hyundai,뉴 에쿠스,VS380 프레스티지 VIP팩Ⅱ,sedan,93.766067,1
+hyundai,뉴 에쿠스,VS380 프레스티지 VVIP팩,sedan,93.766067,1
+kia,더 K9,-,sedan,94.344473,2
+kia,더 K9,그랜드 마스터즈,sedan,94.344473,2
+kia,더 K9,마스터즈,sedan,94.344473,1
+kia,더 K9,마스터즈Ⅱ,sedan,94.344473,3
+kia,더 K9,마스터즈Ⅲ,sedan,94.344473,2
+hyundai,제네시스 DH,-,sedan,94.730077,2
+kia,더 K9,베스트 셀렉션Ⅱ,sedan,94.858612,2
+kia,더 뉴 K9 [RJ],플래티넘,sedan,94.987147,6
+kia,더 K9,그랜드 플래티넘,sedan,95.437018,2
+kia,더 K9,베스트 셀렉션Ⅰ,sedan,95.437018,1
+kia,더 K9,플래티넘,sedan,95.437018,2
+kia,더 K9,플래티넘Ⅰ,sedan,95.437018,3
+kia,더 K9,플래티넘Ⅱ,sedan,95.437018,3
+kia,더 K9,플래티넘Ⅲ,sedan,95.437018,2
+kgm,뉴 체어맨W,CW600 SVIP,sedan,96.015424,4
+kgm,뉴 체어맨W,CW600 럭셔리,sedan,96.015424,10
+kgm,뉴 체어맨W,CW600 프레스티지,sedan,96.015424,10
+kia,더 뉴 K9 [RJ],마스터즈,sedan,96.401028,2
+kia,더 뉴 K9 [RJ],베스트 셀렉션 I,sedan,96.401028,2
+kia,더 뉴 K9 [RJ],베스트 셀렉션 II,sedan,96.401028,2
+hyundai,뉴 에쿠스,VS380 럭셔리,sedan,96.979434,2
+hyundai,뉴 에쿠스,VS380 모던,sedan,96.979434,2
+hyundai,뉴 에쿠스,VS380 익스클루시브,sedan,96.979434,2
+hyundai,뉴 에쿠스,VS380 프라임,sedan,96.979434,2
+hyundai,뉴 에쿠스,VS380 프라임 VIP팩,sedan,96.979434,2
+hyundai,뉴 에쿠스,VS380 프리미엄,sedan,96.979434,2
+hyundai,뉴 에쿠스,VS460 프레스티지,sedan,97.429306,1
+kia,더 K9,퀀텀,sedan,97.557841,2
+kgm,뉴 체어맨W,V8 5000,sedan,97.750643,1
+kgm,뉴 체어맨W,V8 5000 스페셜 에디션,sedan,97.750643,1
+kgm,뉴 체어맨W,CW700 VVIP,sedan,98.136247,9
+kgm,뉴 체어맨W,CW700 럭셔리,sedan,98.136247,6
+kgm,뉴 체어맨W,CW700 보우 에디션,sedan,98.136247,2
+kgm,뉴 체어맨W,CW700 프레스티지,sedan,98.136247,8
+hyundai,뉴 에쿠스,VS500 (수출형),sedan,98.521851,1
+hyundai,뉴 에쿠스,VS500 프레스티지,sedan,98.521851,3
+kgm,뉴 체어맨W,V8 5000 보우 에디션,sedan,98.714653,2
+kgm,뉴 체어맨W,V8 5000 VVIP,sedan,98.843188,5
+kgm,뉴 체어맨W,CW700 리무진,sedan,98.971722,7
+hyundai,뉴 에쿠스,VL 380 프레스티지,sedan,99.100257,3
+kgm,뉴 체어맨W,V8 5000 서밋,sedan,99.228792,3
+hyundai,뉴 에쿠스,VL 500 프레스티지,sedan,99.357326,5
+kgm,뉴 체어맨W,V8 5000 리무진,sedan,99.485861,4
+renault,필랑트,아이코닉,sedan,99.807198,1
+renault,필랑트,에스프리 알핀,sedan,99.807198,1
+renault,필랑트,에스프리 알핀 1955,sedan,99.807198,1
+renault,필랑트,테크노,sedan,99.807198,1
+kia,쏘렌토R,리미티드 스페셜,suv,0.000000,1
+hyundai,뉴 투싼ix,-,suv,0.144300,1
+hyundai,더 뉴 캐스퍼,디 에센셜,suv,0.721501,2
+hyundai,더 뉴 캐스퍼,스마트,suv,0.721501,2
+hyundai,더 뉴 캐스퍼,인스퍼레이션,suv,0.721501,2
+hyundai,캐스퍼,디 에센셜,suv,0.721501,2
+hyundai,캐스퍼,모던,suv,0.721501,2
+hyundai,캐스퍼,스마트,suv,0.721501,4
+hyundai,캐스퍼,인스퍼레이션,suv,0.721501,2
+hyundai,싼타페CM,-,suv,1.298701,1
+hyundai,더 뉴 맥스크루즈,수출형,suv,1.443001,2
+hyundai,베라크루즈,VX 40주년 스페셜팩,suv,1.587302,1
+kia,스토닉,디럭스,suv,1.731602,4
+kia,스토닉,트렌디,suv,1.948052,5
+kia,스토닉,프레스티지,suv,1.948052,5
+hyundai,베뉴,모던,suv,2.380952,1
+hyundai,베뉴,모던 플러스,suv,2.380952,1
+hyundai,베뉴,스마트,suv,2.380952,1
+hyundai,베뉴,프리미엄,suv,2.380952,1
+hyundai,베뉴,플럭스,suv,2.741703,1
+renault,QM3,LE,suv,3.751804,4
+renault,QM3,RE,suv,3.751804,4
+renault,QM3,RE 시그니처,suv,3.751804,2
+renault,QM3,RE 시그니처 소닉 레드,suv,3.751804,2
+renault,QM3,RE 시그니처 쇼콜라 브라운,suv,3.751804,2
+renault,QM3,RE 시그니처 에투알 화이트,suv,3.751804,2
+renault,QM3,SE,suv,3.751804,4
+renault,뉴 QM3,LE,suv,3.751804,2
+renault,뉴 QM3,RE,suv,3.751804,2
+renault,뉴 QM3,RE S-에디션,suv,3.751804,1
+renault,뉴 QM3,RE 시그니처,suv,3.751804,2
+renault,뉴 QM3,RE 파노라믹 에디션,suv,3.751804,1
+renault,뉴 QM3,SE,suv,3.751804,2
+hyundai,코나 하이브리드,모던 스페셜,suv,4.834055,1
+hyundai,코나 하이브리드,스마트 스페셜,suv,4.834055,1
+hyundai,코나,모던,suv,5.122655,3
+hyundai,코나,스마트,suv,5.122655,7
+hyundai,코나,모던 초이스,suv,5.339105,4
+hyundai,더 뉴 코나 하이브리드,모던,suv,5.627706,1
+hyundai,더 뉴 코나 하이브리드,스마트,suv,5.627706,1
+hyundai,더 뉴 코나 하이브리드,인스퍼레이션,suv,5.627706,1
+hyundai,코나 하이브리드,프리미엄 스페셜,suv,5.916306,1
+hyundai,코나,플럭스 모던,suv,6.204906,2
+hyundai,코나,플럭스 프리미엄,suv,6.204906,2
+hyundai,코나,플럭스 프리미엄 스페셜,suv,6.204906,2
+hyundai,코나,모던 아트,suv,6.709957,3
+hyundai,코나,모던 테크,suv,6.709957,3
+hyundai,코나,모던 팝,suv,6.709957,3
+hyundai,코나,프리미엄,suv,6.709957,7
+hyundai,더 뉴 코나,N 라인 모던,suv,7.142857,2
+hyundai,더 뉴 코나,N 라인 인스퍼레이션,suv,7.142857,2
+hyundai,더 뉴 코나,모던,suv,7.503608,4
+hyundai,더 뉴 코나,스마트,suv,7.503608,4
+hyundai,더 뉴 코나,인스퍼레이션,suv,7.503608,4
+hyundai,코나,아이언맨 에디션,suv,7.792208,2
+kia,쏘울,-,suv,7.936508,1
+kia,쏘울,U 고급형,suv,8.152958,8
+kia,쏘울,스마트,suv,8.152958,2
+kia,쏘울,2U 세이프티,suv,8.441558,3
+kia,쏘울,U 스마트,suv,8.441558,2
+kia,쏘울,럭셔리,suv,8.730159,4
+kia,쏘울,프렌드,suv,8.730159,2
+kia,쏘울,디럭스,suv,9.379509,3
+kia,쏘울,디럭스 에코플러스,suv,9.379509,1
+kia,쏘울,럭셔리 스타일팩,suv,9.379509,1
+kia,쏘울,럭셔리 에코플러스,suv,9.379509,2
+kia,쏘울,프렌드 에코플러스,suv,9.379509,1
+kia,쏘울,프리미엄,suv,9.379509,3
+kia,쏘울,프리미엄 에코플러스,suv,9.379509,1
+renault,캡처,에디션 파리,suv,9.956710,1
+renault,캡처,인텐스,suv,10.101010,2
+renault,캡처,젠,suv,10.245310,1
+kgm,티볼리,TX,suv,10.389610,6
+kia,더 뉴 쏘울,노블레스 스페셜,suv,10.678211,1
+kia,올 뉴 쏘울,노블레스 스페셜,suv,10.678211,1
+kia,올 뉴 쏘울,액티브존,suv,10.678211,1
+kia,올 뉴 쏘울,노블레스,suv,11.111111,6
+kia,올 뉴 쏘울,브라운존,suv,11.111111,2
+kia,올 뉴 쏘울,프레스티지,suv,11.111111,6
+kgm,티볼리 아머,TX,suv,11.399711,5
+kia,더 뉴 쏘울,노블레스,suv,11.976912,1
+kia,더 뉴 쏘울,트렌디,suv,11.976912,1
+kia,더 뉴 쏘울,프레스티지,suv,11.976912,1
+kia,올 뉴 쏘울,그린존,suv,11.976912,1
+kia,올 뉴 쏘울,럭셔리,suv,11.976912,3
+kia,올 뉴 쏘울,레드존,suv,11.976912,3
+kia,올 뉴 쏘울,트렌디,suv,11.976912,1
+kia,니로,노블레스,suv,13.131313,4
+kia,니로,럭셔리,suv,13.131313,3
+kia,니로,프레스티지,suv,13.131313,4
+kia,더 뉴 니로,노블레스,suv,13.131313,3
+kia,더 뉴 니로,노블레스 스페셜,suv,13.131313,2
+kia,더 뉴 니로,럭셔리,suv,13.131313,1
+kia,더 뉴 니로,시그니처,suv,13.131313,2
+kia,더 뉴 니로,트렌디,suv,13.131313,1
+kia,더 뉴 니로,프레스티지,suv,13.131313,2
+hyundai,코나 N,-,suv,13.852814,1
+kgm,티볼리 아머,기어 에디션,suv,14.213564,4
+kgm,티볼리 아머,기어 플러스,suv,14.213564,4
+kgm,티볼리 아머,기어 플러스 I,suv,14.213564,2
+kgm,티볼리 아머,기어 플러스 II,suv,14.213564,2
+kgm,티볼리,LX,suv,15.007215,6
+kgm,티볼리,LX 고급형,suv,15.007215,3
+kgm,티볼리,LX 최고급형,suv,15.007215,2
+kgm,티볼리,TX 스타일,suv,15.007215,1
+kgm,티볼리,VX,suv,15.007215,4
+kgm,티볼리,삼바 에디션,suv,15.007215,3
+kgm,티볼리,엣지 에디션,suv,15.007215,3
+kgm,티볼리 아머,LX,suv,15.800866,6
+kgm,티볼리 아머,VX,suv,15.800866,5
+kgm,티볼리 아머,기어 II 드라이빙 기어,suv,15.800866,4
+kgm,티볼리 아머,기어 II 스타일링 기어,suv,15.800866,4
+kia,쏘울 부스터,노블레스,suv,16.305916,1
+kia,쏘울 부스터,노블레스 스페셜,suv,16.305916,1
+kia,쏘울 부스터,프레스티지,suv,16.305916,1
+kia,쏘울,2U 쿨,suv,16.738817,8
+kia,쏘울,4U 코스모,suv,16.738817,8
+kia,쏘울,U 최고급형,suv,16.738817,6
+kia,쏘울,2U 고급형,suv,17.099567,9
+kia,쏘울,2U 최고급형,suv,17.099567,8
+chevrolet,더 뉴 트랙스,LS,suv,17.388167,8
+chevrolet,더 뉴 트랙스,LS 디럭스,suv,17.388167,8
+kia,쏘울,4U,suv,17.604618,8
+kia,디 올 뉴 니로,베스트 셀렉션,suv,17.965368,1
+kia,디 올 뉴 니로,시그니처,suv,17.965368,2
+kia,디 올 뉴 니로,트렌디,suv,17.965368,2
+kia,디 올 뉴 니로,프레스티지,suv,17.965368,2
+kgm,베리 뉴 티볼리,V1,suv,18.326118,5
+kgm,베리 뉴 티볼리,R-PLUS,suv,18.686869,1
+kgm,베리 뉴 티볼리,V3,suv,18.686869,5
+kgm,베리 뉴 티볼리,V5,suv,18.686869,5
+kgm,베리 뉴 티볼리,업비트,suv,18.686869,1
+kgm,베리 뉴 티볼리,V7,suv,19.047619,4
+chevrolet,트랙스,LS,suv,19.552670,6
+chevrolet,트랙스,LS 디럭스 패키지,suv,19.552670,5
+chevrolet,트랙스,LT,suv,19.552670,6
+chevrolet,트랙스,LT 디럭스,suv,19.552670,2
+chevrolet,트랙스,LTZ,suv,19.552670,6
+chevrolet,트랙스,퍼팩트 블랙,suv,19.552670,1
+kia,쏘울,2U,suv,20.129870,1
+kia,쏘울,스포츠,suv,20.129870,3
+kgm,베리 뉴 티볼리,V3 스페셜,suv,20.418470,4
+kgm,베리 뉴 티볼리,리미티드 에디션,suv,20.418470,4
+chevrolet,트랙스,LT 레더 패키지,suv,20.707071,4
+chevrolet,트랙스,프리미엄 에디션,suv,20.707071,4
+kia,셀토스,트렌디,suv,20.923521,10
+chevrolet,트랙스 크로스오버,LS,suv,21.428571,1
+chevrolet,트랙스 크로스오버,LT,suv,21.428571,1
+chevrolet,트랙스 크로스오버,RS,suv,21.428571,1
+chevrolet,트랙스 크로스오버,RS 미드나잇 에디션,suv,21.428571,1
+chevrolet,트랙스 크로스오버,레드라인,suv,21.428571,1
+chevrolet,트랙스 크로스오버,액티브,suv,21.428571,1
+kia,셀토스,프레스티지,suv,21.933622,10
+hyundai,디 올 뉴 코나 하이브리드,모던,suv,22.077922,1
+chevrolet,더 뉴 트랙스,LTZ,suv,22.222222,4
+hyundai,디 올 뉴 코나,모던,suv,22.366522,3
+chevrolet,트랙스,퍼펙트 블랙,suv,22.510823,2
+hyundai,디 올 뉴 코나 하이브리드,H-Pick,suv,22.727273,1
+hyundai,디 올 뉴 코나 하이브리드,프리미엄,suv,22.727273,1
+hyundai,디 올 뉴 코나,프리미엄,suv,22.943723,3
+chevrolet,더 뉴 트랙스,LT,suv,23.593074,8
+chevrolet,더 뉴 트랙스,LT 디럭스,suv,23.593074,6
+chevrolet,더 뉴 트랙스,LT 코어,suv,23.593074,4
+chevrolet,더 뉴 트랙스,레드라인 LT 코어,suv,23.593074,2
+chevrolet,더 뉴 트랙스,레드라인 프리미어,suv,23.593074,2
+chevrolet,더 뉴 트랙스,블레이드 에디션,suv,23.593074,2
+chevrolet,더 뉴 트랙스,퍼펙트 블랙,suv,23.593074,6
+chevrolet,더 뉴 트랙스,프리미어,suv,23.593074,6
+kia,더 뉴 셀토스,트렌디,suv,24.314574,2
+kia,더 뉴 셀토스,프레스티지,suv,24.314574,2
+hyundai,디 올 뉴 코나 하이브리드,블랙 익스테리어,suv,24.603175,1
+hyundai,디 올 뉴 코나 하이브리드,인스퍼레이션,suv,24.603175,1
+hyundai,디 올 뉴 코나,인스퍼레이션,suv,24.819625,3
+kia,셀토스,그래비티,suv,25.036075,4
+kia,셀토스,시그니처,suv,25.036075,4
+kia,셀토스,노블레스,suv,25.252525,6
+hyundai,디 올 뉴 코나,H-Pick,suv,25.396825,2
+hyundai,디 올 뉴 코나 하이브리드,N라인,suv,25.541126,1
+renault,XM3,RE 시그니처,suv,25.685426,1
+hyundai,디 올 뉴 코나,N라인,suv,25.829726,1
+hyundai,디 올 뉴 코나,블랙 익스테리어,suv,25.974026,2
+kia,더 뉴 셀토스,X-Line,suv,26.118326,2
+renault,XM3,인스파이어,suv,26.262626,2
+kia,더 뉴 셀토스,그래비티,suv,26.479076,2
+kia,더 뉴 셀토스,시그니처,suv,26.479076,2
+chevrolet,트레일블레이저,LS,suv,26.767677,2
+chevrolet,트레일블레이저,LT,suv,26.767677,2
+renault,XM3,LE,suv,27.200577,3
+renault,XM3,LE 플러스,suv,27.200577,1
+renault,XM3,RE,suv,27.200577,5
+renault,XM3,SE,suv,27.200577,2
+chevrolet,더 뉴 트레일블레이저,LT,suv,27.561328,1
+kgm,티볼리 에어,AX,suv,27.849928,7
+kgm,티볼리 에어,IX,suv,27.849928,9
+kgm,티볼리 에어,RX,suv,27.849928,10
+kia,디 올 뉴 셀토스,트렌디,suv,28.138528,3
+chevrolet,더 뉴 트레일블레이저,프리미어,suv,28.354978,1
+chevrolet,트레일블레이저,프리미어,suv,28.354978,2
+kia,디 올 뉴 셀토스,시그니처,suv,28.643579,3
+kia,디 올 뉴 셀토스,프레스티지,suv,28.643579,3
+chevrolet,더 뉴 트레일블레이저,RS,suv,29.076479,2
+chevrolet,더 뉴 트레일블레이저,액티브,suv,29.076479,2
+chevrolet,트레일블레이저,RS,suv,29.076479,2
+chevrolet,트레일블레이저,액티브,suv,29.076479,2
+kia,디 올 뉴 셀토스,X-Line,suv,29.437229,3
+kgm,티볼리 에어,A1,suv,29.581530,1
+kgm,티볼리 에어,A3,suv,29.797980,1
+kgm,티볼리 에어,업비트,suv,29.797980,1
+hyundai,뉴 투싼ix,스마트,suv,30.375180,4
+hyundai,투싼ix,LX20 럭셔리,suv,30.375180,4
+hyundai,투싼ix,LX20 월드컵 스페셜 에디션,suv,30.375180,1
+hyundai,투싼ix,X20 디럭스,suv,30.375180,3
+hyundai,투싼ix,X20 럭셔리,suv,30.375180,6
+hyundai,투싼ix,X20 스타일,suv,30.375180,2
+hyundai,투싼ix,X20 워너비,suv,30.880231,3
+hyundai,뉴 투싼ix,스타일,suv,31.024531,2
+hyundai,투싼ix,LX20 스마트팩,suv,31.240981,2
+hyundai,투싼ix,X20 스마트,suv,31.240981,2
+kgm,뷰티풀 코란도,C3,suv,31.529582,4
+kgm,뷰티풀 코란도,C3 플러스,suv,31.529582,2
+kgm,뷰티풀 코란도,샤이니,suv,31.746032,2
+kgm,뷰티풀 코란도,C5 프라임,suv,31.890332,2
+hyundai,올 뉴 투싼,모던 초이스,suv,32.034632,6
+kgm,뷰티풀 코란도,C5,suv,32.395382,4
+kgm,뷰티풀 코란도,C5 플러스,suv,32.395382,4
+kgm,뷰티풀 코란도,C7,suv,32.395382,4
+kgm,뷰티풀 코란도,R-플러스,suv,32.395382,2
+hyundai,올 뉴 투싼,스타일 피버,suv,32.756133,2
+kgm,뷰티풀 코란도,딜라이트,suv,33.044733,2
+kgm,뷰티풀 코란도,딜라이트 플러스,suv,33.044733,2
+kgm,뷰티풀 코란도,판타스틱,suv,33.044733,2
+hyundai,올 뉴 투싼,스타일,suv,33.333333,7
+hyundai,뉴 투싼ix,모던,suv,33.982684,5
+hyundai,뉴 투싼ix,스마트 스페셜,suv,33.982684,5
+hyundai,뉴 투싼ix,월드컵 에디션,suv,33.982684,3
+hyundai,뉴 투싼ix,프리미엄,suv,33.982684,2
+hyundai,투싼ix,LMX20 프리미엄,suv,33.982684,9
+hyundai,투싼ix,LX20 모던,suv,33.982684,2
+hyundai,투싼ix,LX20 프리미어,suv,33.982684,9
+hyundai,투싼ix,X20 스페셜팩,suv,33.982684,1
+hyundai,올 뉴 투싼,스마트,suv,34.632035,9
+hyundai,올 뉴 투싼,베스트 초이스,suv,34.920635,6
+hyundai,올 뉴 투싼,얼티밋 에디션,suv,34.920635,6
+hyundai,올 뉴 투싼,인스퍼레이션,suv,34.920635,6
+hyundai,올 뉴 투싼,모던 피버,suv,35.209235,2
+kgm,뉴 코란도 C,CVS 고급형,suv,36.435786,2
+kgm,뉴 코란도 C,CVS 최고급형,suv,36.435786,2
+kgm,코란도 C,시크,suv,36.435786,3
+kgm,코란도 C,시크 K룩,suv,36.435786,1
+kgm,코란도 C,시크 리미티드,suv,36.435786,1
+kgm,코란도 C,시크 비트,suv,36.435786,1
+kgm,코란도 C,시크 쿨,suv,36.435786,1
+kgm,코란도 C,클래시,suv,36.435786,4
+kgm,코란도 C,클래시 럭셔리,suv,36.435786,5
+kgm,코란도 C,클래시 컴포트,suv,36.435786,1
+kgm,코란도 C,클러비,suv,36.435786,4
+kgm,코란도 C,클러비 K룩,suv,36.435786,1
+kgm,코란도 C,클러비 가디언,suv,36.435786,1
+kgm,코란도 C,클러비 리미티드,suv,36.435786,1
+kgm,코란도 C,클러비 매니아,suv,36.435786,1
+kgm,코란도 C,클러비 파크,suv,36.435786,3
+kia,스포티지 더 볼드,트렌디,suv,37.662338,8
+kia,스포티지R,LX,suv,37.806638,6
+hyundai,올 뉴 투싼,모던,suv,37.950938,13
+hyundai,올 뉴 투싼,프리미엄,suv,38.095238,12
+kia,더 뉴 스포티지R,럭셔리,suv,38.239538,3
+kgm,뉴 코란도 C,KX,suv,38.383838,4
+kia,스포티지R,TLX 최고급형,suv,38.528139,6
+kgm,뉴 스타일 코란도 C,KX,suv,38.672439,2
+kia,스포티지 4세대,스타일 에디션,suv,38.888889,1
+kia,스포티지 4세대,트렌디,suv,38.888889,9
+kia,더 뉴 스포티지R,W 스페셜,suv,39.538240,1
+kia,더 뉴 스포티지R,노블레스,suv,39.538240,4
+kia,더 뉴 스포티지R,에이스,suv,39.538240,3
+kia,더 뉴 스포티지R,트렌디,suv,39.538240,5
+kia,더 뉴 스포티지R,프레스티지,suv,39.538240,4
+kia,스포티지R,TLX 고급형,suv,39.538240,3
+kia,스포티지R,TLX 프리미엄,suv,39.538240,3
+kia,스포티지 더 볼드,럭셔리,suv,40.115440,5
+kia,더 뉴 스포티지R,럭셔리 트렌디,suv,40.259740,2
+kia,스포티지R,리미티드,suv,40.404040,8
+hyundai,올 뉴 투싼,스타일 스페셜,suv,40.548341,2
+kia,스포티지 4세대,노블레스,suv,40.692641,8
+hyundai,올 뉴 투싼,모던 스페셜,suv,40.909091,2
+hyundai,올 뉴 투싼,익스트림 에디션,suv,40.909091,2
+kia,스포티지 4세대,노블레스 스페셜,suv,41.269841,5
+kia,스포티지 4세대,노블레스 플러스,suv,41.269841,2
+kia,스포티지 4세대,프레스티지,suv,41.269841,4
+kia,스포티지 더 볼드,프레스티지,suv,41.630592,15
+kia,스포티지 더 볼드,프레스티지 그래비티,suv,41.630592,5
+kia,스포티지 더 볼드,노블레스,suv,42.063492,5
+kia,스포티지 더 볼드,시그니처,suv,42.063492,9
+kia,스포티지 더 볼드,시그니처 그래비티,suv,42.063492,5
+kia,스포티지 더 볼드,인텔리전트,suv,42.063492,5
+kgm,뉴 코란도 C,CVT 고급형,suv,42.784993,2
+kgm,뉴 코란도 C,CVT 최고급형,suv,42.784993,2
+kgm,뉴 코란도 C,CVX 고급형,suv,42.784993,2
+kgm,뉴 코란도 C,CVX 최고급형,suv,42.784993,2
+kgm,뉴 코란도 C,어드벤처 60th 에디션,suv,42.784993,1
+kgm,뉴 코란도 C,어드벤처 60주년 에디션,suv,42.784993,1
+kgm,뉴 코란도 C,DX,suv,43.506494,4
+kgm,뉴 코란도 C,RX 고급형,suv,43.506494,4
+kgm,뉴 코란도 C,RX 최고급형,suv,43.506494,4
+kgm,뉴 코란도 C,익스트림,suv,43.506494,4
+kgm,뉴 스타일 코란도 C,DX,suv,44.372294,2
+kgm,뉴 스타일 코란도 C,RX,suv,44.372294,1
+kgm,뉴 스타일 코란도 C,RX 고급형,suv,44.372294,2
+kgm,뉴 스타일 코란도 C,RX 최고급형,suv,44.372294,2
+kgm,뉴 스타일 코란도 C,익스트림,suv,44.372294,2
+kgm,뉴 스타일 코란도 C,익스트림 스포츠,suv,44.372294,2
+kgm,뉴 코란도 C,KX 스페셜,suv,44.372294,2
+kgm,뉴 코란도 C,삼바 에디션,suv,44.372294,1
+hyundai,디 올 뉴 투싼 하이브리드,N 라인 인스퍼레이션,suv,45.310245,1
+hyundai,디 올 뉴 투싼 하이브리드,N 라인 프리미엄,suv,45.310245,1
+hyundai,디 올 뉴 투싼 하이브리드,모던,suv,45.310245,1
+hyundai,디 올 뉴 투싼 하이브리드,인스퍼레이션,suv,45.310245,1
+hyundai,디 올 뉴 투싼 하이브리드,프리미엄,suv,45.310245,1
+hyundai,더 뉴 투싼 하이브리드,모던,suv,45.887446,2
+hyundai,더 뉴 투싼 하이브리드,인스퍼레이션,suv,45.887446,2
+hyundai,더 뉴 투싼 하이브리드,프리미엄,suv,45.887446,2
+chevrolet,이쿼녹스,LS,suv,46.681097,1
+chevrolet,이쿼녹스,LT,suv,46.681097,1
+chevrolet,이쿼녹스,LT 익스클루시브,suv,46.681097,2
+chevrolet,이쿼녹스,LT 플러스,suv,46.681097,1
+chevrolet,이쿼녹스,LT 플러스 익스클루시브,suv,46.681097,2
+chevrolet,이쿼녹스,퍼펙트 블랙,suv,46.681097,2
+chevrolet,이쿼녹스,프리미어,suv,46.681097,1
+chevrolet,이쿼녹스,프리미어 익스클루시브,suv,46.681097,2
+hyundai,더 뉴 투싼 하이브리드,N 라인 인스퍼레이션,suv,47.402597,2
+hyundai,더 뉴 투싼 하이브리드,N 라인 프리미엄,suv,47.402597,2
+kia,디 올 뉴 스포티지 하이브리드,노블레스,suv,47.763348,1
+kia,디 올 뉴 스포티지 하이브리드,시그니처,suv,47.763348,1
+kia,디 올 뉴 스포티지 하이브리드,프레스티지,suv,47.763348,1
+hyundai,디 올 뉴 투싼,N 라인 인스퍼레이션,suv,48.340548,4
+hyundai,디 올 뉴 투싼,N 라인 프리미엄,suv,48.340548,4
+hyundai,디 올 뉴 투싼,모던,suv,48.340548,4
+hyundai,디 올 뉴 투싼,인스퍼레이션,suv,48.340548,4
+hyundai,디 올 뉴 투싼,프리미엄,suv,48.340548,4
+renault,QM5,LE,suv,49.567100,8
+renault,QM5,LE 프리미엄,suv,49.567100,2
+renault,QM5,LE 플러스,suv,49.567100,5
+renault,QM5,LE 플러스 스포티,suv,49.567100,1
+renault,QM5,RE,suv,49.567100,8
+renault,QM5,RE 플러스,suv,49.567100,2
+renault,QM5,SE,suv,49.567100,5
+renault,QM5,SE 프리미엄팩,suv,49.567100,2
+renault,QM5,SE 플러스,suv,49.567100,2
+renault,QM5,보스 스페셜 에디션,suv,49.567100,1
+renault,QM5,어드벤처,suv,49.567100,1
+renault,QM5,페어웨이,suv,49.567100,1
+renault,QM5 네오,SE,suv,50.865801,6
+renault,뉴 QM5,LE,suv,50.865801,4
+renault,뉴 QM5,LE 플러스,suv,50.865801,2
+renault,뉴 QM5,RE,suv,50.865801,4
+renault,뉴 QM5,SE,suv,50.865801,4
+renault,뉴 QM5,살로몬 에디션,suv,50.865801,3
+renault,뉴 QM5,LE20,suv,51.443001,1
+renault,뉴 QM5,SE20,suv,51.443001,1
+hyundai,더 뉴 투싼,모던,suv,51.803752,4
+hyundai,더 뉴 투싼,인스퍼레이션,suv,51.803752,4
+hyundai,더 뉴 투싼,프리미엄,suv,51.803752,4
+hyundai,더 뉴 투싼,N 라인 인스퍼레이션,suv,52.164502,4
+hyundai,더 뉴 투싼,N 라인 프리미엄,suv,52.164502,4
+renault,QM6,LE,suv,52.525253,10
+renault,QM6,RE 플러스,suv,52.525253,2
+renault,QM6,SE,suv,52.525253,6
+kia,디 올 뉴 스포티지 하이브리드,노블레스 그래비티,suv,52.886003,1
+kia,디 올 뉴 스포티지 하이브리드,시그니처 그래비티,suv,52.886003,1
+kia,디 올 뉴 스포티지,트렌디,suv,53.102453,3
+kia,디 올 뉴 스포티지,노블레스,suv,53.391053,3
+kia,디 올 뉴 스포티지,시그니처,suv,53.391053,3
+kia,디 올 뉴 스포티지,프레스티지,suv,53.391053,3
+renault,QM5 네오,LE,suv,54.040404,6
+renault,QM5 네오,LE 아트 컬렉션 II,suv,54.040404,1
+renault,QM5 네오,LE 아트 컬렉션II,suv,54.040404,1
+renault,QM5 네오,R4U,suv,54.040404,6
+renault,QM5 네오,RE,suv,54.040404,6
+renault,QM5 네오,RE 아트 컬렉션II,suv,54.040404,2
+renault,QM5,씨티 LE25,suv,55.122655,3
+renault,QM5,씨티 LE25 플러스,suv,55.122655,2
+renault,QM5,씨티 RE25,suv,55.122655,3
+renault,QM5,씨티 SE25,suv,55.122655,2
+renault,QM5,씨티 SE25 프리미엄팩,suv,55.122655,1
+renault,QM5,씨티 SE25 플러스,suv,55.122655,1
+renault,QM5,씨티 보스,suv,55.122655,1
+renault,QM5,씨티 어드벤처,suv,55.122655,1
+renault,QM5,씨티 페어웨이25,suv,55.122655,1
+renault,뉴 QM5,LE25,suv,56.060606,3
+renault,뉴 QM5,LE25 플러스,suv,56.060606,1
+renault,뉴 QM5,RE25,suv,56.060606,2
+renault,뉴 QM5,SE25,suv,56.060606,2
+renault,더 뉴 QM6,RE,suv,56.709957,7
+renault,더 뉴 QM6,RE 시그니처,suv,56.709957,6
+renault,더 뉴 QM6,SE,suv,56.709957,5
+renault,더 뉴 QM6,볼드 에디션,suv,56.709957,1
+renault,더 뉴 QM6,프리미에르,suv,56.709957,5
+renault,더 뉴 QM6,LE,suv,57.215007,4
+renault,더 뉴 QM6,LE 시그니처,suv,57.215007,2
+kia,디 올 뉴 스포티지,노블레스 그래비티,suv,57.503608,3
+kia,디 올 뉴 스포티지,시그니처 그래비티,suv,57.503608,3
+renault,QM6,RE,suv,57.792208,10
+renault,QM6,RE 시그니처,suv,57.792208,9
+renault,더 뉴 QM6,비즈니스,suv,58.080808,1
+renault,더 뉴 QM6,어드밴처,suv,58.080808,1
+hyundai,싼타페DM,모던,suv,58.369408,6
+hyundai,싼타페DM,스마트,suv,58.369408,4
+hyundai,싼타페 더 프라임,모던,suv,58.658009,1
+hyundai,싼타페 더 프라임,스마트,suv,58.658009,4
+kgm,무쏘,2000,suv,58.946609,1
+kgm,무쏘,2000 프레스티지,suv,58.946609,1
+hyundai,싼타페DM,익스클루시브,suv,59.307359,12
+hyundai,싼타페DM,익스클루시브 스페셜,suv,59.307359,8
+hyundai,싼타페DM,프리미엄,suv,59.307359,12
+renault,그랑 콜레오스,테크노,suv,59.595960,2
+hyundai,싼타페 더 프라임,1 밀리언,suv,59.812410,3
+hyundai,싼타페 더 프라임,1 밀리언 스타일,suv,59.812410,2
+hyundai,싼타페 더 프라임,프리미엄,suv,60.028860,8
+hyundai,싼타페 더 프라임,밸류 플러스,suv,60.173160,3
+hyundai,싼타페 더 프라임,익스클루시브,suv,60.389610,6
+hyundai,싼타페 더 프라임,익스클루시브 스페셜,suv,60.389610,8
+kgm,무쏘,2300,suv,60.678211,1
+kgm,무쏘,2300 프레스티지,suv,60.678211,1
+kgm,무쏘,601,suv,60.894661,4
+renault,그랑 콜레오스,아이코닉,suv,61.111111,3
+renault,그랑 콜레오스,에스프리 알핀,suv,61.111111,3
+hyundai,싼타페 더 프라임,1 밀리언 얼티밋,suv,61.327561,2
+kgm,액티언 2세대,S7,suv,61.616162,4
+kgm,액티언 2세대,S8,suv,61.616162,4
+kgm,액티언 2세대,S9,suv,61.616162,4
+kgm,액티언 2세대,S8 하이브리드,suv,61.904762,1
+chevrolet,캡티바,다이나믹 레드,suv,62.049062,2
+kgm,토레스,T5,suv,62.265512,2
+kgm,토레스,T7,suv,62.265512,2
+kgm,토레스,TL5,suv,62.698413,1
+kgm,토레스,TL7,suv,62.698413,1
+kgm,토레스,TX,suv,62.698413,1
+kgm,토레스,블랙 에디션,suv,62.698413,1
+chevrolet,캡티바,LS 프리미엄,suv,63.059163,1
+hyundai,싼타페TM,모던,suv,63.203463,1
+hyundai,싼타페TM,프리미엄,suv,63.347763,8
+hyundai,더 뉴 싼타페 하이브리드,익스클루시브 5인승,suv,63.852814,2
+hyundai,더 뉴 싼타페 하이브리드,익스클루시브 6인승,suv,63.852814,2
+hyundai,더 뉴 싼타페 하이브리드,익스클루시브 7인승,suv,63.852814,2
+hyundai,더 뉴 싼타페 하이브리드,프레스티지 5인승,suv,63.852814,2
+hyundai,더 뉴 싼타페 하이브리드,프레스티지 6인승,suv,63.852814,2
+hyundai,더 뉴 싼타페 하이브리드,프레스티지 7인승,suv,63.852814,2
+chevrolet,캡티바,시티팩,suv,64.357864,2
+chevrolet,캡티바,LT 스마트,suv,64.502165,1
+chevrolet,캡티바,LS,suv,64.935065,5
+chevrolet,캡티바,LS 디럭스팩,suv,64.935065,3
+chevrolet,캡티바,LT 디럭스팩,suv,64.935065,3
+chevrolet,캡티바,LTZ,suv,64.935065,4
+chevrolet,캡티바,퍼펙트 블랙,suv,64.935065,2
+chevrolet,캡티바,LT,suv,65.512266,8
+chevrolet,캡티바,LT 프리미엄,suv,65.512266,2
+chevrolet,캡티바,어드벤처팩,suv,65.512266,2
+kia,올 뉴 쏘렌토,디럭스,suv,65.873016,2
+kia,올 뉴 쏘렌토,럭셔리,suv,65.873016,4
+kia,뉴 쏘렌토R,LX,suv,66.089466,4
+kia,올 뉴 쏘렌토,노블레스,suv,66.305916,12
+kia,올 뉴 쏘렌토,프레스티지,suv,66.305916,12
+renault,그랑 콜레오스,에스카파드 루프박스,suv,66.594517,3
+renault,그랑 콜레오스,에스카파드 파노라마 선루프,suv,66.594517,3
+hyundai,싼타페CM,MLX 스마트팩,suv,66.810967,1
+kia,더 뉴 쏘렌토,럭셔리,suv,66.955267,6
+hyundai,싼타페DM,-,suv,67.099567,1
+kgm,무쏘,EX,suv,67.316017,1
+kgm,무쏘,IL6 3200,suv,67.316017,2
+kia,더 뉴 쏘렌토,노블레스,suv,67.676768,15
+kia,더 뉴 쏘렌토,마스터 스페셜,suv,67.676768,6
+kia,더 뉴 쏘렌토,프레스티지,suv,67.676768,15
+kia,더 뉴 쏘렌토 4세대 하이브리드,프레스티지,suv,67.965368,2
+kia,쏘렌토 4세대 하이브리드,그래비티,suv,68.326118,2
+kia,쏘렌토 4세대 하이브리드,노블레스,suv,68.326118,2
+kia,쏘렌토 4세대 하이브리드,시그니처,suv,68.326118,2
+kia,쏘렌토 4세대 하이브리드,프레스티지,suv,68.326118,2
+kia,올 뉴 쏘렌토,노블레스 스페셜,suv,68.686869,9
+kia,더 뉴 쏘렌토,노블레스 스페셜,suv,68.903319,8
+kia,더 뉴 쏘렌토,마스터,suv,68.903319,6
+kgm,무쏘,-,suv,69.336219,1
+kgm,무쏘,602 EL,suv,69.336219,5
+kgm,무쏘,602 프레스티지,suv,69.336219,2
+kgm,무쏘,프레스티지,suv,69.336219,1
+kia,더 뉴 쏘렌토 4세대 하이브리드,그래비티,suv,69.841270,2
+kia,더 뉴 쏘렌토 4세대 하이브리드,노블레스,suv,69.841270,2
+kia,더 뉴 쏘렌토 4세대 하이브리드,시그니처,suv,69.841270,2
+kia,쏘렌토R,LX 고급형,suv,70.202020,13
+kia,쏘렌토R,TLX 고급형,suv,70.202020,13
+hyundai,싼타페TM,익스클루시브 스페셜,suv,70.418470,4
+hyundai,싼타페TM,익스클루시브,suv,70.707071,8
+hyundai,싼타페TM,인스퍼레이션,suv,70.707071,9
+hyundai,싼타페TM,프레스티지,suv,70.707071,8
+kia,더 뉴 쏘렌토,No.1 에디션,suv,70.995671,2
+hyundai,싼타페 더스타일,CLX 기본형,suv,71.428571,1
+hyundai,싼타페CM,CLX 기본형,suv,71.428571,1
+hyundai,싼타페CM,MLX 모젠 최고급형,suv,71.428571,1
+hyundai,싼타페CM,SLX 모젠 고급형,suv,71.428571,1
+hyundai,싼타페CM,SLX 모젠 최고급형,suv,71.428571,1
+hyundai,싼타페CM,CLX 디럭스,suv,71.861472,4
+hyundai,싼타페 더스타일,CLX 디럭스,suv,72.005772,6
+hyundai,더 뉴 싼타페,익스클루시브 5인승,suv,72.582973,4
+hyundai,더 뉴 싼타페,익스클루시브 6인승,suv,72.582973,4
+hyundai,더 뉴 싼타페,익스클루시브 7인승,suv,72.582973,4
+hyundai,더 뉴 싼타페,프리미엄 5인승,suv,72.582973,4
+hyundai,더 뉴 싼타페,프리미엄 7인승,suv,72.582973,4
+hyundai,더 뉴 싼타페,프리미엄 초이스 5인승,suv,72.582973,4
+hyundai,더 뉴 싼타페,프리미엄 초이스 7인승,suv,72.582973,4
+kia,뉴 쏘렌토R,럭셔리,suv,73.160173,1
+hyundai,더 뉴 싼타페 하이브리드,캘리그래피 5인승,suv,73.448773,2
+hyundai,더 뉴 싼타페 하이브리드,캘리그래피 6인승,suv,73.448773,2
+hyundai,더 뉴 싼타페 하이브리드,캘리그래피 7인승,suv,73.448773,2
+kia,뉴 쏘렌토R,TLX 스페셜,suv,74.098124,4
+kia,뉴 쏘렌토R,노블레스,suv,74.098124,4
+kia,뉴 쏘렌토R,리미티드,suv,74.098124,4
+kia,뉴 쏘렌토R,리미티드 스페셜,suv,74.098124,4
+kia,뉴 쏘렌토R,트렌디,suv,74.098124,4
+kia,뉴 쏘렌토R,프레스티지,suv,74.098124,4
+kia,쏘렌토 4세대,트렌디,suv,74.603175,3
+kia,더 뉴 쏘렌토 4세대 하이브리드,X-Line,suv,74.747475,2
+hyundai,디 올 뉴 싼타페 하이브리드,익스클루시브,suv,74.891775,2
+hyundai,더 뉴 싼타페,프레스티지 5인승,suv,75.108225,6
+hyundai,더 뉴 싼타페,프레스티지 6인승,suv,75.108225,4
+kgm,뉴카이런,LV5 고급형,suv,75.396825,4
+kgm,뉴카이런,LV5 최고급형,suv,75.396825,4
+kia,뉴 쏘렌토R,TLX,suv,75.613276,4
+kia,쏘렌토 4세대,노블레스,suv,75.901876,3
+kia,쏘렌토 4세대,시그니처,suv,75.901876,3
+kia,쏘렌토 4세대,프레스티지,suv,75.901876,3
+hyundai,맥스크루즈,익스클루시브,suv,76.262626,4
+hyundai,맥스크루즈,익스클루시브 스페셜,suv,76.262626,6
+kia,더 뉴 쏘렌토 4세대,프레스티지,suv,76.479076,4
+hyundai,더 뉴 맥스크루즈,익스클루시브,suv,76.839827,9
+hyundai,더 뉴 맥스크루즈,익스클루시브 스페셜,suv,76.839827,7
+hyundai,더 뉴 맥스크루즈,파이니스트 에디션,suv,76.839827,7
+hyundai,더 뉴 맥스크루즈,프레스티지,suv,76.839827,6
+hyundai,더 뉴 싼타페,프레스티지 7인승,suv,77.200577,5
+kgm,뉴카이런,EV5 고급형,suv,77.633478,2
+kgm,뉴카이런,LV5,suv,77.633478,4
+kgm,뉴카이런,LV6,suv,77.633478,7
+kgm,뉴카이런,LV6 브라운 에디션,suv,77.633478,5
+kgm,뉴카이런,최고급형,suv,77.633478,1
+kia,쏘렌토 4세대,그래비티,suv,78.066378,2
+hyundai,싼타페 더스타일,MLX 디럭스,suv,78.282828,3
+hyundai,싼타페CM,MLX 월드컵 스페셜 에디션,suv,78.282828,1
+kia,쏘렌토R,TLX 최고급형,suv,78.715729,13
+kia,쏘렌토R,TLX 프리미엄,suv,78.715729,13
+kia,쏘렌토R,리미티드 고급형,suv,78.715729,9
+kia,쏘렌토R,리미티드 프리미엄,suv,78.715729,9
+kia,더 뉴 쏘렌토 4세대,X-Line,suv,79.292929,4
+kia,더 뉴 쏘렌토 4세대,그래비티,suv,79.292929,4
+kia,더 뉴 쏘렌토 4세대,노블레스,suv,79.292929,4
+kia,더 뉴 쏘렌토 4세대,시그니처,suv,79.292929,4
+hyundai,싼타페CM,MLX 디럭스,suv,79.653680,2
+hyundai,싼타페CM,MLX 최고급형,suv,79.942280,4
+hyundai,싼타페CM,SLX 고급형,suv,79.942280,2
+hyundai,싼타페CM,SLX 최고급형,suv,79.942280,4
+hyundai,싼타페 더스타일,MLX 럭셔리,suv,80.447330,5
+hyundai,싼타페 더스타일,SLX 탑,suv,80.447330,2
+hyundai,싼타페CM,MLX 럭셔리,suv,80.447330,5
+hyundai,싼타페CM,SLX 탑,suv,80.447330,2
+hyundai,더 뉴 싼타페,캘리그래피 7인승,suv,80.808081,5
+hyundai,싼타페 더스타일,MLX 프리미어,suv,81.096681,8
+hyundai,싼타페CM,MLX 프리미어,suv,81.096681,6
+hyundai,싼타페CM,SLX 프리미엄,suv,81.096681,4
+hyundai,싼타페 더스타일,SLX 프리미엄,suv,81.385281,3
+hyundai,더 뉴 싼타페,캘리그래피 5인승,suv,81.601732,6
+hyundai,더 뉴 싼타페,캘리그래피 6인승,suv,81.601732,4
+hyundai,맥스크루즈,수출형,suv,81.818182,2
+kgm,뉴카이런,LV7 고급형,suv,82.034632,4
+kgm,뉴카이런,LV7 최고급형,suv,82.034632,4
+hyundai,디 올 뉴 싼타페,익스클루시브,suv,82.251082,2
+hyundai,싼타페 더스타일,프리미어,suv,82.467532,1
+hyundai,싼타페CM,MLX 기본형,suv,82.467532,3
+hyundai,디 올 뉴 싼타페 하이브리드,H-Pick,suv,82.900433,2
+hyundai,디 올 뉴 싼타페 하이브리드,블랙 익스테리어,suv,82.900433,2
+hyundai,디 올 뉴 싼타페 하이브리드,프레스티지,suv,82.900433,2
+hyundai,디 올 뉴 싼타페 하이브리드,프레스티지 플러스,suv,82.900433,2
+hyundai,싼타페CM,CLX 최고급형,suv,83.261183,4
+kgm,뉴카이런,LV7,suv,83.621934,3
+kgm,뉴카이런,하이퍼,suv,83.621934,3
+kgm,뉴카이런,하이퍼 최고급형,suv,83.621934,2
+kgm,뉴카이런,하이퍼 하이테크,suv,83.621934,2
+hyundai,싼타페CM,CLX 고급형,suv,84.126984,1
+hyundai,싼타페CM,MLX 고급형,suv,84.126984,3
+hyundai,싼타페CM,스타일팩,suv,84.126984,5
+hyundai,디 올 뉴 싼타페 하이브리드,블랙잉크,suv,84.487734,2
+hyundai,디 올 뉴 싼타페 하이브리드,캘리그래피,suv,84.487734,2
+hyundai,디 올 뉴 싼타페,H-Pick,suv,84.848485,2
+hyundai,디 올 뉴 싼타페,블랙 익스테리어,suv,84.848485,2
+hyundai,디 올 뉴 싼타페,프레스티지,suv,84.848485,2
+hyundai,디 올 뉴 싼타페,블랙잉크,suv,85.209235,2
+hyundai,디 올 뉴 싼타페,캘리그래피,suv,85.209235,2
+kgm,슈퍼 렉스턴,RX4 고급형,suv,85.569986,3
+kgm,슈퍼 렉스턴,RX4 브라운,suv,85.569986,2
+kgm,슈퍼 렉스턴,RX4 최고급형,suv,85.569986,3
+kgm,렉스턴W,RX5 디럭스,suv,86.219336,4
+kgm,렉스턴W,RX7 럭셔리,suv,86.219336,7
+kgm,렉스턴W,RX7 마니아,suv,86.219336,3
+kgm,렉스턴W,RX7 브라운 스페셜,suv,86.219336,2
+kgm,렉스턴W,노블레스,suv,86.219336,5
+kgm,렉스턴W,어드벤처 60주년 에디션,suv,86.219336,1
+kgm,렉스턴W,RX7 프레스티지,suv,86.724387,6
+kgm,렉스턴W,RX7 디럭스,suv,86.868687,2
+kgm,슈퍼 렉스턴,RX5 고급형,suv,87.734488,3
+kgm,슈퍼 렉스턴,RX6 고급형,suv,87.734488,2
+kgm,슈퍼 렉스턴,RX6 브라운 스페셜,suv,87.734488,1
+kgm,슈퍼 렉스턴,RX6 브라운 에디션,suv,87.734488,1
+kgm,슈퍼 렉스턴,RX6 최고급형,suv,87.734488,3
+kgm,슈퍼 렉스턴,RX7,suv,87.734488,1
+kgm,슈퍼 렉스턴,RX7 AWD 브라운 에디션,suv,87.734488,1
+kgm,슈퍼 렉스턴,RX7 고급형,suv,87.734488,3
+kgm,슈퍼 렉스턴,RX7 최고급형,suv,87.734488,4
+kgm,슈퍼 렉스턴,노블레스,suv,87.734488,3
+kgm,슈퍼 렉스턴,아웃도어 에디션,suv,87.734488,1
+hyundai,베라크루즈,VX 모젠팩,suv,88.744589,2
+hyundai,베라크루즈,VXL 슈프림,suv,88.744589,1
+hyundai,베라크루즈,X 밸류,suv,88.744589,7
+kia,모하비 더 마스터,마스터즈,suv,89.177489,3
+kia,모하비 더 마스터,마스터즈 그래비티,suv,89.177489,7
+kia,모하비 더 마스터,플래티넘,suv,89.177489,3
+hyundai,베라크루즈,X,suv,89.466089,2
+kia,더 뉴 모하비,VIP,suv,89.754690,3
+kia,더 뉴 모하비,노블레스,suv,89.754690,3
+kia,더 뉴 모하비,프레지던트,suv,89.754690,4
+hyundai,팰리세이드,익스클루시브,suv,90.115440,5
+hyundai,팰리세이드,프레스티지,suv,90.115440,5
+kia,모하비,JV300,suv,91.053391,4
+kia,모하비,JV300 고급형,suv,91.053391,6
+kia,모하비,JV300 에센스 패키지,suv,91.053391,3
+kia,모하비,JV300 에센스팩,suv,91.053391,3
+kia,모하비,JV300 최고급형,suv,91.053391,2
+kia,모하비,KV300,suv,91.053391,4
+kia,모하비,KV300 고급형,suv,91.053391,6
+kia,모하비,KV300 최고급형,suv,91.053391,8
+kia,모하비,QV300,suv,91.053391,6
+kia,모하비,QV300 고급형,suv,91.053391,6
+kia,모하비,QV300 최고급형,suv,91.053391,6
+hyundai,더 뉴 팰리세이드,르블랑,suv,91.919192,1
+kgm,G4 렉스턴,럭셔리,suv,93.145743,3
+kgm,G4 렉스턴,마제스티,suv,93.145743,3
+kgm,G4 렉스턴,마제스티 스페셜,suv,93.145743,2
+kgm,G4 렉스턴,유라시아 에디션,suv,93.145743,3
+kgm,G4 렉스턴,프라임,suv,93.145743,2
+kgm,G4 렉스턴,헤리티지,suv,93.145743,4
+kgm,G4 렉스턴,헤리티지 스페셜,suv,93.145743,2
+kgm,G4 렉스턴,화이트 에디션,suv,93.145743,1
+kgm,렉스턴 뉴 아레나,노블레스,suv,93.145743,1
+kgm,렉스턴 뉴 아레나,더 블랙,suv,93.145743,1
+kgm,렉스턴 뉴 아레나,프리미엄,suv,93.145743,1
+kgm,올 뉴 렉스턴,더 블랙,suv,93.145743,1
+kgm,올 뉴 렉스턴,럭셔리,suv,93.145743,2
+kgm,올 뉴 렉스턴,마스터,suv,93.145743,1
+kgm,올 뉴 렉스턴,시그니처,suv,93.145743,1
+kgm,올 뉴 렉스턴,프레스티지,suv,93.145743,2
+kia,모하비,JV380 에센스팩,suv,94.516595,3
+kia,모하비,KV380 고급형,suv,94.516595,3
+kia,모하비,QV380 고급형,suv,94.516595,3
+hyundai,팰리세이드,VIP,suv,94.877345,4
+hyundai,팰리세이드,캘리그래피,suv,94.877345,4
+kia,모하비,-,suv,95.093795,1
+hyundai,더 뉴 팰리세이드,VIP,suv,95.526696,4
+hyundai,더 뉴 팰리세이드,익스클루시브,suv,95.526696,4
+hyundai,더 뉴 팰리세이드,캘리그래피,suv,95.526696,4
+hyundai,더 뉴 팰리세이드,캘리그래피 블랙에디션,suv,95.526696,4
+hyundai,더 뉴 팰리세이드,프레스티지,suv,95.526696,4
+hyundai,베라크루즈,VX,suv,96.392496,2
+hyundai,베라크루즈,VX 스마트팩,suv,96.392496,1
+hyundai,베라크루즈,VX 월드컵 스페셜 에디션,suv,96.392496,1
+hyundai,베라크루즈,VXL,suv,96.392496,3
+hyundai,베라크루즈,VXL 프리미엄,suv,96.392496,14
+hyundai,베라크루즈,익스클루시브,suv,96.392496,2
+hyundai,베라크루즈,익스클루시브 스페셜,suv,96.392496,2
+kia,모하비,KV460,suv,97.041847,1
+kia,모하비,KV460 최고급형,suv,97.041847,3
+hyundai,베라크루즈,VX 럭셔리,suv,97.402597,8
+hyundai,베라크루즈,VX 프리미어,suv,97.402597,5
+hyundai,베라크루즈,X 디럭스,suv,97.402597,8
+hyundai,베라크루즈,-,suv,97.763348,1
+hyundai,베라크루즈,VX 노블 팩,suv,97.763348,6
+hyundai,베라크루즈,X 스타일 팩,suv,97.979798,7
+kia,텔루라이드,EX,suv,98.340548,2
+kia,텔루라이드,LX,suv,98.340548,2
+kia,텔루라이드,S,suv,98.340548,2
+kia,텔루라이드,SX,suv,98.340548,2
+hyundai,디 올 뉴 팰리세이드,익스클루시브,suv,98.773449,8
+hyundai,디 올 뉴 팰리세이드,프레스티지,suv,98.773449,8
+hyundai,디 올 뉴 팰리세이드,캘리그래피,suv,98.989899,8
+chevrolet,트래버스,LT 레더,suv,99.422799,1
+chevrolet,트래버스,LT 레더 프리미엄,suv,99.422799,1
+chevrolet,트래버스,RS,suv,99.422799,1
+chevrolet,트래버스,레드라인,suv,99.422799,1
+chevrolet,트래버스,프리미어,suv,99.422799,1
+chevrolet,타호,다크 나이트,suv,99.927850,1
+chevrolet,타호,하이 컨트리,suv,99.927850,1
+kgm,더 뉴 렉스턴 스포츠,익스페디션,truck,0.000000,4
+kgm,코란도 스포츠,어드벤처 60th 에디션,truck,1.219512,1
+kgm,무쏘 스포츠,FX5 CT 고급형,truck,4.878049,1
+kgm,무쏘 스포츠,FX5 CT 일반형,truck,4.878049,1
+kgm,무쏘 스포츠,FX5 CT 최고급형,truck,4.878049,1
+kgm,무쏘 스포츠,FX5 고급형,truck,4.878049,1
+kgm,무쏘 스포츠,FX5 최고급형,truck,4.878049,1
+kia,더 뉴 봉고3,장축 GL,truck,8.536585,3
+kia,봉고3,장축 GLX,truck,9.756098,1
+kgm,무쏘 스포츠,290S CT 고급형,truck,14.024390,1
+kgm,무쏘 스포츠,290S CT 기본형,truck,14.024390,1
+kgm,무쏘 스포츠,290S CT 최고급형,truck,14.024390,1
+kgm,무쏘 스포츠,290S 고급형,truck,14.024390,1
+kgm,무쏘 스포츠,290S 기본형,truck,14.024390,1
+kgm,무쏘 스포츠,290S 최고급형,truck,14.024390,1
+kia,봉고3,장축 리미티드,truck,18.292683,2
+hyundai,포터2,초장축 플러스,truck,19.512195,1
+kia,더 뉴 봉고3,초장축 L 라이트,truck,20.731707,2
+kia,더 뉴 봉고3,초장축 GL,truck,23.780488,3
+kia,더 뉴 봉고3,초장축 GLS,truck,23.780488,3
+kia,더 뉴 봉고3,초장축 L,truck,23.780488,3
+kia,더 뉴 봉고3,초장축 L라이트,truck,23.780488,1
+kia,봉고3,더블캡,truck,26.829268,1
+kgm,코란도 스포츠,CX5 에코,truck,32.317073,1
+kgm,코란도 스포츠,CX5 클럽,truck,32.317073,1
+kgm,코란도 스포츠,CX5 패션,truck,32.317073,1
+kgm,코란도 스포츠,CX7 레저,truck,32.317073,1
+kgm,코란도 스포츠,CX7 매니아,truck,32.317073,1
+kgm,코란도 스포츠,CX7 비전,truck,32.317073,1
+kgm,코란도 스포츠,CX7 클럽,truck,32.317073,1
+kgm,코란도 스포츠,CX7 패션,truck,32.317073,1
+kgm,더 뉴 코란도 스포츠,CX5 에코,truck,42.073171,1
+kgm,더 뉴 코란도 스포츠,CX5 클럽,truck,42.073171,1
+kgm,더 뉴 코란도 스포츠,CX7 매니아,truck,42.073171,1
+kgm,더 뉴 코란도 스포츠,CX7 비전,truck,42.073171,1
+kgm,더 뉴 코란도 스포츠,CX7 클럽,truck,42.073171,1
+kgm,더 뉴 코란도 스포츠,CX7 패션,truck,42.073171,1
+kgm,더 뉴 코란도 스포츠,삼바 에디션,truck,42.073171,1
+kgm,더 뉴 코란도 스포츠,익스트림,truck,42.073171,1
+kia,봉고3,-,truck,47.560976,2
+kgm,더 뉴 렉스턴 스포츠,노블레스,truck,51.219512,6
+kgm,더 뉴 렉스턴 스포츠,와일드,truck,51.219512,6
+kgm,더 뉴 렉스턴 스포츠,와일드 쿨멘,truck,51.219512,1
+kgm,더 뉴 렉스턴 스포츠,프레스티지,truck,51.219512,6
+kgm,렉스턴 스포츠,프레스티지 스페셜,truck,51.219512,3
+kgm,렉스턴 스포츠,노블레스,truck,55.487805,4
+kgm,렉스턴 스포츠,프레스티지,truck,55.487805,4
+kgm,렉스턴 스포츠,다이내믹 에디션,truck,59.146341,1
+kgm,렉스턴 스포츠,어드벤처,truck,59.146341,2
+kgm,렉스턴 스포츠,와일드,truck,59.146341,2
+kgm,렉스턴 스포츠,캠핑카,truck,59.146341,1
+chevrolet,리얼 뉴 콜로라도,Z71-X,truck,64.024390,1
+chevrolet,리얼 뉴 콜로라도,Z71-X 미드나잇,truck,64.024390,1
+chevrolet,리얼 뉴 콜로라도,익스트림,truck,64.024390,2
+chevrolet,리얼 뉴 콜로라도,익스트림-X,truck,64.024390,1
+chevrolet,올 뉴 콜로라도,Z71,truck,67.073171,1
+chevrolet,콜로라도,익스트림,truck,70.121951,2
+chevrolet,콜로라도,익스트림-X,truck,70.121951,1
+chevrolet,콜로라도,익스트림-X 사이드 레일,truck,70.121951,1
+chevrolet,콜로라도,익스트림-X 스포츠 바,truck,70.121951,1
+kia,타스만,다이내믹,truck,74.390244,2
+kia,타스만,어드벤처,truck,74.390244,2
+kia,타스만,익스트림,truck,74.390244,2
+kgm,더 뉴 렉스턴 스포츠 칸,노블레스,truck,85.365854,6
+kgm,더 뉴 렉스턴 스포츠 칸,와일드,truck,85.365854,6
+kgm,더 뉴 렉스턴 스포츠 칸,익스페디션,truck,85.365854,4
+kgm,더 뉴 렉스턴 스포츠 칸,프레스티지,truck,85.365854,6
+kgm,렉스턴 스포츠 칸,5링크 노블레스,truck,85.365854,2
+kgm,렉스턴 스포츠 칸,5링크 다이나믹 에디션,truck,85.365854,1
+kgm,렉스턴 스포츠 칸,5링크 프레스티지,truck,85.365854,2
+kgm,렉스턴 스포츠 칸,5링크 프레스티지 스페셜,truck,85.365854,2
+kgm,렉스턴 스포츠 칸,5링크 프로페셔널 S,truck,85.365854,2
+kgm,렉스턴 스포츠 칸,5링크 프로페셔널 X,truck,85.365854,2
+kgm,렉스턴 스포츠 칸,파워 리프 노블레스,truck,85.365854,2
+kgm,렉스턴 스포츠 칸,파워 리프 와일드,truck,85.365854,2
+kgm,렉스턴 스포츠 칸,파워 리프 파이오니어 S,truck,85.365854,2
+kgm,렉스턴 스포츠 칸,파워 리프 파이오니어 X,truck,85.365854,2
+kgm,렉스턴 스포츠 칸,파워 리프 프레스티지,truck,85.365854,2
+kgm,더 뉴 렉스턴 스포츠 칸,쿨멘 노블레스,truck,95.121951,1
+kia,타스만,X-프로,truck,96.341463,1
+hyundai,포터2,모던플러스,truck,98.780488,1
+hyundai,포터2,스마트,truck,98.780488,1
+hyundai,포터2,스타일,truck,98.780488,1
+chevrolet,아베오,RS,unknown,0.000000,3
+chevrolet,아베오,LS 스탠다드,unknown,13.636364,2
+chevrolet,아베오,LS 스포츠,unknown,13.636364,1
+chevrolet,아베오,LS 일반형,unknown,31.818182,3
+chevrolet,아베오,LS 펀 에디션,unknown,31.818182,1
+chevrolet,아베오,스타일,unknown,50.000000,1
+chevrolet,아베오,퍼펙트 블랙,unknown,50.000000,1
+chevrolet,아베오,L 일반형,unknown,68.181818,2
+chevrolet,아베오,LT 최고급형,unknown,68.181818,12
+chevrolet,아베오,LT 스포츠,unknown,81.818182,2
+chevrolet,아베오,L 스타,unknown,95.454545,5
+chevrolet,아베오,LS 고급형,unknown,95.454545,7
+kia,더 뉴 레이,-,van,3.005464,1
+kia,더 뉴 레이,고급형,van,3.005464,1
+kia,더 뉴 레이,디럭스,van,3.005464,1
+kia,더 뉴 레이,럭셔리,van,3.005464,3
+kia,더 뉴 레이,럭셔리 스페셜,van,3.005464,1
+kia,더 뉴 레이,스탠다드,van,3.005464,3
+kia,더 뉴 레이,시그니처,van,3.005464,2
+kia,더 뉴 레이,캠핑카,van,3.005464,1
+kia,더 뉴 레이,트렌디,van,3.005464,1
+kia,더 뉴 레이,프레스티지,van,3.005464,7
+kia,더 뉴 레이,프레스티지 베스트셀렉션,van,3.005464,1
+kia,더 뉴 레이,프레스티지 스페셜,van,3.005464,3
+kia,올 뉴 카렌스,디럭스,van,7.103825,3
+kia,올 뉴 카렌스,에코 다이나믹스,van,7.103825,1
+kia,올 뉴 카렌스,프레스티지,van,7.103825,7
+kia,올 뉴 카렌스,노블레스,van,8.743169,6
+kia,올 뉴 카렌스,럭셔리,van,8.743169,6
+kia,올 뉴 카렌스,트렌디,van,8.743169,2
+kia,더 뉴 카렌스,프레스티지,van,9.836066,2
+kia,더 뉴 카렌스,디럭스,van,10.655738,1
+kia,더 뉴 카렌스,럭셔리,van,10.655738,1
+chevrolet,올란도,다이나믹 스페셜 에디션,van,11.475410,3
+chevrolet,올란도,퍼펙트 블랙,van,12.021858,6
+kia,뉴 페이스 카렌스,GX 고급형,van,13.114754,6
+kia,뉴 페이스 카렌스,GX 최고급형,van,13.114754,8
+kia,뉴 페이스 카렌스,비지니스,van,13.114754,2
+kia,뉴 페이스 카렌스,GX 최고급형 패밀리,van,14.480874,2
+kia,뉴 페이스 카렌스,프리미엄,van,14.480874,9
+kia,뉴 페이스 카렌스,GLX 고급형,van,15.573770,8
+kia,뉴 페이스 카렌스,GLX 최고급형,van,15.573770,8
+chevrolet,올란도,LS,van,20.491803,2
+chevrolet,올란도,LS 고급형,van,20.491803,16
+chevrolet,올란도,LS 일반형,van,20.491803,3
+chevrolet,올란도,LT 세이프티,van,20.491803,8
+chevrolet,올란도,LT 세이프티팩,van,20.491803,2
+chevrolet,올란도,LT 컨비니언스,van,20.491803,7
+chevrolet,올란도,LT 컨비니언스팩,van,20.491803,1
+chevrolet,올란도,LT 프리미엄,van,20.491803,16
+chevrolet,올란도,LTZ 세이프티,van,20.491803,8
+chevrolet,올란도,LTZ 프리미엄,van,20.491803,16
+chevrolet,올란도,다이나믹,van,20.491803,3
+chevrolet,올란도,디럭스팩,van,20.491803,2
+chevrolet,올란도,스페셜 컬러 에디션,van,20.491803,4
+chevrolet,올란도,스페셜 컬러 에디션 보르도 레드,van,20.491803,2
+chevrolet,올란도,캠퍼 패키지,van,20.491803,4
+chevrolet,올란도,플래티넘 패키지,van,20.491803,2
+kia,뉴 페이스 카렌스,GLX 고급형 패밀리팩,van,25.409836,2
+kia,뉴 페이스 카렌스,GLX 최고급형 패밀리팩,van,25.409836,2
+hyundai,그랜드스타렉스,HVX 프리미엄,van,26.502732,1
+hyundai,그랜드스타렉스,디젤 11인승 4WD 모던 스페셜,van,26.502732,1
+kgm,코란도 투리스모,GT 11인승,van,29.781421,2
+kgm,코란도 투리스모,GT 9인승,van,29.781421,2
+kgm,코란도 투리스모,LT 11인승,van,29.781421,2
+kgm,코란도 투리스모,LT 9인승,van,29.781421,2
+kgm,코란도 투리스모,RT 11인승,van,29.781421,2
+kgm,코란도 투리스모,RT 9인승,van,29.781421,2
+kgm,코란도 투리스모,어드벤쳐 60th 에디션 11인승,van,29.781421,1
+kgm,코란도 투리스모,어드벤쳐 60th 에디션 9인승,van,29.781421,1
+kgm,코란도 투리스모,익스트림 11인승,van,29.781421,2
+kgm,코란도 투리스모,익스트림 9인승,van,29.781421,2
+kia,뉴 카니발 R,GX,van,32.786885,4
+kgm,코란도 투리스모,TX 11인승,van,33.333333,2
+kgm,코란도 투리스모,KX 11인승,van,35.792350,1
+kgm,코란도 투리스모,KX 9인승,van,35.792350,1
+kgm,코란도 투리스모,RX 11인승,van,35.792350,2
+kgm,코란도 투리스모,RX 9인승,van,35.792350,3
+kgm,코란도 투리스모,TX 9인승,van,35.792350,3
+kgm,코란도 투리스모,샤토 하이루프 11인승,van,35.792350,1
+kgm,코란도 투리스모,샤토 하이루프 9인승,van,35.792350,3
+kgm,코란도 투리스모,아웃도어 에디션 9인승,van,35.792350,3
+kia,더 뉴 카니발,디럭스,van,38.251366,1
+kia,뉴 카니발 R,GLX 최고급형,van,38.797814,6
+kia,더 뉴 카니발,VIP,van,41.803279,5
+kia,올 뉴 카니발,11인승,van,41.803279,1
+kia,올 뉴 카니발,5인승,van,41.803279,1
+kia,올 뉴 카니발,6인승,van,41.803279,1
+kia,올 뉴 카니발,9인승,van,41.803279,1
+kia,올 뉴 카니발,VIP,van,41.803279,8
+kia,올 뉴 카니발,노블레스,van,41.803279,14
+kia,올 뉴 카니발,노블레스 스페셜,van,41.803279,1
+kia,올 뉴 카니발,디럭스,van,41.803279,1
+kia,올 뉴 카니발,매직스페이스,van,41.803279,1
+kia,카니발 4세대,프레스티지,van,44.808743,3
+kia,더 뉴 카니발 4세대,-,van,46.448087,3
+kia,더 뉴 카니발 4세대,그래비티,van,46.448087,6
+kia,더 뉴 카니발 4세대,노블레스,van,46.448087,8
+kia,더 뉴 카니발 4세대,아웃도어,van,46.448087,3
+kia,더 뉴 카니발 4세대,프레스티지,van,46.448087,3
+kia,뉴 카니발 R,GLX,van,48.087432,5
+kgm,뉴 로디우스,RD400,van,48.907104,1
+kgm,뉴 로디우스,RD400 최고급형,van,48.907104,3
+hyundai,더 뉴 스타리아,모던,van,50.273224,13
+hyundai,더 뉴 스타리아,스마트,van,50.273224,13
+hyundai,스타리아,-,van,50.273224,3
+kgm,뉴 로디우스,RD500 최고급형,van,51.366120,2
+kgm,뉴 로디우스,RD400 EZ 스페셜,van,52.459016,3
+kgm,뉴 로디우스,RD500 EZ 스페셜,van,52.459016,2
+kgm,뉴 로디우스,플래티넘,van,52.459016,2
+hyundai,더 뉴 그랜드스타렉스,-,van,53.551913,1
+kia,더 뉴 카니발,럭셔리,van,54.098361,2
+hyundai,그랜드스타렉스,HVX VIP팩,van,54.644809,1
+kia,더 뉴 카니발,프레스티지,van,55.191257,6
+hyundai,그랜드스타렉스,CVX 럭셔리,van,56.010929,4
+hyundai,그랜드스타렉스,CVX 프리미엄,van,56.010929,4
+kgm,코란도 투리스모,샤토 하이리무진,van,56.830601,3
+hyundai,그랜드스타렉스,CVX 디럭스,van,57.650273,3
+hyundai,그랜드스타렉스,CVX 밸류,van,57.650273,2
+hyundai,그랜드스타렉스,기본형,van,60.109290,3
+hyundai,그랜드스타렉스,모던,van,60.109290,6
+hyundai,그랜드스타렉스,모던 스페셜,van,60.109290,4
+hyundai,그랜드스타렉스,스마트,van,60.109290,7
+hyundai,그랜드스타렉스,스마트 스페셜,van,60.109290,1
+hyundai,더 뉴 그랜드스타렉스,2WD,van,60.109290,3
+hyundai,더 뉴 그랜드스타렉스,4WD,van,60.109290,3
+kgm,코란도 투리스모,샤토 11인승,van,62.568306,1
+kgm,코란도 투리스모,샤토 9인승,van,62.568306,1
+hyundai,더 뉴 그랜드스타렉스,스타일,van,63.387978,4
+kia,더 뉴 카니발 4세대,X-Line,van,63.934426,4
+hyundai,더 뉴 그랜드스타렉스,모던,van,64.754098,5
+hyundai,더 뉴 그랜드스타렉스,스마트,van,64.754098,9
+kia,더 뉴 카니발,-,van,66.393443,2
+kia,더 뉴 카니발,노블레스,van,66.393443,2
+kia,더 뉴 카니발,노블레스 스페셜,van,66.393443,4
+kia,올 뉴 카니발,-,van,66.393443,2
+hyundai,더 뉴 그랜드스타렉스,프리미엄,van,68.032787,2
+hyundai,더 뉴 그랜드스타렉스,프리미엄 스페셜,van,68.032787,2
+kia,카니발 4세대,-,van,68.852459,2
+kia,카니발 4세대,노블레스,van,69.398907,6
+kia,더 뉴 카니발,프레스티지 하이루프,van,71.038251,1
+kia,더 뉴 카니발,하이루프 특장차,van,71.038251,1
+kia,올 뉴 카니발,럭셔리,van,71.038251,12
+kia,올 뉴 카니발,프레스티지,van,71.038251,13
+kia,올 뉴 카니발,프레스티지 하이루프,van,71.038251,4
+kia,더 뉴 카니발,프레지던트,van,72.677596,7
+kia,더 뉴 카니발 4세대,시그니처,van,73.224044,13
+kia,올 뉴 카니발,프레지던트,van,73.770492,12
+hyundai,더 뉴 스타리아,-,van,75.956284,7
+hyundai,더 뉴 스타리아,인스퍼레이션,van,75.956284,8
+hyundai,더 뉴 스타리아,프레스티지,van,75.956284,4
+hyundai,스타리아,9인승,van,75.956284,2
+hyundai,스타리아,모던,van,75.956284,17
+hyundai,스타리아,인스퍼레이션,van,75.956284,12
+hyundai,스타리아,프레스티지,van,75.956284,6
+hyundai,더 뉴 그랜드스타렉스,익스클루시브 듀얼 선루프,van,78.142077,4
+hyundai,스타리아,스마트,van,78.688525,14
+hyundai,더 뉴 스타리아,7인승,van,79.508197,8
+hyundai,스타리아,7인승,van,79.508197,6
+hyundai,더 뉴 그랜드스타렉스,7인승 2WD,van,80.327869,1
+hyundai,더 뉴 그랜드스타렉스,12인승 2WD,van,80.874317,1
+hyundai,더 뉴 그랜드스타렉스,12인승,van,81.693989,1
+hyundai,더 뉴 그랜드스타렉스,15인승,van,81.693989,1
+hyundai,스타리아,리무진,van,82.513661,4
+kia,뉴 카니발 R,프레지던트,van,83.060109,7
+hyundai,더 뉴 스타리아,9인승,van,85.245902,3
+hyundai,더 뉴 스타리아,특장업체,van,85.245902,3
+hyundai,더 뉴 스타리아,프레스티지 캠퍼 11인승,van,85.245902,3
+hyundai,더 뉴 스타리아,프레스티지 캠퍼 4인승,van,85.245902,3
+hyundai,스타리아,11인승,van,85.245902,4
+hyundai,스타리아,프레스티지 캠퍼 11인승,van,85.245902,2
+hyundai,스타리아,프레스티지 캠퍼 4인승,van,85.245902,2
+hyundai,그랜드스타렉스,디젤 15인승,van,87.431694,1
+hyundai,스타리아,14인승,van,87.978142,1
+hyundai,더 뉴 스타리아,리무진,van,88.524590,2
+hyundai,더 뉴 그랜드스타렉스,익스클루시브,van,89.071038,6
+renault,마스터,S,van,89.890710,1
+renault,마스터,밴 S,van,89.890710,1
+kia,더 뉴 카니발,노블레스 스페셜 하이루프,van,90.710383,1
+hyundai,스타리아,15인승,van,91.256831,1
+hyundai,더 뉴 스타리아,11인승,van,92.076503,1
+hyundai,더 뉴 스타리아,15인승,van,92.076503,1
+kia,카니발 4세대,시그니처,van,92.896175,9
+renault,뉴 마스터,밴 S,van,93.442623,1
+renault,마스터,밴 L,van,93.989071,1
+renault,마스터,13인승,van,94.535519,1
+renault,마스터,L,van,95.355191,1
+renault,마스터,캠핑카,van,95.355191,1
+renault,뉴 마스터,13인승,van,96.721311,1
+renault,뉴 마스터,밴 L,van,96.721311,1
+renault,뉴 마스터,캠핑카,van,96.721311,1
+renault,마스터,15인승,van,97.814208,1
+renault,뉴 마스터,15인승,van,98.360656,1
+hyundai,포레스트,디럭스,van,99.453552,1
+hyundai,포레스트,스탠다드,van,99.453552,1
+hyundai,포레스트,엔트리,van,99.453552,1
+hyundai,i40,수출형,wagon,0.000000,1
+hyundai,i30CW,디럭스,wagon,25.000000,6
+hyundai,i30CW,럭셔리,wagon,25.000000,10
+hyundai,i30CW,월드컵 스페셜 에디션,wagon,25.000000,1
+hyundai,i30CW,트렌디,wagon,25.000000,4
+hyundai,i30CW,프리미어,wagon,25.000000,11
+hyundai,i30CW,익스트림,wagon,50.000000,3
+hyundai,i40,모던,wagon,66.666667,2
+hyundai,i40,스마트,wagon,66.666667,2
+hyundai,i40,프리미엄,wagon,66.666667,2
+hyundai,i40,PYL,wagon,91.666667,4
+hyundai,i40,디 스팩,wagon,91.666667,4
+hyundai,i40,유니크,wagon,91.666667,3
