@@ -33,6 +33,7 @@ def build_test_database_settings() -> DatabaseSettings:
         password=os.getenv("TEST_DB_PASSWORD", "app_password"),
         name=os.getenv("TEST_DB_NAME", "app_db"),
         charset=os.getenv("TEST_DB_CHARSET", "utf8mb4"),
+        collation=os.getenv("TEST_DB_COLLATION", "utf8mb4_unicode_ci"),
         connect_timeout=_read_int_env("TEST_DB_CONNECT_TIMEOUT", 10),
         ssl_ca_path=None,
     )

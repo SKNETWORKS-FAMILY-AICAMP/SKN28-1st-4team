@@ -62,6 +62,7 @@ def database_settings() -> DatabaseSettings:
         password="secret",
         name="app_db",
         charset="utf8mb4",
+        collation="utf8mb4_unicode_ci",
         connect_timeout=15,
         ssl_ca_path=None,
     )
@@ -95,6 +96,7 @@ def test_from_config_builds_mysql_client_from_database_settings(
         "database": "app_db",
         "user": "app_user",
         "charset": "utf8mb4",
+        "collation": "utf8mb4_unicode_ci",
         "connect_timeout": 15,
         "ssl_ca_path": None,
     }
@@ -123,6 +125,7 @@ def test_connect_uses_configured_connection_kwargs(
             "database": "app_db",
             "port": 3307,
             "charset": "utf8mb4",
+            "collation": "utf8mb4_unicode_ci",
             "connect_timeout": 15,
             "autocommit": False,
         }
@@ -171,6 +174,7 @@ def test_connect_includes_ssl_ca_path_when_configured(
             "database": "app_db",
             "port": 3307,
             "charset": "utf8mb4",
+            "collation": "utf8mb4_unicode_ci",
             "connect_timeout": 15,
             "autocommit": False,
             "ssl_ca": "certs/aws-global-bundle.pem",
@@ -211,6 +215,7 @@ def test_health_summary_reports_available_after_successful_connection(
         "database": "app_db",
         "user": "app_user",
         "charset": "utf8mb4",
+        "collation": "utf8mb4_unicode_ci",
         "connect_timeout": 15,
         "ssl_ca_path": None,
         "status": "available",
@@ -233,6 +238,7 @@ def test_health_summary_reports_unavailable_after_connection_error(
         "database": "app_db",
         "user": "app_user",
         "charset": "utf8mb4",
+        "collation": "utf8mb4_unicode_ci",
         "connect_timeout": 15,
         "ssl_ca_path": None,
         "status": "unavailable",

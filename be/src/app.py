@@ -1,6 +1,7 @@
 from typing import Annotated
+from urllib.parse import quote
 
-from fastapi import Depends, FastAPI
+from fastapi import Depends, FastAPI, HTTPException, Query, Response
 from pydantic import BaseModel, Field
 
 # global useages
@@ -9,6 +10,10 @@ from env import * # for simplicity , just Types and configueration getters
 # external dependencies
 from external.db import get_db_client, MySQLClient
 from services.predict_engine import PredictEngineService, get_predict_engine_service
+from services.vehicle_model_image import (
+    VehicleModelImageService,
+    get_vehicle_model_image_service,
+)
 
 settings = load_settings()
 
@@ -97,3 +102,30 @@ def predict_engine_project(
         feature_values=payload.feature_values,
     )
     return projection.as_dict()
+
+
+@app.get("/vehicle-model-image")
+def get_vehicle_model_image(
+    brand_key: Annotated[str, Query(min_length=1)],
+    model_name: Annotated[str, Query(min_length=1)],
+    vehicle_model_image_service: Annotated[
+        VehicleModelImageService,
+        Depends(get_vehicle_model_image_service),
+    ],
+) -> Response:
+    try:
+        image = vehicle_model_image_service.get_image(brand_key, model_name)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+    if image is None:
+        raise HTTPException(status_code=404, detail="vehicle model image not found")
+
+    filename = quote(image.source_filename)
+    return Response(
+        content=image.payload,
+        media_type=image.mime_type,
+        headers={
+            "Content-Disposition": f"inline; filename*=UTF-8''{filename}",
+        },
+    )

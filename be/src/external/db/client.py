@@ -46,6 +46,7 @@ class MySQLClient:
             "database": self._config.name,
             "port": self._config.port,
             "charset": self._config.charset,
+            "collation": self._config.collation,
             "connect_timeout": self._config.connect_timeout,
             "autocommit": False,
         }
@@ -63,6 +64,7 @@ class MySQLClient:
             "database": self._config.name,
             "user": self._config.user,
             "charset": self._config.charset,
+            "collation": self._config.collation,
             "connect_timeout": self._config.connect_timeout,
             "ssl_ca_path": self._config.ssl_ca_path,
         }
