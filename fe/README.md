@@ -1,188 +1,155 @@
 # FE
 
-## 역할
+`fe` 는 Streamlit 기반 프런트엔드 애플리케이션입니다.  
+사용자는 이 앱에서 차량을 선택하고, 주행거리·구매일자·색상 같은 기본 정보를 입력한 뒤 현재 예측가와 향후 감가 흐름을 확인합니다.
 
-`fe`는 이 모노레포의 Streamlit 프런트엔드입니다. 백엔드와 모델 호스팅 API를 연결하는 화면 레이어가 됩니다.
+## 현재 화면 구성
 
-## 디렉토리 구성
+- 랜딩 페이지
+- 차량 입력 페이지
+- 결과 페이지
 
-- `pyproject.toml`: 프로젝트 메타데이터와 의존성 정의
-- `.env`: 로컬 실행과 Docker 런타임에서 함께 사용하는 환경변수 파일
-- `Dockerfile`: 프런트엔드 컨테이너 이미지 정의
-- `src/app.py`: 라우팅과 페이지 조합을 담당하는 Streamlit 엔트리포인트
-- `src/core`: 라우팅, 환경설정, `st.session_state` 관리
-- `src/models`: 폼 상태, 가격 결과, query DTO 같은 실제 데이터 구조
-- `src/pages`: 페이지 단위 조합 레이어. 화면에 필요한 데이터를 모아 컴포넌트에 내려줌
-- `src/components`: UI 블록 레이어. 가급적 전달받은 데이터만 렌더링
-- `src/services`: facade, query helper, mapper, mock service 등 백엔드 연동 레이어
-- `src/mock_data`: development 환경에서 facade가 사용하는 정적 시드 데이터
-- `src/styles/theme.css`: 공통 Streamlit 테마 스타일
+현재 UX 흐름은 아래와 같습니다.
 
-## 역할 분리 원칙
+1. 브랜드 선택
+2. 모델 검색 및 모델 카드 선택
+3. 세부 트림 선택
+4. 기본 차량 정보 입력
+5. 결과 페이지에서 현재 예측가, 적정 매도 범위, 향후 1~5년 가격 흐름, 상승/하락 요인 확인
 
-- `app.py`: 어떤 페이지를 렌더할지 결정
-- `pages/*`: 한 페이지에서 필요한 상태 읽기, facade 호출, 컴포넌트 조합 담당
-- `components/*`: 실제 Streamlit 위젯과 마크업 렌더 담당
-- `core/state.py`: 사용자 입력을 `st.session_state`에 저장하고 `VehicleFormState`로 묶음
-- `services/query_facade.py`: frontend -> backend 진입점 하나로 통합
-- `services/query_mapper.py`: frontend 상태 <-> request payload <-> response DTO 변환 담당
-- `models/*`: 각 레이어에서 공유하는 typed data model 정의
+## 디렉토리 구조
 
-## 호출 흐름
-
-```mermaid
-flowchart TD
-    App["src/app.py"]
-    Routing["core/routing.py"]
-    State["core/state.py"]
-    Facade["services/query_facade.py"]
-
-    LandingPage["pages/landing"]
-    EntryPage["pages/entry"]
-    ExpectPage["pages/expect"]
-
-    BasicVehicleForm["components/basic_vehicle_form"]
-    VehicleSelector["components/vehicle_selector"]
-    HistoryTabs["components/history_tabs"]
-    InputSummary["components/input_summary"]
-    ResultHero["components/result_hero"]
-    PriceChart["components/price_chart"]
-    FactorInsights["components/factor_insights"]
-    Footer["components/site_footer"]
-
-    App --> Routing
-    App --> State
-    App --> Facade
-    App --> LandingPage
-    App --> EntryPage
-    App --> ExpectPage
-    App --> Footer
-
-    EntryPage --> BasicVehicleForm
-    EntryPage --> VehicleSelector
-    EntryPage --> HistoryTabs
-    EntryPage --> InputSummary
-
-    ExpectPage --> ResultHero
-    ExpectPage --> PriceChart
-    ExpectPage --> FactorInsights
-
-    BasicVehicleForm --> State
-    EntryPage --> Facade
-    ExpectPage --> Facade
-    InputSummary --> Routing
-    State --> ExpectPage
+```text
+fe/
+├─ README.md
+├─ .env.example
+├─ .streamlit/
+├─ assets/
+├─ src/
+│  ├─ app.py
+│  ├─ assets/
+│  ├─ components/
+│  ├─ core/
+│  ├─ mock_data/
+│  ├─ models/
+│  ├─ pages/
+│  ├─ services/
+│  └─ styles/
+└─ Dockerfile
 ```
 
-## Query 흐름
+## 주요 소스 역할
 
-```mermaid
-flowchart TD
-    UserInput["Streamlit input widgets"]
-    SessionState["st.session_state"]
-    ReadFormState["core/state.py\nread_form_state()"]
-    Facade["services/query_facade.py\nFrontendQueryFacade"]
-    Mapper["services/query_mapper.py\nFrontendQueryMapper"]
-    FormModel["models/form.py\nVehicleFormState"]
-    RequestDTO["models/query.py\nPricePredictionRequestDTO"]
-    ResponseDTO["models/query.py\nPricePredictionResponseDTO"]
-    Settings["core/settings.py\nquery settings"]
-    MockCatalog["services/mock_query_service.py\nbuild_mock_catalog_payload()"]
-    QueryHelper["services/query_helper.py\nhttpx Client"]
-    Backend["Backend API"]
-    Result["models/price.py\nPriceResult"]
+- `src/app.py`
+  - 페이지 라우팅과 전체 조합 진입점
+- `src/pages/landing`
+  - 첫 화면
+- `src/pages/entry`
+  - 차량 입력 화면
+- `src/pages/expect`
+  - 예측 결과 화면
+- `src/components/vehicle_selector`
+  - 브랜드/모델/트림 선택 UI
+- `src/components/basic_vehicle_form`
+  - 번호판, 구매 일자, 주행거리, 색상 등 기본 입력 UI
+- `src/components/input_summary`
+  - 가격 예측 실행 버튼과 입력 요약
+- `src/components/result_hero`
+  - 현재 예측가/적정 매도 범위 영역
+- `src/components/price_chart`
+  - 현재~5년 후 가격 차트
+- `src/components/factor_insights`
+  - 상승/하락 요인 카드
+- `src/services/query_facade.py`
+  - 프런트가 사용하는 단일 질의 진입점
+- `src/services/query_helper.py`
+  - `httpx` 기반 백엔드 호출
+- `src/services/query_mapper.py`
+  - form state <-> DTO <-> API payload 변환
 
-    UserInput --> SessionState
-    SessionState --> ReadFormState
-    ReadFormState --> FormModel
-    FormModel --> Facade
+## 데이터 소스 원칙
 
-    Facade --> Settings
-    Facade --> Mapper
-    Mapper --> RequestDTO
+프런트는 아래 두 종류의 데이터를 다르게 다룹니다.
 
-    Facade --> MockCatalog
-    QueryHelper --> Backend
+### 1. 로컬 자산으로 직접 쓰는 데이터
 
-    MockCatalog --> Facade
-    Backend --> QueryHelper
-    QueryHelper --> Facade
-    Facade --> Mapper
-    Mapper --> ResponseDTO
-    ResponseDTO --> Result
-```
+- 브랜드/모델/세부 트림 참조
+  - `src/assets/brand_model_trim_reference.json`
+- 색상 옵션 참조
+  - `src/assets/training_color_options.json`
 
-## Python 버전
+이 데이터는 배포 시점에 같이 포함되는 정적 자산입니다.  
+즉, 차량 선택용 카탈로그는 백엔드에서 받지 않습니다.
 
-- 최소 Python 버전: `3.12`
-- Docker 이미지 기준 Python 버전: `3.12`
+### 2. 백엔드로 요청하는 데이터
 
-## 의존성 및 역할
+- 모델 카드 이미지
+- 가격 예측 결과
+- 상승/하락 요인 분석
 
-- `streamlit`: 프런트엔드 UI를 구성하고, 설정값과 상태를 시각적으로 확인하는 데 사용합니다.
-- `pandas`: 차트용 시계열 데이터와 파생 결과 데이터를 구성합니다.
-- `httpx`: facade 내부 query helper가 백엔드 API를 호출할 때 사용합니다.
+현재 프런트가 호출하는 API:
 
-`fe/ideas/designs ideas/requirements.txt`에 있던 디자인 프로토타입 의존성은 현재 `pyproject.toml`로 옮겨 관리합니다.
-프런트엔드의 데이터 접근은 `src/services/query_facade.py`를 통해 단일 진입점으로 모읍니다.
+- `POST /api/v1/frontend/model-images`
+- `POST /api/v1/frontend/price-prediction`
+- `POST /api/v1/frontend/price-factors`
 
-현재 기준 동작은 아래와 같습니다.
-- 차량 선택용 `catalog` 데이터는 프런트 로컬 JSON을 항상 사용합니다.
-- `model-images`, `price-prediction`, `price-factors` 는 백엔드 API를 호출합니다.
-- 즉 `APP_ENV=development` 라도 위 세 API는 `FE_QUERY_BASE_URL` 기준으로 실제 백엔드에 요청됩니다.
+## 환경변수
+
+주요 환경변수는 아래와 같습니다.
+
+- `APP_ENV`
+- `SERVICE_NAME`
+- `STREAMLIT_SERVER_ADDRESS`
+- `STREAMLIT_SERVER_PORT`
+- `STREAMLIT_SERVER_HEADLESS`
+- `STREAMLIT_BROWSER_GATHER_USAGE_STATS`
+- `FE_QUERY_BASE_URL`
+- `FE_QUERY_MODEL_IMAGE_PAGE_PATH`
+- `FE_QUERY_PRICE_PATH`
+- `FE_QUERY_PRICE_FACTORS_PATH`
+- `FE_QUERY_TIMEOUT_SECONDS`
+
+샘플 파일:
+
+- [fe/.env.example](/Users/iwonbin/workspace/Study/boot/SKN28-1st-4team/fe/.env.example)
+
+### `FE_QUERY_BASE_URL`
+
+백엔드 호출 기본 주소입니다.
+
+권장값:
+
+- 로컬에서 직접 실행할 때: `http://127.0.0.1:8000`
+- Docker Compose 안에서 FE 컨테이너가 BE 컨테이너를 호출할 때: `http://be:8000`
 
 ## 로컬 실행
-
-`uv run`은 `.env` 파일 주입을 직접 지원하므로 별도 Makefile 없이 실행할 수 있습니다.
 
 ```bash
 cd fe
 uv run --env-file .env streamlit run src/app.py
 ```
 
+기본 접속 주소:
+
+- `http://localhost:8501`
+
 ## Docker 실행
 
-저장소 루트에서 실행합니다.
+루트에서 실행:
 
 ```bash
 docker compose up --build fe
 ```
 
-## 환경변수 설명
+## 상태 관리 원칙
 
-- `APP_ENV`: 실행 환경 구분값입니다.
-- `SERVICE_NAME`: UI에 표시할 서비스 이름입니다.
-- `STREAMLIT_SERVER_ADDRESS`: Streamlit 바인드 주소입니다.
-- `STREAMLIT_SERVER_PORT`: Streamlit 포트입니다.
-- `STREAMLIT_SERVER_HEADLESS`: 헤드리스 실행 여부입니다.
-- `STREAMLIT_BROWSER_GATHER_USAGE_STATS`: Streamlit 사용 통계 수집 여부입니다.
-- `FE_QUERY_BASE_URL`: 프런트가 백엔드 API를 호출할 기본 URL입니다.
-- `FE_QUERY_CATALOG_PATH`: 현재는 사용하지 않는 예약 설정값입니다.
-- `FE_QUERY_MODEL_IMAGE_PAGE_PATH`: 모델 이미지 조회 경로입니다.
-- `FE_QUERY_PRICE_PATH`: 가격 예측 조회 경로입니다.
-- `FE_QUERY_PRICE_FACTORS_PATH`: 가격 상승/하락 요인 분석 경로입니다.
-- `FE_QUERY_TIMEOUT_SECONDS`: httpx query timeout 초 단위 값입니다.
+- 사용자 입력은 `st.session_state` 를 사용합니다.
+- 상태 읽기/정리는 `src/core/state.py` 에 모읍니다.
+- 위젯 내부에서 직접 API를 치지 않고, 페이지나 facade를 통해 호출합니다.
 
-## 백엔드 URL 설정
+## 현재 주의사항
 
-`FE_QUERY_BASE_URL` 은 [fe/src/core/settings.py](/Users/iwonbin/workspace/Study/boot/SKN28-1st-4team/fe/src/core/settings.py) 에서 읽습니다.
-설정하지 않으면 기본값은 `http://127.0.0.1:8000` 입니다.
-
-권장값:
-- 로컬에서 프런트와 백엔드를 각각 직접 실행할 때: `http://127.0.0.1:8000`
-- Docker Compose 안에서 프런트 컨테이너가 백엔드 컨테이너를 호출할 때: `http://be:8000`
-
-예시:
-
-```bash
-FE_QUERY_BASE_URL=http://127.0.0.1:8000
-```
-
-```bash
-FE_QUERY_BASE_URL=http://be:8000
-```
-
-현재 프런트가 호출하는 백엔드 경로:
-- `POST /api/v1/frontend/model-images`
-- `POST /api/v1/frontend/price-prediction`
-- `POST /api/v1/frontend/price-factors`
+- Streamlit 특성상 검색/초기화/재선택 버튼은 `session_state` callback 기반으로 제어합니다.
+- 결과 페이지는 백엔드 응답을 세션 캐시에 보관합니다.
+- 모델 카드 이미지는 현재 페이지 9개만 백엔드에 요청합니다.
+- 백엔드 이미지가 DB에 없으면 로컬 이미지 fallback 을 사용합니다.

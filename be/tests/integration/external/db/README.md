@@ -1,60 +1,56 @@
-# DB Integration Tests
+# DB 통합 테스트
 
-## Scope
+이 디렉토리는 외부 DB 경계에 대한 통합 테스트 범위를 설명합니다.
 
-This directory contains integration-scope tests for the external DB boundary.
-Unlike the unit tests, these tests exercise `MySQLClient` against a real MySQL
-container so connection setup, transaction handling, and query execution are
-verified end to end.
+## 테스트 범위
 
-## Files
+단위 테스트와 달리 실제 MySQL 컨테이너를 붙여서 아래를 끝단 기준으로 검증합니다.
 
-- `conftest.py`: shared integration fixtures and live test DB settings
-- `test_client_connection.py`: connectivity test against the seeded MySQL
-  container
-- `test_client_queries.py`: context-managed write/read/delete query execution
-  test against the live MySQL container
-- `docker-compose.yml`: Compose override for the DB integration environment
-- `docker/test-db/Dockerfile`: custom MySQL test image definition
-- `docker/test-db/initdb/01-create-test-schema.sql`: schema and seed data for
-  the connectivity check
+- `MySQLClient.connect()` 실연결
+- 실제 쿼리 실행 가능 여부
+- context manager 기반 insert / select / delete 동작
+- 초기화 스키마와 seed 데이터 접근 가능 여부
 
-## What Is Verified
+## 파일
 
-- the Docker-backed MySQL test container becomes reachable
-- `MySQLClient.connect()` can open a real connection
-- a real query can read the seeded `connectivity_check` row
-- a real transaction can insert, select, and delete rows through the context
-  manager
+- `conftest.py`
+- `test_client_connection.py`
+- `test_client_queries.py`
+- `docker-compose.yml`
+- `docker/test-db/Dockerfile`
+- `docker/test-db/initdb/01-create-test-schema.sql`
 
-## How To Start The Test DB
+## 테스트 DB 실행
 
-Run this from the repository root:
+저장소 루트에서 실행:
 
 ```bash
 docker compose -f docker-compose.yml -f be/tests/integration/external/db/docker-compose.yml up -d --build test_db_docker
 ```
 
-## How To Run
+## 실행 방법
+
+특정 연결 테스트:
 
 ```bash
 cd be
 RUN_DOCKER_DB_TESTS=1 TEST_DB_HOST=127.0.0.1 TEST_DB_PORT=3307 uv run pytest tests/integration/external/db/test_client_connection.py
 ```
 
-You can also run the whole DB integration scope with:
+전체 DB 통합 범위:
 
 ```bash
 cd be
 RUN_DOCKER_DB_TESTS=1 TEST_DB_HOST=127.0.0.1 TEST_DB_PORT=3307 uv run pytest -m integration tests/integration/external/db
 ```
 
-## Notes
+## 메모
 
-- tests are skipped unless `RUN_DOCKER_DB_TESTS=1`
-- the default container name is `test_db_docker`
-- the seeded query currently expects the row `('test_db_docker',)`
-- stop and clean up when finished:
+- `RUN_DOCKER_DB_TESTS=1` 이 아니면 skip 됩니다.
+- 기본 테스트 컨테이너 이름은 `test_db_docker` 입니다.
+- seed 데이터에는 `connectivity_check` 확인용 row 가 포함됩니다.
+
+종료 및 정리:
 
 ```bash
 docker compose -f docker-compose.yml -f be/tests/integration/external/db/docker-compose.yml down -v
