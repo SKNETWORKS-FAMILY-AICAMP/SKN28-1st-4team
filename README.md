@@ -1,5 +1,19 @@
 # SKN28 중고차 가격 예측 플랫폼
 
+![Python](https://img.shields.io/badge/Python-3.12%2B-3776AB?logo=python&logoColor=white)
+![uv Workspace](https://img.shields.io/badge/uv-workspace-6E56CF?logo=uv&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B?logo=streamlit&logoColor=white)
+![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?logo=fastapi&logoColor=white)
+![CatBoost](https://img.shields.io/badge/Model-CatBoost-FFCC00?logoColor=black)
+![Docker Compose](https://img.shields.io/badge/Infra-Docker%20Compose-2496ED?logo=docker&logoColor=white)
+
+![Pandas](https://img.shields.io/badge/Data-Pandas-150458?logo=pandas&logoColor=white)
+![httpx](https://img.shields.io/badge/API-httpx-5A67D8?logoColor=white)
+![PyMySQL](https://img.shields.io/badge/DB-PyMySQL-4479A1?logo=mysql&logoColor=white)
+![Pydantic Settings](https://img.shields.io/badge/Config-Pydantic%20Settings-E92063?logo=pydantic&logoColor=white)
+![scikit--learn](https://img.shields.io/badge/ML-scikit--learn-F7931E?logo=scikitlearn&logoColor=white)
+![Weights & Biases](https://img.shields.io/badge/Tracking-W%26B-FFBE00?logo=weightsandbiases&logoColor=black)
+
 이 저장소는 중고차 가격을 숫자 하나로만 보여주는 도구를 만들기 위한 곳이 아닙니다.  
 우리가 풀고 싶은 문제는 아래와 같습니다.
 
@@ -100,7 +114,20 @@
 
 ---
 
-## 저장소가 하는 일
+## 프로젝트 구조와 스택
+
+### Core Stack
+
+- `fe`
+  - `Streamlit`, `httpx`, `pandas`
+- `be`
+  - `FastAPI`, `pydantic-settings`, `PyMySQL`, `Loguru`, `CatBoost`
+- `predict_engine_research`
+  - `CatBoost`, `scikit-learn`, `pandas`, `torch`, `wandb`
+- `data_collection`
+  - Python workspace package 기반 데이터 정리 및 reference 생성 파이프라인
+
+### 저장소가 하는 일
 
 현재 저장소는 네 영역이 함께 움직이는 구조입니다.
 
@@ -113,7 +140,7 @@
 - `data_collection/`
   - 원천 데이터 정리와 학습용 데이터 준비를 담당하는 파이프라인
 
-## 저장소 구조
+### 저장소 구조
 
 ```text
 SKN28-1st-4team/
