@@ -1,5 +1,5 @@
-title: SKN28 Technical Docs
-description: 중고차 가격·감가 예측 플랫폼 기술 문서
+title: SKN28 프로젝트 문서
+description: 중고차 가격·감가 예측 플랫폼 문서
 theme: jekyll-theme-cayman
 markdown: kramdown
 kramdown:

@@ -1,0 +1,35 @@
+{
+  "os": "macOS-26.3-arm64-arm-64bit-Mach-O",
+  "python": "CPython 3.14.3",
+  "startedAt": "2026-03-17T17:18:17.801718Z",
+  "program": "predict_engine_research/src/main.ipynb",
+  "codePath": "predict_engine_research/src/main.ipynb",
+  "git": {
+    "remote": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN28-1st-4team.git",
+    "commit": "90095eff5848625f6bd9e5d1ceb0d593ae44ece6"
+  },
+  "email": "wonbeenlee093@gmail.com",
+  "root": "/Users/iwonbin/workspace/Study/boot/SKN28-1st-4team/predict_engine_research/src",
+  "host": "iwonbin-ui-MacBookPro-3.local",
+  "executable": "/Users/iwonbin/workspace/Study/boot/SKN28-1st-4team/.venv/bin/python",
+  "cpu_count": 10,
+  "cpu_count_logical": 10,
+  "disk": {
+    "/": {
+      "total": "494384795648",
+      "used": "411554037760"
+    }
+  },
+  "memory": {
+    "total": "34359738368"
+  },
+  "apple": {
+    "name": "Apple M1 Max",
+    "ecpuCores": 2,
+    "pcpuCores": 8,
+    "gpuCores": 32,
+    "memoryGb": 32,
+    "ramTotalBytes": "34359738368"
+  },
+  "writerId": "3mhrz130s2w10nuv14bfudk4s36q37ld"
+}
