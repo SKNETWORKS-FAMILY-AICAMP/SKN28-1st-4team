@@ -3,6 +3,9 @@ from __future__ import annotations
 from base64 import b64encode
 from dataclasses import dataclass
 from functools import lru_cache
+import mimetypes
+from pathlib import Path
+import re
 from typing import Any, cast
 
 from external.db import MySQLClient, get_db_client
@@ -10,6 +13,10 @@ from sql_commands.vehicle_model_image import (
     SELECT_VEHICLE_MODEL_IMAGE_SQL,
     build_select_vehicle_model_image_meta_by_models_sql,
 )
+
+IMAGE_SOURCE_DIR = Path(__file__).resolve().parents[3] / "data_insert" / "source" / "images"
+
+SEARCH_NORMALIZATION_PATTERN = re.compile(r"[^0-9a-z가-힣]+")
 
 
 @dataclass(frozen=True)
@@ -45,25 +52,37 @@ class VehicleModelImageService:
         if not normalized_model_name:
             raise ValueError("model_name is required")
 
-        with self._client.connect() as active_connection:
-            with cast(Any, active_connection).cursor() as cursor:
-                cursor.execute(
-                    SELECT_VEHICLE_MODEL_IMAGE_SQL,
-                    (normalized_brand_key, normalized_model_name),
-                )
-                row = cursor.fetchone()
+        row = None
+        try:
+            with self._client.connect() as active_connection:
+                with cast(Any, active_connection).cursor() as cursor:
+                    cursor.execute(
+                        SELECT_VEHICLE_MODEL_IMAGE_SQL,
+                        (normalized_brand_key, normalized_model_name),
+                    )
+                    row = cursor.fetchone()
+        except Exception as exc:
+            print(
+                "[vehicle_model_image] image lookup from db failed; trying local file fallback",
+                {
+                    "brand_key": normalized_brand_key,
+                    "model_name": normalized_model_name,
+                    "error": type(exc).__name__,
+                    "message": str(exc),
+                },
+            )
 
-        if row is None:
-            return None
+        if row is not None:
+            brand_key_value, model_name_value, source_filename, mime_type, payload = row
+            return VehicleModelImage(
+                brand_key=str(brand_key_value),
+                model_name=str(model_name_value),
+                source_filename=str(source_filename),
+                mime_type=str(mime_type),
+                payload=bytes(payload),
+            )
 
-        brand_key_value, model_name_value, source_filename, mime_type, payload = row
-        return VehicleModelImage(
-            brand_key=str(brand_key_value),
-            model_name=str(model_name_value),
-            source_filename=str(source_filename),
-            mime_type=str(mime_type),
-            payload=bytes(payload),
-        )
+        return _build_local_image(brand_key=normalized_brand_key, model_name=normalized_model_name)
 
     def get_image_metas(
         self,
@@ -77,21 +96,44 @@ class VehicleModelImageService:
         if not normalized_model_names:
             raise ValueError("model_names is required")
 
-        sql = build_select_vehicle_model_image_meta_by_models_sql(len(normalized_model_names))
-        query_params = (normalized_brand_key, *normalized_model_names)
-
-        with self._client.connect() as active_connection:
-            with cast(Any, active_connection).cursor() as cursor:
-                cursor.execute(sql, query_params)
-                rows = cursor.fetchall()
-
         image_metas: dict[str, VehicleModelImageMeta] = {}
-        for brand_key_value, model_name_value, source_filename, mime_type in rows:
-            image_metas[str(model_name_value)] = VehicleModelImageMeta(
-                brand_key=str(brand_key_value),
-                model_name=str(model_name_value),
-                source_filename=str(source_filename),
-                mime_type=str(mime_type),
+        try:
+            sql = build_select_vehicle_model_image_meta_by_models_sql(len(normalized_model_names))
+            query_params = (normalized_brand_key, *normalized_model_names)
+
+            with self._client.connect() as active_connection:
+                with cast(Any, active_connection).cursor() as cursor:
+                    cursor.execute(sql, query_params)
+                    rows = cursor.fetchall()
+
+            for brand_key_value, model_name_value, source_filename, mime_type in rows:
+                image_metas[str(model_name_value)] = VehicleModelImageMeta(
+                    brand_key=str(brand_key_value),
+                    model_name=str(model_name_value),
+                    source_filename=str(source_filename),
+                    mime_type=str(mime_type),
+                )
+        except Exception as exc:
+            print(
+                "[vehicle_model_image] image meta lookup from db failed; trying local file fallback",
+                {
+                    "brand_key": normalized_brand_key,
+                    "error": type(exc).__name__,
+                    "message": str(exc),
+                },
+            )
+
+        for model_name in normalized_model_names:
+            if model_name in image_metas:
+                continue
+            local_image = _build_local_image(brand_key=normalized_brand_key, model_name=model_name)
+            if local_image is None:
+                continue
+            image_metas[model_name] = VehicleModelImageMeta(
+                brand_key=local_image.brand_key,
+                model_name=local_image.model_name,
+                source_filename=local_image.source_filename,
+                mime_type=local_image.mime_type,
             )
         return image_metas
 
@@ -173,6 +215,51 @@ def _build_placeholder_image_src(*, brand_label: str, model_name: str) -> str:
     """.strip()
     encoded_svg = b64encode(svg.encode("utf-8")).decode("ascii")
     return f"data:image/svg+xml;base64,{encoded_svg}"
+
+
+def _build_local_image(*, brand_key: str, model_name: str) -> VehicleModelImage | None:
+    image_path = _find_local_image_path(brand_key=brand_key, model_name=model_name)
+    if image_path is None:
+        return None
+
+    payload = image_path.read_bytes()
+    mime_type = mimetypes.guess_type(image_path.name)[0] or "image/jpeg"
+    return VehicleModelImage(
+        brand_key=brand_key,
+        model_name=model_name,
+        source_filename=image_path.name,
+        mime_type=mime_type,
+        payload=payload,
+    )
+
+
+def _normalize_image_token(value: str) -> str:
+    lowered = value.casefold()
+    return SEARCH_NORMALIZATION_PATTERN.sub("", lowered)
+
+
+@lru_cache(maxsize=16)
+def _get_brand_image_files(brand_key: str) -> tuple[Path, ...]:
+    return tuple(sorted(IMAGE_SOURCE_DIR.glob(f"{brand_key}_*.jpg")))
+
+
+def _find_local_image_path(*, brand_key: str, model_name: str) -> Path | None:
+    brand_files = _get_brand_image_files(brand_key)
+    if not brand_files:
+        return None
+
+    normalized_model_name = _normalize_image_token(model_name)
+    for image_path in brand_files:
+        image_model_name = image_path.stem.split("_", 1)[1]
+        if _normalize_image_token(image_model_name) == normalized_model_name:
+            return image_path
+
+    for image_path in brand_files:
+        image_model_name = image_path.stem.split("_", 1)[1]
+        if normalized_model_name and normalized_model_name in _normalize_image_token(image_model_name):
+            return image_path
+
+    return brand_files[0]
 
 
 @lru_cache(maxsize=1)
